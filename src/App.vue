@@ -1,17 +1,12 @@
 <template>
-  <div id="app" class="container">
-    <top></top>
+  <div id="app" class="container-fluid">
+
     <router-view/>
   </div>
 </template>
 
 <script>
-  import Top from '@/components/menus/Top'
-  export default {
-    components: {
-      Top
-    }
-  }
+
 </script>
 
 <style lang="scss">
