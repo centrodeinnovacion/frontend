@@ -25,7 +25,7 @@
   }
 
   .home{
-    padding-top: 15%;
+    padding-top: 25vh;
 .homecontent{
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
     text-transform: uppercase;
     text-align: left;
     letter-spacing: 0.7em;
-    line-height: 1.3em;
+    line-height: 1.2em;
 
   }
     @media screen and (max-width: 1200px) {
@@ -94,8 +94,8 @@
       align-items: center;
       border: 1px solid $lightgreen;
       background-color: transparent;
-      width: 11vh;
-      height: 11vh;
+      width: 12vh;
+      height: 12vh;
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -123,10 +123,13 @@
       background-color: transparent;
       color: white;
       text-align: center;
-
-    }
+      img{
+        height: 45px;
+      }
+      }
     .linefooterhome{
       border-left: 1px solid $whitetransparent;
+
 
     }
 

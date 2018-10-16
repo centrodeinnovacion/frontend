@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-3 imageback">
             </div>
-            <div class="col-5 homecontent"><h1><span class="lineth"><span
+            <div class="col-6 homecontent"><h1><span class="lineth"><span
                     class="linetext">Blockchain toolkit</span></span>
             </h1>
                 <p>Blockchain permite el registro de información en diferentes partes del planeta de manera simultánea,
@@ -14,7 +14,7 @@
 
                 <router-link class="btn" :to="{name: 'dashboard'}"><span class="buttontext">Empezar</span></router-link>
             </div>
-            <div class="col-4 imageback2"></div>
+            <div class="col-3 imageback2"></div>
 
         </div>
 <footer>
