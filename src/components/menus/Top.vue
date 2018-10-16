@@ -1,4 +1,5 @@
 <template>
+  <!--
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand bdb" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +34,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
-  </nav>
+  </nav>-->
 </template>
 
 <script>

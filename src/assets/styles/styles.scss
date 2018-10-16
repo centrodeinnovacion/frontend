@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700');
 @import "navbar";
 
+
 #app{
   background-color: $darkblue!important;
   height: 100vh;
@@ -136,5 +137,79 @@
     }
 
   }
+  .dashboard{
+    margin-left: 10%;
+
+    p{
+      font-family: 'Raleway', sans-serif!important;
+      color: $white!important;
+      font-size: 13px!important;
+      font-weight: 100!important;
+      text-align: left;
+      line-height: 2em;
+      letter-spacing: 0.13em;
+      padding-top: 10px;
+
+    }
+    .btn-dashboard{
+      color: $lightgreen!important;
+      text-transform: uppercase!important;
+      font-weight: 400!important;
+      font-size: $normaltext!important;
+      letter-spacing: 0.05em!important;
+
+    }
+    .btn{
+
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em!important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      margin-top: 5vh;
+
+
+    }
+    .btn:hover {
+      background-color: $lightgreen;
+      text-decoration-color: $darkblue!important;
+
+    }
+    .btn-dashboard:hover{
+      color: $darkblue!important;
+    }
+    .fas {
+      font-size: 17px!important;
+      margin-left: 10px;
+    }
+    h2{
+      font-family: 'Raleway', sans-serif!important;
+      font-size: 2.2em!important;
+      font-weight: 500!important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.1em;
+      line-height: 1.2em;
+      color: $white;
+      margin-top: 10vh;
+
+    }
+    .file{
+      color: $lightgreen!important;
+      text-transform: uppercase!important;
+      font-weight: 400!important;
+      font-size: $normaltext!important;
+      letter-spacing: 0.05em!important;
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em!important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+
+
+    }
+
+    }
+
 }
 
