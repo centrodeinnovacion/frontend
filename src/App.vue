@@ -1,19 +1,19 @@
 <template>
-  <div id="app" class="container">
-    <top></top>
-    <router-view/>
-  </div>
+    <div id="app" class="container">
+        <home></home>
+        <router-view/>
+    </div>
 </template>
 
 <script>
-  import Top from '@/components/menus/Top'
-  export default {
-    components: {
-      Top
+    import Home from "./views/Home";
+    export default {
+        components: {
+            Home
+        }
     }
-  }
 </script>
 
 <style lang="scss">
-  @import "assets/styles/styles";
+    @import "assets/styles/styles";
 </style>
