@@ -3,7 +3,7 @@
     <form @submit.prevent="">
       <input type="file" placeholder="Drag a file to upload" name="upload" id="upload">
       <input type="file" placeholder="Drag a file to verify" name="verify" id="verify">
-      <button type="button" class="btn btn-primary">Descargar</button>
+      <button type="button" class="btn btn-dashboard">Descargar</button>
     </form>
   </div>
 </template>
