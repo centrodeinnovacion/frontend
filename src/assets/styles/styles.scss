@@ -166,7 +166,8 @@
       border-radius: 0.3em!important;
       align-self: center;
       padding: 0.8em 1.3em 0.8em 1.3em;
-      margin-top: 5vh;
+      margin-top: 20vh;
+
 
 
     }
@@ -175,8 +176,18 @@
       text-decoration-color: $darkblue!important;
 
     }
+    .btn:active {
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue!important;
+
+    }
     .btn-dashboard:hover{
       color: $darkblue!important;
+      font-weight: 700!important;
+    }
+    .btn-dashboard:active{
+      color: $white!important;
+      font-weight: 700!important;
     }
     .fas {
       font-size: 17px!important;
@@ -194,18 +205,96 @@
       margin-top: 10vh;
 
     }
-    .file{
-      color: $lightgreen!important;
-      text-transform: uppercase!important;
-      font-weight: 400!important;
-      font-size: $normaltext!important;
-      letter-spacing: 0.05em!important;
+    .buttonscol{
+      position: relative;
+      display: flex;
+      justify-content: left;
+      align-items: left;
+
+    }
+
+    .inputstylebtn{
+      visibility: hidden;
+      width: 0;
+      position: relative;
+    }
+    .inputstylebtn::before{
+      content: 'SUBIR DOCUMENTO' url("./assets/upload.png");
+      display: inline-block;
       border: 1px solid $lightgreen;
       background-color: transparent;
       border-radius: 0.3em!important;
       align-self: center;
       padding: 0.8em 1.3em 0.8em 1.3em;
+      color: $lightgreen!important;
+      text-transform: uppercase!important;
+      font-weight: 400!important;
+      font-size: $normaltext!important;
+      letter-spacing: 0.05em!important;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      visibility: visible;
+      position: absolute;
 
+    }
+    .inputstylebtn:hover::before{
+      content: 'SUBIR DOCUMENTO' url("./assets/uploadblue.png");
+      background-color: $lightgreen;
+      text-decoration-color: $darkblue!important;
+      color: $darkblue!important;
+      font-weight: 700!important;
+
+    }
+    .inputstylebtn:active::before {
+      content: 'SUBIR DOCUMENTO  ' url("./assets/uploadwhite.png");
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue!important;
+      color: $white!important;
+      font-weight: 700!important;
+
+    }
+    .inputstylebtnverify{
+      visibility: hidden;
+      width: 0;
+      position: relative;
+    }
+    .inputstylebtnverify::before{
+      content: 'VERIFICAR DOCUMENTO'url("./assets/verify.png");
+      display: inline-block;
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em!important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      color: $lightgreen!important;
+      text-transform: uppercase!important;
+      font-weight: 400!important;
+      font-size: $normaltext!important;
+      letter-spacing: 0.05em!important;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      visibility: visible;
+      position: absolute;
+      margin-top: 10vh;
+
+
+    }
+    .inputstylebtnverify:active::before {
+      content: 'VERIFICAR DOCUMENTO' url("./assets/verify.png");
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue!important;
+      color: $white!important;
+      font-weight: 700!important;
+
+    }
+    .inputstylebtnveriy:active::before {
+      content: 'VERIFICAR DOCUMENTO'url("./assets/verifywhite.png");
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue!important;
+      color: $white!important;
+      font-weight: 700!important;
 
     }
 
