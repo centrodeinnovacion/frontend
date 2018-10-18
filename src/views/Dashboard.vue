@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-3">
       <h2>Instrucciones</h2>
-    <p>Suponga que usted quiere cargar, verificar y descargar el Registro Sanitario de un producto, para esto seleccione una de las siguientes acciones: </p>
+    <p>Suponga que usted quiere cargar, verificar y descargar el registro sanitario o médico de un producto, para esto seleccione una de las siguientes acciones: </p>
 
     <form @submit.prevent="">
       <div class="buttonscol">

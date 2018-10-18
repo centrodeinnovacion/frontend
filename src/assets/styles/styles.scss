@@ -138,7 +138,7 @@
 
   }
   .dashboard{
-    margin-left: 10%;
+    margin-left: 10vh;
 
     p{
       font-family: 'Raleway', sans-serif!important;
@@ -166,7 +166,9 @@
       border-radius: 0.3em!important;
       align-self: center;
       padding: 0.8em 1.3em 0.8em 1.3em;
-      margin-top: 20vh;
+      margin-top: 230px;
+      width: 265px;
+      border-color: $lightgreen!important;
 
 
 
@@ -183,11 +185,11 @@
     }
     .btn-dashboard:hover{
       color: $darkblue!important;
-      font-weight: 700!important;
+      font-weight: 500!important;
     }
     .btn-dashboard:active{
       color: $white!important;
-      font-weight: 700!important;
+      font-weight: 500!important;
     }
     .fas {
       font-size: 17px!important;
@@ -195,7 +197,7 @@
     }
     h2{
       font-family: 'Raleway', sans-serif!important;
-      font-size: 2.2em!important;
+      font-size: 1.8em!important;
       font-weight: 500!important;
       text-transform: uppercase;
       text-align: left;
@@ -219,7 +221,8 @@
       position: relative;
     }
     .inputstylebtn::before{
-      content: 'SUBIR DOCUMENTO' url("./assets/upload.png");
+      content: 'SUBIR DOCUMENTO' url("./assets/upload.png")'Arrastre el documento aquí o haga clic para buscarlo';
+      width: 265px;
       display: inline-block;
       border: 1px solid $lightgreen;
       background-color: transparent;
@@ -227,31 +230,29 @@
       align-self: center;
       padding: 0.8em 1.3em 0.8em 1.3em;
       color: $lightgreen!important;
-      text-transform: uppercase!important;
       font-weight: 400!important;
       font-size: $normaltext!important;
       letter-spacing: 0.05em!important;
-      white-space: nowrap;
       -webkit-user-select: none;
       cursor: pointer;
       visibility: visible;
       position: absolute;
-
+      margin-top: 20px;
     }
     .inputstylebtn:hover::before{
-      content: 'SUBIR DOCUMENTO' url("./assets/uploadblue.png");
+      content: 'SUBIR DOCUMENTO' url("./assets/uploadblue.png")'Arrastre el documento aquí o haga clic para buscarlo';
       background-color: $lightgreen;
       text-decoration-color: $darkblue!important;
       color: $darkblue!important;
-      font-weight: 700!important;
+      font-weight: 500!important;
 
     }
     .inputstylebtn:active::before {
-      content: 'SUBIR DOCUMENTO  ' url("./assets/uploadwhite.png");
+      content: 'SUBIR DOCUMENTO  ' url("./assets/uploadwhite.png")'Arrastre el documento aquí o haga clic para buscarlo';
       background-color: $lightgreentransparent;
       text-decoration-color: $darkblue!important;
       color: $white!important;
-      font-weight: 700!important;
+      font-weight: 500!important;
 
     }
     .inputstylebtnverify{
@@ -260,7 +261,8 @@
       position: relative;
     }
     .inputstylebtnverify::before{
-      content: 'VERIFICAR DOCUMENTO'url("./assets/verify.png");
+      content: 'VERIFICAR DOCUMENTO'url("./assets/verify.png")'Arrastre el documento aquí o haga clic para buscarlo';
+      width: 265px;
       display: inline-block;
       border: 1px solid $lightgreen;
       background-color: transparent;
@@ -268,33 +270,31 @@
       align-self: center;
       padding: 0.8em 1.3em 0.8em 1.3em;
       color: $lightgreen!important;
-      text-transform: uppercase!important;
       font-weight: 400!important;
       font-size: $normaltext!important;
       letter-spacing: 0.05em!important;
-      white-space: nowrap;
       -webkit-user-select: none;
       cursor: pointer;
       visibility: visible;
       position: absolute;
-      margin-top: 10vh;
+      margin-top: 124px;
 
 
     }
     .inputstylebtnverify:active::before {
-      content: 'VERIFICAR DOCUMENTO' url("./assets/verify.png");
+      content: 'VERIFICAR DOCUMENTO' url("./assets/verify.png")'Arrastre el documento aquí o haga clic para buscarlo';
       background-color: $lightgreentransparent;
       text-decoration-color: $darkblue!important;
       color: $white!important;
-      font-weight: 700!important;
+      font-weight: 500!important;
 
     }
     .inputstylebtnveriy:active::before {
-      content: 'VERIFICAR DOCUMENTO'url("./assets/verifywhite.png");
+      content: 'VERIFICAR DOCUMENTO'url("./assets/verifywhite.png")'Arrastre el documento aquí o haga clic para buscarlo';
       background-color: $lightgreentransparent;
       text-decoration-color: $darkblue!important;
       color: $white!important;
-      font-weight: 700!important;
+      font-weight: 500!important;
 
     }
 
