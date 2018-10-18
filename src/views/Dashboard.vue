@@ -10,8 +10,14 @@
       <input type="file"  placeholder="Drag a file to upload" name="upload" id="upload" class="inputstylebtn"  >
       <input type="file" placeholder="Drag a file to verify" name="verify" id="verify" class="inputstylebtnverify">
       <button type="button" class="btn btn-dashboard">Descargar documento <i class="fas fa-cloud-download-alt"></i> </button>
-      </div>    </form>
-  </div></div></div>
+      </div>    </form>  </div>
+
+    <div class="col-6">
+    </div>
+   
+      </div>
+    </div>
+  </div>
 
 </template>
 
