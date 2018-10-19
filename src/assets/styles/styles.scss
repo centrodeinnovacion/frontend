@@ -14,15 +14,13 @@
     background-repeat: no-repeat;
     background-size: 50%;
     background-position-x: left;
-
   }
+
   .imageback2{
     background-image: url("./assets/fondo1.png");
     background-repeat: no-repeat;
     background-size: 50%;
     background-position-x: right;
-
-
   }
 
   .home{
@@ -62,17 +60,8 @@
     .linetext{
       color: $white;
 
-          }
-    p{
-      font-family: 'Raleway', sans-serif!important;
-      color: $white!important;
-      font-size: $normaltext!important;
-      font-weight: 100!important;
-      text-align: left;
-      line-height: 1.6em;
-      letter-spacing: 0.1em;
-
     }
+
     .buttontext{
       position: absolute;
       color: $lightgreen!important;
@@ -142,9 +131,166 @@
     }
 
   }
-  .dashboard{
+  .dashboard {
     margin-left: 10vh;
 
+    p {
+      font-family: 'Raleway', sans-serif !important;
+      color: $white !important;
+      font-size: 13px !important;
+      font-weight: 100 !important;
+      text-align: left;
+      line-height: 2em;
+      letter-spacing: 0.13em;
+      padding-top: 10px;
+      margin-right: 30px;
+    }
+
+    .btn-dashboard {
+      color: $lightgreen !important;
+      text-transform: uppercase !important;
+      font-weight: 400 !important;
+      font-size: $normaltext !important;
+      letter-spacing: 0.05em !important;
+    }
+
+    .btn {
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em !important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      margin-top: 230px;
+      width: 265px;
+      border-color: $lightgreen !important;
+    }
+
+    .btn:hover {
+      background-color: $lightgreen;
+      text-decoration-color: $darkblue !important;
+    }
+
+    .btn:active {
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue !important;
+    }
+
+    .btn-dashboard:hover {
+      color: $darkblue !important;
+      font-weight: 500 !important;
+    }
+
+    .btn-dashboard:active {
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+
+    h2 {
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 1.8em !important;
+      font-weight: 500 !important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.1em;
+      line-height: 1.2em;
+      color: $white;
+      margin-top: 10vh;
+    }
+
+    .buttonscol {
+      position: relative;
+      display: flex;
+      justify-content: left;
+      align-items: left;
+    }
+
+    .inputstylebtn {
+      visibility: hidden;
+      width: 0;
+      position: relative;
+    }
+
+    .inputstylebtn::before {
+      content: 'SUBIR DOCUMENTO' url("./assets/upload.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      width: 265px;
+      display: inline-block;
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em !important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      color: $lightgreen !important;
+      font-weight: 400 !important;
+      font-size: $normaltext !important;
+      letter-spacing: 0.05em !important;
+      -webkit-user-select: none;
+      cursor: pointer;
+      visibility: visible;
+      position: absolute;
+      margin-top: 20px;
+    }
+
+    .inputstylebtn:hover::before {
+      content: 'SUBIR DOCUMENTO' url("./assets/uploadblue.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      background-color: $lightgreen;
+      text-decoration-color: $darkblue !important;
+      color: $darkblue !important;
+      font-weight: 500 !important;
+    }
+
+    .inputstylebtn:active::before {
+      content: 'SUBIR DOCUMENTO  ' url("./assets/uploadwhite.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue !important;
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+
+    .inputstylebtnverify {
+      visibility: hidden;
+      width: 0;
+      position: relative;
+    }
+
+    .inputstylebtnverify::before {
+      content: 'VERIFICAR DOCUMENTO' url("./assets/verify.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      width: 265px;
+      display: inline-block;
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em !important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      color: $lightgreen !important;
+      font-weight: 400 !important;
+      font-size: $normaltext !important;
+      letter-spacing: 0.05em !important;
+      -webkit-user-select: none;
+      cursor: pointer;
+      visibility: visible;
+      position: absolute;
+      margin-top: 124px;
+    }
+
+    .inputstylebtnverify:active::before {
+      content: 'VERIFICAR DOCUMENTO' url("./assets/verify.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue !important;
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+
+    .inputstylebtnveriy:active::before {
+      content: 'VERIFICAR DOCUMENTO' url("./assets/verifywhite.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue !important;
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+  }
+
+  .upload{
+    padding-right: 20px;
     h3{
       font-family: 'Raleway', sans-serif!important;
       font-size: 1.3em!important;
@@ -153,44 +299,47 @@
       text-align: left;
       letter-spacing: 0.1em;
       line-height: 1.2em;
-      color: $yellow;
-      margin-top: 4vh;
-            }
-    .alignicon {
-      position: absolute!important;
+      margin-top: 50px;
+    }
+    .coloryellow{
+      color: $yellow!important;
+    }
+    .colorgreen{
+      color: $green!important;
     }
     .alignicon2 {
-    position: relative!important;
+      position: relative!important;
+    }
+
+    .alignicon {
+      position: absolute!important;
     }
 
     .sizeicon {
       position: absolute!important;
-            color: $yellow!important;
-      margin-left: -25px!important;
-      .fas { font-size: 5vh!important;
-      margin-top: 4.2vh}
+      color: $yellow!important;
+      margin-left: -40px!important;
+      font-size: 30px!important;
+      margin-top: 45px!important;
 
     }
     .sizeicon3 {
       position: absolute!important;
-      color: $hiperlightgreen!important;
-      margin-left: -70px!important;
-      margin-top: 2vh;
+      color: $green!important;
+      margin-left: -73px!important;
+      margin-top: 36px;
       width: 6vh;
-
     }
-
-      h4{
-        font-family: 'Roboto', sans-serif!important;
-        font-size: 0.94em!important;
-        font-weight: 500!important;
-        text-transform: uppercase;
-        text-align: left;
-        letter-spacing: 0.1em;
-        line-height: 1.0em;
-        color: $yellow;
-        margin-top: 10vh;
-      }
+    h4{
+      font-family: 'Roboto', sans-serif!important;
+      font-size: 0.94em!important;
+      font-weight: 500!important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.1em;
+      line-height: 1.0em;
+      margin-top: 30px;
+    }
 
     h5{
       font-family: 'Roboto', sans-serif!important;
@@ -201,226 +350,23 @@
       letter-spacing: 0.1em;
       line-height: 1.0em;
       color: $yellow;
-         }
-    h6{
-      font-family: 'Raleway', sans-serif!important;
-      font-size: 1.2em!important;
-      font-weight: 500!important;
-      text-transform: uppercase;
-      text-align: left;
-      letter-spacing: 0.1em;
-      line-height: 1.2em;
-      color: $hiperlightgreen;
-      margin-top: 4vh;
     }
 
-    h7{
-      font-family: 'Roboto', sans-serif!important;
-      font-size: 0.94em!important;
-      font-weight: 500!important;
-      text-transform: uppercase;
-      text-align: left;
-      letter-spacing: 0.1em;
-      line-height: 1.0em;
-      color: $hiperlightgreen;
-      margin-top: 10vh;
-    }
-
-    h8{
-      font-family: 'Roboto', sans-serif!important;
-      font-size: 1.7em!important;
-      font-weight: 500!important;
-      text-transform: uppercase;
-      text-align: left;
-      letter-spacing: 0.1em;
-      line-height: 1.0em;
-      color: $hiperlightgreen;
-      margin-top: 1vh;
-    }
-    h9{
-      font-family: 'Roboto', sans-serif!important;
-      font-size: 0.94em!important;
-      font-weight: 500!important;
-      text-transform: uppercase;
-      text-align: left;
-      letter-spacing: 0.1em;
-      line-height: 1.0em;
-      color: $yellow;
-    }
-    p{
-      font-family: 'Raleway', sans-serif!important;
-      color: $white!important;
-      font-size: 13px!important;
-      font-weight: 100!important;
+    p {
+      font-family: 'Raleway', sans-serif !important;
+      color: $white !important;
+      font-size: 13px !important;
+      font-weight: 100 !important;
       text-align: left;
       line-height: 2em;
       letter-spacing: 0.13em;
       padding-top: 10px;
-      margin-right: 30px;
-
-      .sizeicon {
-        position: absolute!important;
-        color: $yellow!important;
-
-      }
-}
-
-    }
-    p1{
-      font-family: 'Raleway', sans-serif!important;
-      color: $white!important;
-      font-size: 13px!important;
-      font-weight: 100!important;
-      font-style: italic;
-      text-align: left;
-      line-height: 2em;
-      letter-spacing: 0.13em;
-       }
-
-    .btn-dashboard{
-      color: $lightgreen!important;
-      text-transform: uppercase!important;
-      font-weight: 400!important;
-      font-size: $normaltext!important;
-      letter-spacing: 0.05em!important;
-
-    }
-    .btn{
-
-      border: 1px solid $lightgreen;
-      background-color: transparent;
-      border-radius: 0.3em!important;
-      align-self: center;
-      padding: 0.8em 1.3em 0.8em 1.3em;
-      margin-top: 230px;
-      width: 265px;
-      border-color: $lightgreen!important;
-
-
-
-    }
-    .btn:hover {
-      background-color: $lightgreen;
-      text-decoration-color: $darkblue!important;
-
-    }
-    .btn:active {
-      background-color: $lightgreentransparent;
-      text-decoration-color: $darkblue!important;
-
-    }
-    .btn-dashboard:hover{
-      color: $darkblue!important;
-      font-weight: 500!important;
-    }
-    .btn-dashboard:active{
-      color: $white!important;
-      font-weight: 500!important;
-    }
-
-    h2{
-      font-family: 'Raleway', sans-serif!important;
-      font-size: 1.8em!important;
-      font-weight: 500!important;
-      text-transform: uppercase;
-      text-align: left;
-      letter-spacing: 0.1em;
-      line-height: 1.2em;
-      color: $white;
-      margin-top: 10vh;
-
-    }
-    .buttonscol{
-      position: relative;
-      display: flex;
-      justify-content: left;
-      align-items: left;
 
     }
 
-    .inputstylebtn{
-      visibility: hidden;
-      width: 0;
-      position: relative;
-    }
-    .inputstylebtn::before{
-      content: 'SUBIR DOCUMENTO' url("./assets/upload.png")'Arrastre el documento aquí o haga clic para buscarlo';
-      width: 265px;
-      display: inline-block;
-      border: 1px solid $lightgreen;
-      background-color: transparent;
-      border-radius: 0.3em!important;
-      align-self: center;
-      padding: 0.8em 1.3em 0.8em 1.3em;
-      color: $lightgreen!important;
-      font-weight: 400!important;
-      font-size: $normaltext!important;
-      letter-spacing: 0.05em!important;
-      -webkit-user-select: none;
-      cursor: pointer;
-      visibility: visible;
-      position: absolute;
-      margin-top: 20px;
-    }
-    .inputstylebtn:hover::before{
-      content: 'SUBIR DOCUMENTO' url("./assets/uploadblue.png")'Arrastre el documento aquí o haga clic para buscarlo';
-      background-color: $lightgreen;
-      text-decoration-color: $darkblue!important;
-      color: $darkblue!important;
-      font-weight: 500!important;
+  }
 
-    }
-    .inputstylebtn:active::before {
-      content: 'SUBIR DOCUMENTO  ' url("./assets/uploadwhite.png")'Arrastre el documento aquí o haga clic para buscarlo';
-      background-color: $lightgreentransparent;
-      text-decoration-color: $darkblue!important;
-      color: $white!important;
-      font-weight: 500!important;
-
-    }
-    .inputstylebtnverify{
-      visibility: hidden;
-      width: 0;
-      position: relative;
-    }
-    .inputstylebtnverify::before{
-      content: 'VERIFICAR DOCUMENTO'url("./assets/verify.png")'Arrastre el documento aquí o haga clic para buscarlo';
-      width: 265px;
-      display: inline-block;
-      border: 1px solid $lightgreen;
-      background-color: transparent;
-      border-radius: 0.3em!important;
-      align-self: center;
-      padding: 0.8em 1.3em 0.8em 1.3em;
-      color: $lightgreen!important;
-      font-weight: 400!important;
-      font-size: $normaltext!important;
-      letter-spacing: 0.05em!important;
-      -webkit-user-select: none;
-      cursor: pointer;
-      visibility: visible;
-      position: absolute;
-      margin-top: 124px;
+  }
 
 
-    }
-    .inputstylebtnverify:active::before {
-      content: 'VERIFICAR DOCUMENTO' url("./assets/verify.png")'Arrastre el documento aquí o haga clic para buscarlo';
-      background-color: $lightgreentransparent;
-      text-decoration-color: $darkblue!important;
-      color: $white!important;
-      font-weight: 500!important;
-
-    }
-    .inputstylebtnveriy:active::before {
-      content: 'VERIFICAR DOCUMENTO'url("./assets/verifywhite.png")'Arrastre el documento aquí o haga clic para buscarlo';
-      background-color: $lightgreentransparent;
-      text-decoration-color: $darkblue!important;
-      color: $white!important;
-      font-weight: 500!important;
-
-    }
-
-
-}
 
