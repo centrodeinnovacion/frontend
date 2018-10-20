@@ -50,11 +50,9 @@ var Globe = function(canvas, options)
             this.wave = this.getWave();
         }
 
-        if (options.width !== undefined) {
+        if (options.width !== undefined && options.height !== undefined) {
             w = options.width;
-        }
-        if (options.height !== undefined) {
-            h = options.height;
+            h = options.width;
         }
     }
 
@@ -793,7 +791,8 @@ osgGA.GlobeManipulator = function (options) {
         }
     }
 
-    this.minAutomaticMotion = 0.015;
+    //this.minAutomaticMotion = 0.015;
+    this.minAutomaticMotion = 0.0;
     if (options !== undefined && options.rotationIdleSpeedFactor !== undefined) {
         if (options.rotationIdleSpeedFactor !== 0.0) {
             this.minAutomaticMotion *= options.rotationIdleSpeedFactor;
@@ -1100,7 +1099,7 @@ osgGA.GlobeManipulator.prototype = osg.objectInehrit(osgGA.Manipulator.prototype
     },
 
     mousewheel: function(ev, intDelta, deltaX, deltaY) {
-	if (intDelta > 0){
+	/*if (intDelta > 0){
             if (this.distanceDecrease) {
                 this.distanceDecrease();
             }
@@ -1109,7 +1108,7 @@ osgGA.GlobeManipulator.prototype = osg.objectInehrit(osgGA.Manipulator.prototype
             if (this.distanceIncrease) {
                 this.distanceIncrease();
             }
-	}
+	}*/
     },
     distanceIncrease: function() {
         var h = this.height;
