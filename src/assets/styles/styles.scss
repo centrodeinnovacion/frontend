@@ -8,6 +8,7 @@
   height: 100vh;
   background-image: url("./assets/frame.png");
   background-repeat: repeat;
+
   .imageback {
     background-image: url("./assets/fondo.png");
     background-repeat: no-repeat;
@@ -150,22 +151,7 @@
       font-size: $normaltext !important;
       letter-spacing: 0.05em !important;
     }
-    .btnpink {
-      color: $white !important;
-      text-transform: uppercase !important;
-      font-weight: 400 !important;
-      font-size: $normaltext !important;
-      letter-spacing: 0.05em !important;
-      border: 1px solid;
-      border-color: transparent;
-      background-color: $pink;
-      border-radius: 0.3em !important;
-      align-self: center;
-      padding: 0.8em 1.3em 0.8em 1.3em;
-      margin-top: 230px;
-      width: 180px;
 
-    }
     .btn {
       border: 1px solid $lightgreen;
       background-color: transparent;
@@ -177,27 +163,7 @@
       border-color: $lightgreen !important;
     }
 
-    .box-download {
-      border: 1px solid;
-      background-color: $darkblue;
-      border-radius: 0.3em !important;
-      align-self: center;
-      padding: 0.8em 1.3em 0.8em 1.3em;
-      margin-top: 230px;
-      border-color: $lightgreen !important;
-      color: $white !important;
-      font-size: 1.3em!important;
-      font-weight: 300!important;
-      text-transform: uppercase;
-      text-align: center;
-      width: 800px;
 
-    }
-
-    .btnpink:hover {
-      background-color: $lightpink;
-      text-decoration-color: $darkblue !important;
-    }
     .btn:hover {
       background-color: $lightgreen;
       text-decoration-color: $darkblue !important;
@@ -353,7 +319,7 @@
       color: $yellow !important;
       margin-left: -40px !important;
       font-size: 30px !important;
-      margin-top: 45px !important;
+      margin-top: -6px !important;
 
     }
     .sizeicon3 {
@@ -396,10 +362,70 @@
       padding-top: 10px;
 
     }
+  }
+
+  .backgroundcolor{
+    background-color: yellow;
+    position: relative;
+    height: 100px;
+    z-index: 100!important;
+  }
+
+.download{
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  z-index: 100!important;
+
+    .textcenter{
+    text-align: center;
+    font-weight: 400!important;
+    font-size: 1em!important;
+
+}
+    .box-download {
+    border: 1px solid;
+    background-color: $darkblue;
+    border-radius: 0.3em !important;
+    align-self: center;
+    padding: 0.8em 1.3em 0.8em 1.3em;
+    border-color: $lightgreen !important;
+    color: $white !important;
+    font-size: 1.1em!important;
+    font-weight: 300!important;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100vh;
+
 
   }
 
+  .btnpink:hover {
+    background-color: $lightpink;
+    text-decoration-color: $darkblue !important;
+  }
+
+  .btnpink {
+    color: $white !important;
+    text-transform: uppercase !important;
+    font-weight: 400 !important;
+    font-size: $normaltext !important;
+    letter-spacing: 0.05em !important;
+    border: 1px solid;
+    border-color: transparent;
+    background-color: $pink;
+    border-radius: 0.3em !important;
+    align-self: center;
+    padding: 0.8em 1.3em 0.8em 1.3em;
+    position: absolute;
+    top: 110%;
+    left: 40%;
+
+  }
 }
+  }
+
+
 
 
 

@@ -12,22 +12,27 @@
                 <upload></upload>
             </div>
 
-
+        </div>
+        <div class="row download">
+            <div class="col-12 mx-auto">
+                <download></download>
+            </div>
         </div>
     </div>
-
 </template>
 
 <script>
     import Buttons from '@/components/menus/Buttons'
     import xxx from '@/components/common/xxx'
     import Upload from '@/components/common/Upload'
+    import Download from '@/components/common/Download'
     export default {
         name: 'Dashboard',
         components: {
             Buttons,
             xxx,
-            Upload
+            Upload,
+            Download
         }
     }
 </script>
