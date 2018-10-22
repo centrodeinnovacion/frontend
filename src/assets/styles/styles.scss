@@ -3,37 +3,36 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700');
 @import "navbar";
 
-
-#app{
-  background-color: $darkblue!important;
+#app {
+  background-color: $darkblue !important;
   height: 100vh;
   background-image: url("./assets/frame.png");
   background-repeat: repeat;
-  .imageback{
+  .imageback {
     background-image: url("./assets/fondo.png");
     background-repeat: no-repeat;
     background-size: 50%;
     background-position-x: left;
   }
 
-  .imageback2{
+  .imageback2 {
     background-image: url("./assets/fondo1.png");
     background-repeat: no-repeat;
     background-size: 50%;
     background-position-x: right;
   }
 
-  .home{
+  .home {
     padding-top: 25vh;
-    .homecontent{
+    .homecontent {
       display: flex;
       flex-direction: column;
     }
 
-    h1{
-      font-family: 'Raleway', sans-serif!important;
-      font-size: 4em!important;
-      font-weight: 700!important;
+    h1 {
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 4em !important;
+      font-weight: 700 !important;
       text-transform: uppercase;
       text-align: left;
       letter-spacing: 0.7em;
@@ -43,7 +42,7 @@
     @media screen and (max-width: 1200px) {
       h1 {
         letter-spacing: 0.3em;
-        font-size: 3.5em!important;
+        font-size: 3.5em !important;
       }
     }
     @media screen and (max-width: 1500px) {
@@ -51,31 +50,31 @@
         letter-spacing: 0.5em;
       }
     }
-    .lineth{
+    .lineth {
       color: $darkblue;
       text-decoration: line-through;
       height: 20px;
     }
 
-    .linetext{
+    .linetext {
       color: $white;
 
     }
 
-    .buttontext{
+    .buttontext {
       position: absolute;
-      color: $lightgreen!important;
-      text-transform: uppercase!important;
-      font-weight: 500!important;
-      font-size: $textbutton!important;
-      letter-spacing: 0.15em!important;
+      color: $lightgreen !important;
+      text-transform: uppercase !important;
+      font-weight: 500 !important;
+      font-size: $textbutton !important;
+      letter-spacing: 0.15em !important;
       -webkit-align-content: center;
       align-content: center;
-      -webkit-transform: rotate(-45deg)!important;
-      -moz-transform: rotate(-45deg)!important;
-      -ms-transform: rotate(-45deg)!important;
-      -o-transform: rotate(-45deg)!important;
-      transform: rotate(-45deg)!important;
+      -webkit-transform: rotate(-45deg) !important;
+      -moz-transform: rotate(-45deg) !important;
+      -ms-transform: rotate(-45deg) !important;
+      -o-transform: rotate(-45deg) !important;
+      transform: rotate(-45deg) !important;
 
     }
     .btn {
@@ -92,24 +91,24 @@
       -ms-transform: rotate(45deg);
       -o-transform: rotate(45deg);
       transform: rotate(45deg);
-      border-radius: 0!important;
+      border-radius: 0 !important;
       align-self: center;
       margin-top: 3em;
 
-      .btn-dashboard{
+      .btn-dashboard {
         .fas {
-          font-size: 17px!important;
+          font-size: 17px !important;
           margin-left: 10px;
         }
       }
     }
     .btn:hover {
       background-color: $lightgreen;
-      text-decoration-color: $darkblue!important;
+      text-decoration-color: $darkblue !important;
 
     }
-    .buttontext:hover{
-      color: $darkblue!important;
+    .buttontext:hover {
+      color: $darkblue !important;
     }
 
     footer {
@@ -120,13 +119,12 @@
       background-color: transparent;
       color: white;
       text-align: center;
-      img{
+      img {
         height: 45px;
       }
     }
-    .linefooterhome{
+    .linefooterhome {
       border-left: 1px solid $whitetransparent;
-
 
     }
 
@@ -289,51 +287,51 @@
     }
   }
 
-  .upload{
+  .upload {
 
-    h3{
-      font-family: 'Raleway', sans-serif!important;
-      font-size: 1.3em!important;
-      font-weight: 500!important;
+    h3 {
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 1.3em !important;
+      font-weight: 500 !important;
       text-transform: uppercase;
       text-align: left;
       letter-spacing: 0.1em;
       line-height: 1.2em;
       margin-top: 50px;
     }
-    .coloryellow{
-      color: $yellow!important;
+    .coloryellow {
+      color: $yellow !important;
     }
-    .colorgreen{
-      color: $green!important;
+    .colorgreen {
+      color: $green !important;
     }
     .alignicon2 {
-      position: relative!important;
+      position: relative !important;
     }
 
     .alignicon {
-      position: absolute!important;
+      position: absolute !important;
     }
 
     .sizeicon {
-      position: absolute!important;
-      color: $yellow!important;
-      margin-left: -40px!important;
-      font-size: 30px!important;
-      margin-top: 45px!important;
+      position: absolute !important;
+      color: $yellow !important;
+      margin-left: -40px !important;
+      font-size: 30px !important;
+      margin-top: 45px !important;
 
     }
     .sizeicon3 {
-      position: absolute!important;
-      color: $green!important;
-      margin-left: -73px!important;
+      position: absolute !important;
+      color: $green !important;
+      margin-left: -73px !important;
       margin-top: 36px;
       width: 6vh;
     }
-    h4{
-      font-family: 'Roboto', sans-serif!important;
-      font-size: 0.94em!important;
-      font-weight: 500!important;
+    h4 {
+      font-family: 'Roboto', sans-serif !important;
+      font-size: 0.94em !important;
+      font-weight: 500 !important;
       text-transform: uppercase;
       text-align: left;
       letter-spacing: 0.1em;
@@ -341,10 +339,10 @@
       margin-top: 30px;
     }
 
-    h5{
-      font-family: 'Roboto', sans-serif!important;
-      font-size: 1.7em!important;
-      font-weight: 500!important;
+    h5 {
+      font-family: 'Roboto', sans-serif !important;
+      font-size: 1.7em !important;
+      font-weight: 500 !important;
       text-transform: uppercase;
       text-align: left;
       letter-spacing: 0.1em;
@@ -366,7 +364,7 @@
 
   }
 
-  }
+}
 
 
 
