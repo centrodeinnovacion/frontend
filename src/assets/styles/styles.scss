@@ -3,48 +3,44 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700');
 @import "navbar";
 
-
-#app{
-  background-color: $darkblue!important;
+#app {
+  background-color: $darkblue !important;
   height: 100vh;
   background-image: url("./assets/frame.png");
   background-repeat: repeat;
-  .imageback{
+  .imageback {
     background-image: url("./assets/fondo.png");
     background-repeat: no-repeat;
     background-size: 50%;
     background-position-x: left;
 
   }
-  .imageback2{
+  .imageback2 {
     background-image: url("./assets/fondo1.png");
     background-repeat: no-repeat;
     background-size: 50%;
     background-position-x: right;
 
-
   }
 
-  .home{
+  .home {
     padding-top: 25vh;
 
+    .homecontent {
+      display: flex;
+      flex-direction: column;
+    }
 
-.homecontent{
-  display: flex;
-  flex-direction: column;
-}
-
-  .h1{
-    font-family: 'Raleway', sans-serif!important;
-    font-size: 4em!important;
-    font-weight: 700!important;
-    text-transform: uppercase;
-    text-align: left;
-    letter-spacing: 0.4em;
-    line-height: 1.2em;
-  }
-    @mixin textGlitch($name, $intensity, $textColor, $background, $highlightColor1, $highlightColor2, $width, $height)
-    {
+    .h1 {
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 4em !important;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.4em;
+      line-height: 1.2em;
+    }
+    @mixin textGlitch($name, $intensity, $textColor, $background, $highlightColor1, $highlightColor2, $width, $height) {
       color: $textColor;
       position: relative;
       $steps: $intensity;
@@ -91,9 +87,9 @@
     }
 
     .content {
-      font-family: 'Raleway', sans-serif!important;
-      font-size: 4em!important;
-      font-weight: 700!important;
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 4em !important;
+      font-weight: 700 !important;
       text-transform: uppercase;
       text-align: left;
       letter-spacing: 0.7em;
@@ -101,11 +97,10 @@
       @include textGlitch("glitch", 17, white, black, red, blue, 1084, 115);
     }
 
-
     @media screen and (max-width: 1200px) {
       h1 {
         letter-spacing: 0.3em;
-        font-size: 3.5em!important;
+        font-size: 3.5em !important;
       }
     }
     @media screen and (max-width: 1500px) {
@@ -113,39 +108,39 @@
         letter-spacing: 0.5em;
       }
     }
-    .lineth{
+    .lineth {
       color: $darkblue;
       text-decoration: line-through;
       height: 20px;
     }
 
-    .linetext{
+    .linetext {
       color: $white;
     }
-    p{
-      font-family: 'Raleway', sans-serif!important;
-      color: $white!important;
-      font-size: $normaltext!important;
-      font-weight: 100!important;
+    p {
+      font-family: 'Raleway', sans-serif !important;
+      color: $white !important;
+      font-size: $normaltext !important;
+      font-weight: 100 !important;
       text-align: left;
       line-height: 1.6em;
       letter-spacing: 0.1em;
 
     }
-    .buttontext{
+    .buttontext {
       position: absolute;
-      color: $lightgreen!important;
-      text-transform: uppercase!important;
-      font-weight: 500!important;
-      font-size: $textbutton!important;
-      letter-spacing: 0.15em!important;
+      color: $lightgreen !important;
+      text-transform: uppercase !important;
+      font-weight: 500 !important;
+      font-size: $textbutton !important;
+      letter-spacing: 0.15em !important;
       -webkit-align-content: center;
       align-content: center;
-      -webkit-transform: rotate(-45deg)!important;
-      -moz-transform: rotate(-45deg)!important;
-      -ms-transform: rotate(-45deg)!important;
-      -o-transform: rotate(-45deg)!important;
-      transform: rotate(-45deg)!important;
+      -webkit-transform: rotate(-45deg) !important;
+      -moz-transform: rotate(-45deg) !important;
+      -ms-transform: rotate(-45deg) !important;
+      -o-transform: rotate(-45deg) !important;
+      transform: rotate(-45deg) !important;
 
     }
     .btn {
@@ -162,18 +157,18 @@
       -ms-transform: rotate(45deg);
       -o-transform: rotate(45deg);
       transform: rotate(45deg);
-      border-radius: 0!important;
+      border-radius: 0 !important;
       align-self: center;
       margin-top: 3em;
 
     }
     .btn:hover {
       background-color: $lightgreen;
-      text-decoration-color: $darkblue!important;
+      text-decoration-color: $darkblue !important;
 
     }
-    .buttontext:hover{
-      color: $darkblue!important;
+    .buttontext:hover {
+      color: $darkblue !important;
     }
 
     footer {
@@ -184,13 +179,12 @@
       background-color: transparent;
       color: white;
       text-align: center;
-      img{
+      img {
         height: 45px;
       }
-      }
-    .linefooterhome{
+    }
+    .linefooterhome {
       border-left: 1px solid $whitetransparent;
-
 
     }
 
@@ -198,5 +192,419 @@
 }
 
 
+//NICK
+#app {
+  background-color: $darkblue !important;
+  height: 100vh;
+  background-image: url("./assets/frame.png");
+  background-repeat: repeat;
 
+  .imageback {
+    background-image: url("./assets/fondo.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position-x: left;
+  }
 
+  .imageback2 {
+    background-image: url("./assets/fondo1.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position-x: right;
+  }
+
+  .home {
+    padding-top: 25vh;
+    .homecontent {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 4em !important;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.7em;
+      line-height: 1.2em;
+
+    }
+    @media screen and (max-width: 1200px) {
+      h1 {
+        letter-spacing: 0.3em;
+        font-size: 3.5em !important;
+      }
+    }
+    @media screen and (max-width: 1500px) {
+      h1 {
+        letter-spacing: 0.5em;
+      }
+    }
+    .lineth {
+      color: $darkblue;
+      text-decoration: line-through;
+      height: 20px;
+    }
+
+    .linetext {
+      color: $white;
+
+    }
+
+    .buttontext {
+      position: absolute;
+      color: $lightgreen !important;
+      text-transform: uppercase !important;
+      font-weight: 500 !important;
+      font-size: $textbutton !important;
+      letter-spacing: 0.15em !important;
+      -webkit-align-content: center;
+      align-content: center;
+      -webkit-transform: rotate(-45deg) !important;
+      -moz-transform: rotate(-45deg) !important;
+      -ms-transform: rotate(-45deg) !important;
+      -o-transform: rotate(-45deg) !important;
+      transform: rotate(-45deg) !important;
+
+    }
+    .btn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      width: 12vh;
+      height: 12vh;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      border-radius: 0 !important;
+      align-self: center;
+      margin-top: 3em;
+
+      .btn-dashboard {
+        .fas {
+          font-size: 17px !important;
+          margin-left: 10px;
+        }
+      }
+    }
+    .btn:hover {
+      background-color: $lightgreen;
+      text-decoration-color: $darkblue !important;
+
+    }
+    .buttontext:hover {
+      color: $darkblue !important;
+    }
+
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 1vh;
+      width: 100%;
+      background-color: transparent;
+      color: white;
+      text-align: center;
+      img {
+        height: 45px;
+      }
+    }
+    .linefooterhome {
+      border-left: 1px solid $whitetransparent;
+    }
+
+  }
+  .dashboard {
+    margin-left: 10vh;
+
+    p {
+      font-family: 'Raleway', sans-serif !important;
+      color: $white !important;
+      font-size: 13px !important;
+      font-weight: 100 !important;
+      text-align: left;
+      line-height: 2em;
+      letter-spacing: 0.13em;
+      padding-top: 10px;
+      margin-right: 30px;
+    }
+
+    .btn-dashboard {
+      color: $lightgreen !important;
+      text-transform: uppercase !important;
+      font-weight: 400 !important;
+      font-size: $normaltext !important;
+      letter-spacing: 0.05em !important;
+    }
+
+    .btn {
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em !important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      margin-top: 230px;
+      width: 265px;
+      border-color: $lightgreen !important;
+    }
+
+    .btn:hover {
+      background-color: $lightgreen;
+      text-decoration-color: $darkblue !important;
+    }
+
+    .btn:active {
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue !important;
+    }
+
+    .btn-dashboard:hover {
+      color: $darkblue !important;
+      font-weight: 500 !important;
+    }
+
+    .btn-dashboard:active {
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+
+    h2 {
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 1.8em !important;
+      font-weight: 500 !important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.1em;
+      line-height: 1.2em;
+      color: $white;
+      margin-top: 10vh;
+    }
+
+    .buttonscol {
+      position: relative;
+      display: flex;
+      justify-content: left;
+      align-items: left;
+    }
+
+    .inputstylebtn {
+      visibility: hidden;
+      width: 0;
+      position: relative;
+    }
+
+    .inputstylebtn::before {
+      content: 'SUBIR DOCUMENTO' url("./assets/upload.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      width: 265px;
+      display: inline-block;
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em !important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      color: $lightgreen !important;
+      font-weight: 400 !important;
+      font-size: $normaltext !important;
+      letter-spacing: 0.05em !important;
+      -webkit-user-select: none;
+      cursor: pointer;
+      visibility: visible;
+      position: absolute;
+      margin-top: 20px;
+    }
+
+    .inputstylebtn:hover::before {
+      content: 'SUBIR DOCUMENTO' url("./assets/uploadblue.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      background-color: $lightgreen;
+      text-decoration-color: $darkblue !important;
+      color: $darkblue !important;
+      font-weight: 500 !important;
+    }
+
+    .inputstylebtn:active::before {
+      content: 'SUBIR DOCUMENTO  ' url("./assets/uploadwhite.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue !important;
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+
+    .inputstylebtnverify {
+      visibility: hidden;
+      width: 0;
+      position: relative;
+    }
+
+    .inputstylebtnverify::before {
+      content: 'VERIFICAR DOCUMENTO' url("./assets/verify.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      width: 265px;
+      display: inline-block;
+      border: 1px solid $lightgreen;
+      background-color: transparent;
+      border-radius: 0.3em !important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      color: $lightgreen !important;
+      font-weight: 400 !important;
+      font-size: $normaltext !important;
+      letter-spacing: 0.05em !important;
+      -webkit-user-select: none;
+      cursor: pointer;
+      visibility: visible;
+      position: absolute;
+      margin-top: 124px;
+    }
+
+    .inputstylebtnverify:active::before {
+      content: 'VERIFICAR DOCUMENTO' url("./assets/verify.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue !important;
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+
+    .inputstylebtnveriy:active::before {
+      content: 'VERIFICAR DOCUMENTO' url("./assets/verifywhite.png") 'Arrastre el documento aquí o haga clic para buscarlo';
+      background-color: $lightgreentransparent;
+      text-decoration-color: $darkblue !important;
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+  }
+
+  .upload {
+
+    h3 {
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 1.3em !important;
+      font-weight: 500 !important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.1em;
+      line-height: 1.2em;
+      margin-top: 50px;
+    }
+    .coloryellow {
+      color: $yellow !important;
+    }
+    .colorgreen {
+      color: $green !important;
+    }
+    .alignicon2 {
+      position: relative !important;
+    }
+
+    .alignicon {
+      position: absolute !important;
+    }
+
+    .sizeicon {
+      position: absolute !important;
+      color: $yellow !important;
+      margin-left: -40px !important;
+      font-size: 30px !important;
+      margin-top: -6px !important;
+
+    }
+    .sizeicon3 {
+      position: absolute !important;
+      color: $green !important;
+      margin-left: -73px !important;
+      margin-top: 36px;
+      width: 6vh;
+    }
+    h4 {
+      font-family: 'Roboto', sans-serif !important;
+      font-size: 0.94em !important;
+      font-weight: 500 !important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.1em;
+      line-height: 1.0em;
+      margin-top: 30px;
+    }
+
+    h5 {
+      font-family: 'Roboto', sans-serif !important;
+      font-size: 1.7em !important;
+      font-weight: 500 !important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.1em;
+      line-height: 1.0em;
+      color: $yellow;
+    }
+
+    p {
+      font-family: 'Raleway', sans-serif !important;
+      color: $white !important;
+      font-size: 13px !important;
+      font-weight: 100 !important;
+      text-align: left;
+      line-height: 2em;
+      letter-spacing: 0.13em;
+      padding-top: 10px;
+
+    }
+  }
+
+  .backgroundimg {
+    background-image: url("./assets/globo.png");
+  }
+
+  .download {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+
+    .textcenter {
+      text-align: center;
+      font-weight: 400 !important;
+      font-size: 1em !important;
+
+    }
+    .box-download {
+      border: 1px solid;
+      background-color: $darkblue;
+      border-radius: 0.3em !important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      border-color: $lightgreen !important;
+      color: $white !important;
+      font-size: 1.1em !important;
+      font-weight: 300 !important;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100vh;
+
+    }
+
+    .btnpink:hover {
+      background-color: $lightpink;
+      text-decoration-color: $darkblue !important;
+    }
+
+    .btnpink {
+      color: $white !important;
+      text-transform: uppercase !important;
+      font-weight: 400 !important;
+      font-size: $normaltext !important;
+      letter-spacing: 0.05em !important;
+      border: 1px solid;
+      border-color: transparent;
+      background-color: $pink;
+      border-radius: 0.3em !important;
+      align-self: center;
+      padding: 0.8em 1.3em 0.8em 1.3em;
+      position: absolute;
+      top: 110%;
+      left: 40%;
+
+    }
+  }
+}
