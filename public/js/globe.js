@@ -50,14 +50,14 @@ var Globe = function(canvas, options)
             this.wave = this.getWave();
         }
 
-        if (options.width !== undefined && options.height !== undefined) {
+        if (options.width !== undefined) {
             w = options.width;
             h = options.width;
         }
     }
 
     
-    if (w === undefined || h === undefined) {
+    if (w === undefined && h === undefined) {
         w = window.innerWidth;
         h = window.innerHeight;
     }
