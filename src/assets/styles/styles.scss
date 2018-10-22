@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700');
 @import "navbar";
 
+
 #app{
   background-color: $darkblue!important;
   height: 100vh;
@@ -26,21 +27,81 @@
 
   .home{
     padding-top: 25vh;
+
+
 .homecontent{
   display: flex;
   flex-direction: column;
 }
 
-  h1{
+  .h1{
     font-family: 'Raleway', sans-serif!important;
     font-size: 4em!important;
     font-weight: 700!important;
     text-transform: uppercase;
     text-align: left;
-    letter-spacing: 0.7em;
+    letter-spacing: 0.4em;
     line-height: 1.2em;
-
   }
+    @mixin textGlitch($name, $intensity, $textColor, $background, $highlightColor1, $highlightColor2, $width, $height)
+    {
+      color: $textColor;
+      position: relative;
+      $steps: $intensity;
+
+      @at-root {
+        @for $i from 1 through 2 {
+          @keyframes #{$name}-anim-#{$i} {
+            @for $i from 0 through $steps {
+              #{percentage($i*(1/$steps))} {
+                clip: rect(
+                                random($height)+px,
+                                $width+px,
+                                random($height)+px,
+                                0
+                );
+              }
+            }
+          }
+        }
+      }
+      &:before,
+      &:after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: $darkblue;
+        background-image: url("./assets/frame.png");
+        background-repeat: repeat;
+        clip: rect(0, 0, 0, 0);
+      }
+      &:after {
+        left: 2px;
+        text-shadow: -1px 0 $highlightColor1;
+        animation: #{$name}-anim-1 2s infinite linear alternate-reverse;
+      }
+      &:before {
+        left: -2px;
+        text-shadow: 2px 0 $highlightColor2;
+        animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
+      }
+
+    }
+
+    .content {
+      font-family: 'Raleway', sans-serif!important;
+      font-size: 4em!important;
+      font-weight: 700!important;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 0.7em;
+      line-height: 1.2em;
+      @include textGlitch("glitch", 17, white, black, red, blue, 1084, 115);
+    }
+
+
     @media screen and (max-width: 1200px) {
       h1 {
         letter-spacing: 0.3em;

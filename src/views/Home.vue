@@ -1,12 +1,19 @@
 <template>
+
     <div class="home">
 
         <div class="row">
             <div class="col-3 imageback">
             </div>
-            <div class="col-6 homecontent"><h1><span class="lineth"><span
-                    class="linetext">Blockchain toolkit</span></span>
-            </h1>
+            <div class="col-6 homecontent">
+                <div class="content" data-text="Blockchain"><span class="lineth"><span
+                        class="linetext">Blockchain</span></span>
+                </div>
+                <div class="content" data-text="Toolkit"><span class="lineth"><span
+                        class="linetext">Toolkit</span></span>
+                </div>
+
+
                 <p>Blockchain permite el registro de información en diferentes partes del planeta de manera simultánea,
                     asegurando la seguridad y veracidad de esta. Esta herramienta le ayudará a entender el
                     funcionamiento de
