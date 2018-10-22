@@ -11746,7 +11746,7 @@ osgViewer.Viewer.prototype = osg.objectInehrit(osgViewer.View.prototype, {
                     osg.Matrix.postMult(osg.Matrix.makeScale(1.0, aspectRatioChange, 1.0 ,[]), camera.getProjectionMatrix());
                 }
             };
-            window.onresize = resize;
+            //window.onresize = resize;
         }
     }
 });

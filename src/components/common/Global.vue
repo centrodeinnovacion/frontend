@@ -1,13 +1,7 @@
 <template>
-    <div>
-        <div class="container">
-            <div class="row">
-                <canvas id="3DView"></canvas>
-            </div>
-            <div class="row">
-                <button @click="ipfs()" class="btn" type="submit">IPFS</button>
-            </div>
-        </div>
+    <div class="global">
+        <canvas id="3DView"></canvas>
+        <button @click="ipfs()" class="btn" type="submit">IPFS</button>
     </div>
 </template>
 
@@ -22,8 +16,8 @@
                     globeBackColor: '#396A92aa',
                     globeFrontColor: '#9AB4CBbb',
                     globeLinesColor: '#00000044',
-                    //rotationIdleSpeedFactor: 10.0,
-                    //rotationSpeedFactor: 1.5,
+                    rotationIdleSpeedFactor: 10.0,
+                    rotationSpeedFactor: 1.5,
                     wave: false,
                     width: 700
                 },
@@ -70,24 +64,27 @@
                 this.globe = new Globe(document.getElementById("3DView"), this.options)
                 this.imageIPFS = new Image()
                 this.imageIPFS.src = marker
-                this.globe.addImage(48.8566667, 2.3509871, this.imageIPFS)  // Francia
             },
             ipfs(){
                 //const rdm1 = Math.floor(Math.random() * this.countries.length)
                 //const rdm2 = Math.floor(Math.random() * this.countries.length)
-                this.imageIPFS = new Image()
-                this.imageIPFS.src = marker
+                //this.imageIPFS = new Image()
+                //this.imageIPFS.src = marker
                 //this.globe.addImage(this.countries[rdm1][0],this.countries[rdm1][1], this.imageIPFS)
                 //this.globe.addImage(this.countries[rdm2][0],this.countries[rdm2][1], this.imageIPFS)
                 //setTimeout(
-                //setInterval(() => {
-                //this.globe.addImage(this.countries[46][0], this.countries[46][0], this.imageIPFS)
-                //this.globe.addImage(this.countries[40][0],this.countries[40][1], this.imageIPFS)
-                //this.globe.addImage(this.countries[34][0],this.countries[34][1], this.imageIPFS)
-                //this.globe.addImage(this.countries[60][0],this.countries[60][1], this.imageIPFS)
-                //this.globe.addImage(this.countries[100][0],this.countries[100][1], this.imageIPFS)
-                //}, 1800,5000)
-                this.globe.addImage(4.570868, -74.297333, this.imageIPFS) // Colombia
+                setInterval(() => {
+                    this.globe.addImage(48.8566667, 2.3509871, this.imageIPFS)  // Francia
+                    this.globe.addImage(4.570868, -74.297333, this.imageIPFS) // Colombia
+                    this.globe.addImage(this.countries[46][0], this.countries[46][0], this.imageIPFS)
+                    this.globe.addImage(this.countries[40][0],this.countries[40][1], this.imageIPFS)
+                    this.globe.addImage(this.countries[34][0],this.countries[34][1], this.imageIPFS)
+                    this.globe.addImage(this.countries[60][0],this.countries[60][1], this.imageIPFS)
+                    this.globe.addImage(this.countries[100][0],this.countries[100][1], this.imageIPFS)
+                }, 1800)
+                //,5000)
+
+                console.log(`---------Globe items ${this.globe.items.children.length}`)
             }
         },
         mounted () {

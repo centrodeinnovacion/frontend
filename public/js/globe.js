@@ -791,8 +791,7 @@ osgGA.GlobeManipulator = function (options) {
         }
     }
 
-    //this.minAutomaticMotion = 0.015;
-    this.minAutomaticMotion = 0.0;
+    this.minAutomaticMotion = 0.015;
     if (options !== undefined && options.rotationIdleSpeedFactor !== undefined) {
         if (options.rotationIdleSpeedFactor !== 0.0) {
             this.minAutomaticMotion *= options.rotationIdleSpeedFactor;
