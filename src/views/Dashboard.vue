@@ -11,12 +11,13 @@
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                 <upload></upload>
             </div>
-
         </div>
         <div class="row download">
-            <div class="col-12 mx-auto">
+            <div>
                 <download></download>
             </div>
+        </div>
+
         </div>
     </div>
 </template>

@@ -1,4 +1,4 @@
-<template>
+<template class="backgroundimg">
     <img src="../../assets/globo.png"  width="900px"/>
 </template>
 
