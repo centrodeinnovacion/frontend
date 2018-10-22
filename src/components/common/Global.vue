@@ -76,6 +76,7 @@
                     this.globe.addImage(this.countries[34][0], this.countries[34][1], this.imageIPFS)
                     this.globe.addImage(this.countries[60][0], this.countries[60][1], this.imageIPFS)
                     this.globe.addImage(this.countries[100][0], this.countries[100][1], this.imageIPFS)
+                    this.globe.addImage(this.countries[95][0], this.countries[95][1], this.imageIPFS)
                 }, 1800)
             }
         },
