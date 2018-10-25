@@ -1,0 +1,56 @@
+.verify {
+
+  height: 500px;
+  width: 500px;
+  justify-self: center;
+}
+
+.path {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.line1 {
+  margin-left: 260px !important;
+  margin-top: 80px;
+}
+.hash {
+  color: $lightgreen !important;
+  font-weight: 400 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase!important;
+  .fas{
+    padding-left: 6px;
+    font-size: 20px;
+    animation: bounceIn 1s;
+    animation-delay: 1s;
+
+    @keyframes bounceIn{
+        0%{
+          opacity: 0;
+          transform: scale(0.3) translate3d(0,0,0);
+        }
+        50%{
+          opacity: 0.9;
+          transform: scale(1.5);
+        }
+        80%{
+          opacity: 1;
+          transform: scale(0.89);
+        }
+        100%{
+          opacity: 1;
+          transform: scale(1) translate3d(0,0,0);
+        }
+    }
+  }
+}

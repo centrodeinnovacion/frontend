@@ -1,40 +1,43 @@
 <template>
-  <div class="dashboard">
-    <div class="row">
-      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-        <buttons></buttons>
-      </div>
-
-      <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12">
-        <global></global>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-        <upload></upload>
-      </div>
+    <div class="dashboard">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <buttons></buttons>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <global></global>
+                <verify></verify>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <upload></upload>
+                <uploadipfs></uploadipfs>
+            </div>
+        </div>
+        <div class="row download">
+            <div>
+                <!--<download></download>-->
+            </div>
+        </div>
     </div>
-    <div class="row download">
-      <div>
-        <!--<download></download>-->
-      </div>
-    </div>
-
-  </div>
-  </div>
 </template>
 
 <script>
-  import Buttons from '@/components/menus/Buttons'
-  import Global from '@/components/common/Global'
-  import Upload from '@/components/common/Upload'
-  import Download from '@/components/common/Download'
+    import Buttons from '@/components/menus/Buttons'
+    import Global from '@/components/common/Global'
+    import Upload from '@/components/common/Upload'
+    import Download from '@/components/common/Download'
+    import Uploadipfs from '@/components/common/Uploadipfs'
+    import verify from '@/components/common/verify'
 
-  export default {
-    name: 'Dashboard',
-    components: {
-      Buttons,
-      Global,
-      Upload,
-      Download
+    export default {
+        name: 'Dashboard',
+        components: {
+            Buttons,
+            Global,
+            Upload,
+            Uploadipfs,
+            Download,
+            verify
+        }
     }
-  }
 </script>

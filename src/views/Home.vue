@@ -19,10 +19,7 @@
             </div>
             <div class="col-3 imageback2"></div>
         </div>
-        <div class="homecontent justify-content-center contentfront">
-            <!--<div class="float-left leftext">-->
-                <!--<img src="../assets/logo_toolkit2.png"/>-->
-            <!--</div>-->
+        <div class="homecontent justify-content-center contentfront fixed-top">
             <div class="content" data-text="Blockchain"><span class="">
                     <span class="linetext">Blockchain</span></span>
             </div>
@@ -33,6 +30,9 @@
                 Blockchain, </p>
 
             <router-link class="btn" :to="{name: 'dashboard'}"><span class="buttontext">Empezar</span></router-link>
+            <div class="d-flex justify-content-center fixed-bottom leftext">
+                <img src="../assets/logo_toolkit2.png"/>
+            </div>
         </div>
         <footer>
 
@@ -43,7 +43,8 @@
                 </div>
                 <div class="p-2"><img src="../assets/logo_centrodeinnovacion.png"/>
                 </div>
-                <div class="ml-auto p-2"><img src="../assets/logo_unpd.png"/><img src="../assets/logo_undesa.png"/>
+
+              <div class="ml-auto p-2"><img src="../assets/logo_unpd.png"/><img src="../assets/logo_undesa.png"/><span class="linefooterhome"><img src="../assets/logo_vivelab.png"/></span>
                 </div>
             </div>
         </footer>
