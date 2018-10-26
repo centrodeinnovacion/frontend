@@ -37,14 +37,16 @@
         <footer>
 
             <div class="d-flex">
-                <div class="p-2"><img src="../assets/logo_gobierno.png"/>
+                <div class="p-2"><img src="../assets/logo_vivelab.png"/>
+                </div>
+                <div class="p-2"><span class="linefooterhome"></span><img src="../assets/logo_gobierno.png"/>
                 </div>
                 <div class="p-2"><img src="../assets/logo_mintic.png"/>
                 </div>
                 <div class="p-2"><img src="../assets/logo_centrodeinnovacion.png"/>
                 </div>
 
-              <div class="ml-auto p-2"><img src="../assets/logo_unpd.png"/><img src="../assets/logo_undesa.png"/><span class="linefooterhome"><img src="../assets/logo_vivelab.png"/></span>
+              <div class="ml-auto p-2"><img src="../assets/logo_unpd.png"/><img src="../assets/logo_undesa.png"/>
                 </div>
             </div>
         </footer>
