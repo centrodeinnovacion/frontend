@@ -6,7 +6,7 @@
 
        <form @submit.prevent="">
 
-           <div class="d-flex align-items-center flex-column justify-content-start">
+           <div class="d-flex align-items-start flex-column justify-content-start">
                <div class="form-group inputstyle">
                    <input type="file" placeholder="Drag a file to upload" id="Upload">
                    <div class="d-flex">
