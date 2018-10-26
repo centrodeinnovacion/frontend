@@ -8,6 +8,16 @@
 @import "download";
 @import "verify";
 @import "odometer-theme-car";
+@font-face {
+  font-family: 'Toolkit-Icon';
+  src:  url('fonts/Toolkit-Icon.eot?os9i8d');
+  src:  url('fonts/Toolkit-Icon.eot?os9i8d#iefix') format('embedded-opentype'),
+  url('fonts/Toolkit-Icon.ttf?os9i8d') format('truetype'),
+  url('fonts/Toolkit-Icon.woff?os9i8d') format('woff'),
+  url('fonts/Toolkit-Icon.svg?os9i8d#Toolkit-Icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 #app {

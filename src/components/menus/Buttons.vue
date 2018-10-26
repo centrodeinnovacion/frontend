@@ -5,15 +5,37 @@
            para esto seleccione una de las siguientes acciones: </p>
 
        <form @submit.prevent="">
-           <div class="buttonscol">
-               <input type="file" placeholder="Drag a file to upload" name="upload" id="upload"
-                      class="inputstylebtn">
-               <input type="file" placeholder="Drag a file to verify" name="verify" id="verify"
-                      class="inputstylebtnverify">
-               <button type="button" class="btn btn-dashboard">Descargar documento <i
-                       class="fas fa-cloud-download-alt"></i></button>
+
+           <div class="d-flex align-items-center flex-column">
+               <div class="form-group inputstyle">
+                   <input type="file" placeholder="Drag a file to upload" id="Upload">
+                   <div class="d-flex">
+                       <div class="p-2"><h3>Subir documento</h3>
+                           <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
+                       <div class="p-1 align-self-start"><i class="iconbutton icon-upload"></i></div>
+                   </div>
+               </div>
+
+               <div class="form-group inputstyle">
+                   <input type="file" placeholder="Drag a file to upload" id="Verify">
+                   <div class="d-flex">
+                       <div class="p-2"><h3>Verificar documento</h3>
+                           <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
+                       <div class="p-1 align-self-start"><i class="iconbutton icon-verify"></i></div>
+                   </div>
+               </div>
+
+               <div class="form-group inputstyle">
+                   <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download"></button>
+                   <div class="d-flex">
+                       <div class="p-2"><h3>Descargar documento</h3></div>
+                       <div class="p-1 align-self-start"><i class="iconbutton icon-download"></i></div>
+                   </div>
+               </div>
            </div>
+
        </form>
+
    </div>
 </template>
 
