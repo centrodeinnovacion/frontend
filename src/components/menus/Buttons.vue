@@ -24,8 +24,7 @@
                        <div class="p-1 ml-auto align-self-start"><i class="iconbutton icon-verify"></i></div>
                    </div>
                </div>
-
-               <div class="form-group inputstyle">
+               <div class="form-group inputstyle" id="Input-Download">
                    <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download"></button>
                    <div class="d-flex">
                        <div class="p-2"><h3>Descargar documento</h3></div>
