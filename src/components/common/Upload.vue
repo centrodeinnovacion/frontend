@@ -1,6 +1,6 @@
 <template>
     <div class="alignicon2 upload align-middle">
-        <div class="sizeicon">
+        <div class="sizeicon coloryellow">
             <i class="fas fa-file-alt"></i>
         </div>
         <div class="alingnicon">

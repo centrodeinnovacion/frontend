@@ -180,10 +180,11 @@
       .btn:hover {
         background-color: $lightgreen;
         text-decoration-color: $darkblue !important;
+        .buttontext {
+          color: $darkblue !important;
+        }
       }
-      .buttontext:hover {
-        color: $darkblue !important;
-      }
+
       footer {
         position: fixed;
         left: 0;

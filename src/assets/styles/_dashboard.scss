@@ -56,7 +56,7 @@
     margin-top: 10vh;
   }
   .inputstyle {
-    width: 265px;
+    width: 75%;
     border: 1px solid $lightgreen;
     background-color: transparent;
     border-radius: 0.3em !important;
@@ -73,6 +73,7 @@
     font-weight: 500 !important;
     h3, p, .iconbutton {
       color: $darkblue !important;
+      font-weight: 500 !important;
     }
   }
   #Upload, #Verify, #Download {
@@ -97,17 +98,19 @@
     margin-bottom: 0 !important;
     font-weight: 300 !important;
     font-size: 13px !important;
-    line-height: 15px;
+    line-height: 20px;
     letter-spacing: 0.7px;
   }
 
   .inputstyle:active {
     background-color: $lightgreentransparent;
     text-decoration-color: $darkblue !important;
-    h3, p, .iconbutto {
-      color: $white !important;
-    }
     font-weight: 500 !important;
+    h3, p, .iconbutton {
+      color: $white !important;
+      font-weight: 500 !important;
+    }
+
   }
 
   .icon-upload:before {
