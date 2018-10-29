@@ -1,16 +1,6 @@
 .dashboard {
-  margin-left: 10vh;
-  p {
-    font-family: 'Roboto', sans-serif !important;
-    color: $white !important;
-    font-size: 13px !important;
-    font-weight: 100 !important;
-    text-align: left;
-    line-height: 1.8em;
-    letter-spacing: 0.09em;
-    padding-top: 10px;
-    margin-right: 30px;
-  }
+  margin-left: 2.5%;
+
   .btn-dashboard {
     color: $lightgreen !important;
     text-transform: uppercase !important;
@@ -56,7 +46,7 @@
     margin-top: 10vh;
   }
   .inputstyle {
-    width: 75%;
+    width: 95%;
     border: 1px solid $lightgreen;
     background-color: transparent;
     border-radius: 0.3em !important;
@@ -71,9 +61,9 @@
     background-color: $lightgreen;
     text-decoration-color: $darkblue !important;
     font-weight: 500 !important;
-    h3, p, .iconbutton {
+    .buttontittle, p, .iconbutton {
       color: $darkblue !important;
-      font-weight: 500 !important;
+      font-weight:bold !important;
     }
   }
   #Upload, #Verify, #Download {
@@ -83,32 +73,33 @@
     position: absolute;
     cursor: pointer;
   }
-  h3 {
+  .buttontittle {
     font-family: 'Roboto', sans-serif !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     text-transform: uppercase;
     text-align: left;
     letter-spacing: 0.7px;
+    color: $lightgreen!important;
+    padding-left: 20px!important;
   }
   .text-input {
     color: $lightgreen !important;
-    margin-right: 0 !important;
-    padding-top: 0 !important;
-    margin-bottom: 0 !important;
+    padding: 0 0 0 20px !important;
     font-weight: 300 !important;
     font-size: 13px !important;
     line-height: 20px;
     letter-spacing: 0.7px;
+    margin-top: -20px!important;
   }
 
   .inputstyle:active {
     background-color: $lightgreentransparent;
     text-decoration-color: $darkblue !important;
     font-weight: 500 !important;
-    h3, p, .iconbutton {
+    .buttontittle, p, .iconbutton {
       color: $white !important;
-      font-weight: 500 !important;
+      font-weight: bold !important;
     }
 
   }
@@ -133,11 +124,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: right !important;
-    padding-right: 5px !important;
     font-size: 20px !important;
   }
   .icon-download-pink {
     margin-left: 2.7em;
     margin-top: -19px !important;
   }
+}
+p {
+  font-family: 'Roboto', sans-serif !important;
+  color: $white !important;
+  font-size: 13px !important;
+  font-weight: 100 !important;
+  text-align: left;
+  line-height: 1.8em;
+  letter-spacing: 0.09em;
+  padding-top: 10px;
+  margin-right: 30px;
 }

@@ -1,8 +1,6 @@
-.upload {
-
-  h3 {
+ h3 {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 1.3em !important;
+    font-size: 20px !important;
     font-weight: 500 !important;
     text-transform: uppercase;
     text-align: left;
@@ -10,31 +8,21 @@
     line-height: 1.2em;
     margin-top: 50px;
   }
-  .coloryellow {
-    color: $yellow !important;
-  }
-  .colorgreen {
-    color: $red !important;
-  }
   .alignicon2 {
     position: relative !important;
   }
-
   .alignicon {
     position: absolute !important;
   }
-
   .sizeicon {
     position: absolute !important;
     margin-left: -40px !important;
     font-size: 30px !important;
     margin-top: -6px !important;
-
   }
-
   h4 {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 0.94em !important;
+    font-size: 14px !important;
     font-weight: 500 !important;
     text-transform: uppercase;
     text-align: left;
@@ -42,27 +30,18 @@
     line-height: 1.0em;
     margin-top: 30px;
   }
-
-  h5 {
-    font-family: 'Roboto', sans-serif !important;
-    font-size: 1.7em !important;
-    font-weight: 500 !important;
-    text-transform: uppercase;
-    text-align: left;
-    letter-spacing: 0.1em;
-    line-height: 1.0em;
-    color: $yellow;
-  }
-
-  p {
-    font-family: 'Roboto', sans-serif !important;
-    color: $white !important;
-    font-size: 13px !important;
-    font-weight: 100 !important;
-    text-align: left;
-    line-height: 1.8em;
-    letter-spacing: 0.09em;
-    padding-top: 10px;
-
-  }
+h5 {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 25px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0.1em;
+  line-height: 1.0em;
+}
+.coloryellow {
+  color: $yellow !important;
+}
+.colorgreen {
+  color: $red !important;
 }
