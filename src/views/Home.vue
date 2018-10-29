@@ -1,9 +1,6 @@
 <template>
     <div class="home">
-        <div class="float-left fixed-top ">
-            <div class="logotoolkit"><img src="../assets/logo_toolkit.png"/>
-            </div>
-        </div>
+
         <div class="row">
             <div class="col-3 imageback">
             </div>
