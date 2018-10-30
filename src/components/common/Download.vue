@@ -4,10 +4,10 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <div><p class="textcenter">Escriba el HASH del documento que desea descargar</p>
+                            <p><p class="textcenter">Escriba el HASH del documento que desea descargar</p>
                                 <input type="text" class="box-download">
-                                <button type="button" class="btnpink"> Descargar
-                                    <i class="icon-download icon-download-pink"></i></button>
+                               <div class="d-flex justify-content-center mt-4"> <button type="button" class="btnpink"> Descargar
+                            <i class="iconbutton mt-4 pt-2 pl-3 pr-2 icon-download"></i></button></p></div>
                             </div>
                         </div>
                     </div>
