@@ -1,18 +1,21 @@
 import Vue from 'vue'
 import * as constants from '@/store/constants'
+import FormData from 'form-data'
 
 const state = {
   hash: {
-    ipfs: null,
-    eth: null
+    hash: null,
+    tx: null
   },
   file: null
 }
 
 const actions = {
-  [constants.TOOLKIT_UPLOAD_FILE]: ({commit}, file) => {
-    Vue.axios.post('/document', file)
-      .then(response => response.data)
+  [constants.TOOLKIT_UPLOAD_FILE]: ({commit}, data) => {
+    const formData = new FormData()
+    formData.append('file', data)
+    Vue.axios.post('/document', formData, { headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
+      .then(response => response.data.result)
       .then(hash => {
         commit(constants.TOOLKIT_SET_PROPERTY, {hash})
       })
