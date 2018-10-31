@@ -1,16 +1,12 @@
 <template>
     <div class="verify mx-auto fixed-top ">
         <div class="hash odometer firsthash">
-            <vue-odometer :value="ipfshash"></vue-odometer>
             ...<i class="fas fa-thumbs-up"></i></div>
         <div class="hash odometer secondhash">
-            <vue-odometer :value="ipfshash"></vue-odometer>
             ...<i class="fas fa-thumbs-up"></i></div>
         <div class="hash odometer thirdhash">
-            <vue-odometer :value="ipfshash"></vue-odometer>
             ...<i class="fas fa-thumbs-up"></i></div>
         <div class="hash odometer fourthash">
-            <vue-odometer :value="ipfshash"></vue-odometer>
             ...<i class="fas fa-thumbs-up"></i></div>
         <div class="line1 mx-auto fixed-top">
             <svg width="500px" height="550px"  viewBox="0 0 500 450" enable-background="new 0 0 340 333" xml:space="preserve">
@@ -62,12 +58,9 @@
 
 
 <script>
-    import VueOdometer from 'v-odometer/src'
-
     export default {
         name: 'verify',
         components: {
-            'vue-odometer': VueOdometer
         },
         data() {
             return {
