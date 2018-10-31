@@ -15,6 +15,7 @@
           asegurando la seguridad y veracidad de esta. Esta herramienta le ayudará a entender el
           funcionamiento de
           Blockchain, </p>
+        <chaffle></chaffle>
 
         <router-link class="btn" :to="{name: 'dashboard'}"><span class="buttontext">Empezar</span></router-link>
       </div>
@@ -37,11 +38,13 @@
 
 <script>
   import Global from '@/components/common/Global'
+  import Chaffle from '@/components/common/Chaffle'
 
   export default {
     name: 'home',
     components: {
-      Global
+      Global,
+      Chaffle
     }
   }
 </script>
