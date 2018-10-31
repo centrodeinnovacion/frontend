@@ -9,7 +9,7 @@
                 <verify></verify>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-
+                <verify_blockchain></verify_blockchain>
             </div>
         </div>
         <div class="row download">
@@ -27,6 +27,7 @@
     import Download from '@/components/common/Download'
     import Uploadipfs from '@/components/common/Uploadipfs'
     import verify from '@/components/common/verify'
+    import verify_blockchain from '@/components/common/verify_blockchain'
 
     export default {
         name: 'Dashboard',
@@ -36,7 +37,8 @@
             Upload,
             Uploadipfs,
             Download,
-            verify
+            verify,
+            verify_blockchain
         }
     }
 </script>
