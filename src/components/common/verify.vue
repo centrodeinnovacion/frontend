@@ -1,39 +1,86 @@
 <template>
     <div class="verify mx-auto fixed-top ">
-        <div class="hash odometer firsthash""><vue-odometer :value="ipfshash"></vue-odometer><i class="fas fa-thumbs-up"></i></div>
-    <div class="hash odometer secondhash"><vue-odometer :value="ipfshash"></vue-odometer><i class="fas fa-thumbs-up"></i></div>
+        <div class="etherium">
+            <div class="hash odometer firsthash">
+            <vue-odometer :value="ipfshash"></vue-odometer>
+            ...<i class="fas fa-thumbs-up"></i></div>
+        <div class="hash odometer secondhash">
+            <vue-odometer :value="ipfshash"></vue-odometer>
+            ...<i class="fas fa-thumbs-up"></i></div>
+        <div class="hash odometer thirdhash">
+            <vue-odometer :value="ipfshash"></vue-odometer>
+            ...<i class="fas fa-thumbs-up"></i></div>
+        <div class="hash odometer fourthash">
+            <vue-odometer :value="ipfshash"></vue-odometer>
+            ...<i class="fas fa-thumbs-up"></i></div>
         <div class="line1 mx-auto fixed-top">
-            <svg width="650px" height="650px"  viewBox="0 0 1000 1000" enable-background="new 0 0 340 333" xml:space="preserve">
-                <path class="cls-1 path" d="M37.37,508.24s191.9-37.3,320.32-400.94" transform="translate(-36.87 -102.85)"/>
-                <path class="cls-1 path" d="M281.86,506.59c-184,77.33-244.49,1.65-244.49,1.65" transform="translate(-36.87 -102.85)"/>
-                <circle class="cls-2 path" cx="286.04" cy="505.02" r="5" transform="translate(-259.56 681.54) rotate(-89.25)"/>
-                <circle class="cls-2 path" cx="358.13" cy="107.85" r="5" transform="translate(208.72 361.68) rotate(-89.25)"/>
-            <!--<path class="path" fill="transparent" stroke="#FC6722" stroke-width="1.5" d="M 400,500 C 50,500 0,460 100,440 M 400,500 C 150,380 150,400 150,400-->
-            <!--M 400,500 L 200,300 M 400,500 L 300,250 M 400,500 L 400,200 M 400,500 L 500,250 M 400,500 L 600,300 M 400,500 L 650,400-->
-            <!--M 400,500 L 700,500 M 400,500 L 650,600 M 400,500 L 600,700 M 400,500 L 500,750 M 400,500 L 400,800 M 400,500 L 300,750 M 400,500 L 200,700 M 400,500 L 100,600"/>-->
-        </svg>
+            <svg width="1000px" height="1000px"  viewBox="0 0 1000 900" enable-background="new 0 0 340 333" xml:space="preserve">
+
+<path class="st0 path" d="M184.5,461.2c0,0,282-147,234.6-293.6"/>
+<ellipse transform="matrix(9.188243e-03 -1 1 9.188243e-03 247.5492 585.8514)" class="st1 hash" cx="419.4" cy="168" rx="3.7" ry="3.7"/>
+<ellipse transform="matrix(9.188368e-03 -1 1 9.188368e-03 248.4368 348.2371)" class="st1 hash" cx="299.9" cy="48.8" rx="3.7" ry="3.7"/>
+<ellipse transform="matrix(9.188364e-03 -1 1 9.188364e-03 -107.6927 278.8101)" class="st1 hash"  cx="86.8" cy="193.7" rx="3.7" ry="3.7"/>
+<path class="st2 hash" d="M369.8,436.3v-5.5h-8.1c-0.5,0-1,0.4-1,1l0,18.8c0,0.5,0.4,1,1,1h13.6c0.5,0,1-0.4,1-1v-13.3h-5.5
+	C370.2,437.2,369.8,436.8,369.8,436.3z M372.4,445.8c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5
+	h6.8c0.3,0,0.5,0.2,0.5,0.5V445.8z M372.4,443.2c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	c0.3,0,0.5,0.2,0.5,0.5V443.2z M372.4,440.3v0.3c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	C372.2,439.8,372.4,440.1,372.4,440.3z M376.3,435.7v0.2h-5.2v-5.2h0.2c0.3,0,0.5,0.1,0.7,0.3l4,4
+	C376.2,435.2,376.3,435.4,376.3,435.7z"/>
+<path class="st2 hash2" d="M421.8,144.8v-5.5h-8.1c-0.5,0-1,0.4-1,1v18.8c0,0.5,0.4,1,1,1h13.6c0.5,0,1-0.4,1-1v-13.3h-5.5
+	C422.2,145.8,421.8,145.4,421.8,144.8z M424.4,154.4c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5
+	h6.8c0.3,0,0.5,0.2,0.5,0.5V154.4z M424.4,151.8c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	c0.3,0,0.5,0.2,0.5,0.5V151.8z M424.4,148.9v0.3c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	C424.2,148.4,424.4,148.6,424.4,148.9z M428.3,144.2v0.2h-5.2v-5.2h0.2c0.3,0,0.5,0.1,0.7,0.3l4,4
+	C428.2,143.7,428.3,144,428.3,144.2z"/>
+<path class="st2 hash" d="M318.5,40.8v-5.5h-8.1c-0.5,0-1,0.4-1,1v18.8c0,0.5,0.4,1,1,1l13.6,0c0.5,0,1-0.4,1-1V41.8h-5.5
+	C319,41.8,318.5,41.4,318.5,40.8z M321.1,50.4c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	c0.3,0,0.5,0.2,0.5,0.5V50.4z M321.1,47.8c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	c0.3,0,0.5,0.2,0.5,0.5V47.8z M321.1,44.9v0.3c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	C320.9,44.4,321.1,44.6,321.1,44.9z M325,40.3v0.2h-5.2l0-5.2h0.2c0.3,0,0.5,0.1,0.7,0.3l4,4C324.9,39.8,325,40,325,40.3z"/>
+<path class="st2 hash" d="M87.9,169l0-5.5h-8.1c-0.5,0-1,0.4-1,1v18.8c0,0.5,0.4,1,1,1h13.6c0.5,0,1-0.4,1-1V170h-5.5
+	C88.3,170,87.9,169.5,87.9,169z M90.5,178.6c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5H90
+	c0.3,0,0.5,0.2,0.5,0.5V178.6z M90.5,176c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5H90
+	c0.3,0,0.5,0.2,0.5,0.5V176z M90.5,173v0.3c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5V173c0-0.3,0.2-0.5,0.5-0.5H90
+	C90.2,172.6,90.5,172.8,90.5,173z M94.4,168.4v0.2h-5.2v-5.2h0.2c0.3,0,0.5,0.1,0.7,0.3l4,4C94.3,167.9,94.4,168.2,94.4,168.4z"/>
+<ellipse transform="matrix(9.188440e-03 -1 1 9.188440e-03 -95.5871 821.2332)" class="st1 hash2" cx="366.6" cy="458.9" rx="3.7" ry="3.7"/>
+<path class="st3" d="M174.3,469.2v-5.5h-8.1c-0.5,0-1,0.4-1,1l0,18.8c0,0.5,0.4,1,1,1h13.6c0.5,0,1-0.4,1-1v-13.3h-5.5
+	C174.7,470.2,174.3,469.8,174.3,469.2z M176.9,478.8c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5
+	h6.8c0.3,0,0.5,0.2,0.5,0.5V478.8z M176.9,476.2c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	c0.3,0,0.5,0.2,0.5,0.5V476.2z M176.9,473.3v0.3c0,0.3-0.2,0.5-0.5,0.5h-6.8c-0.3,0-0.5-0.2-0.5-0.5v-0.3c0-0.3,0.2-0.5,0.5-0.5h6.8
+	C176.7,472.8,176.9,473,176.9,473.3z M180.8,468.7v0.2h-5.2v-5.2h0.2c0.3,0,0.5,0.1,0.7,0.3l4,4
+	C180.7,468.2,180.8,468.4,180.8,468.7z"/>
+<path class="st0 path" d="M184.2,461c0,0-220.4-174.3-98.1-267.3"/>
+<path class="st0 path" d="M184.6,461.4c0,0-82.7-446,114.2-413.7"/>
+<path class="st0 path" d="M184.5,461.2c0,0,127.2,34,179-1.2"/>
+</svg>
+            </svg>
         </div>
-    <div class="hashbig"><p class="linebottom">HASH</p><h5 class="coloryellow">548963524</h5></div>
+        </div>
+            <div class="ipfs"></div>
+        <div class="hashbig"><p class="linebottom">HASH</p><h5 class="coloryellow">
+            0x7ba87aac76d29f20cefa161dabe300039d569b3cb5a1acb768af84c1bd063ff3</h5></div>
+
     </div>
 </template>
 
 
 <script>
     import VueOdometer from 'v-odometer/src'
+
     export default {
         name: 'verify',
         components: {
-            'vue-odometer':VueOdometer
+            'vue-odometer': VueOdometer
         },
-        data(){
-            return{
-                ipfshash: '35353'
+        data() {
+            return {
+                ipfshash: '353534'
             }
         },
-        mounted(){
-            setTimeout(()=>{
-                this.ipfshash='548963524'
-            },2000)
+        mounted() {
+            setTimeout(() => {
+                this.ipfshash = '057678'
+            }, 2000)
         }
     }
 </script>

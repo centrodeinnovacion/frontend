@@ -1,20 +1,21 @@
 .verify {
-  margin-top:54px!important;
-  background-image: url("././assets/red.png") ;
-  background-repeat: no-repeat ;
+  margin-top: 54px !important;
+  background-image: url("././assets/red.png");
+  background-repeat: no-repeat;
   background-size: cover;
   height: 523px;
   width: 536px;
   justify-self: center;
-  .cls-1{
-    fill:none;
-    stroke:#fff;
+  .cls-1 {
+    fill: none;
+    stroke: #fff;
     stroke-linecap: round;
-    stroke-linejoin:round;
-    stroke-dasharray:6 6;
-  }.cls-2{
-       fill:#fff;
-     }
+    stroke-linejoin: round;
+    stroke-dasharray: 6 6;
+  }
+  .cls-2 {
+    fill: #fff;
+  }
   .hashbig {
     margin-top: 510px;
     width: 100%;
@@ -23,26 +24,26 @@
     display: flex;
     align-content: end;
     justify-content: center;
-      .linebottom {
-        position: relative;
-        align-items: center;
-        justify-content: center;
-      }
-      .linebottom:before {
-        background-color: $white;
-        content: '';
-        width: 100%;
-        position: absolute;
-        top: 33px;
-        height: 1px;
-        justify-self: center;
-      }
-    p{
+    .linebottom {
+      position: relative;
+      align-items: center;
+      justify-content: center;
+    }
+    .linebottom:before {
+      background-color: $white;
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: 33px;
+      height: 1px;
+      justify-self: center;
+    }
+    p {
       position: absolute;
       align-self: end !important;
       justify-self: center !important;
-      font-weight: 400!important;
-      letter-spacing: 1px!important;
+      font-weight: 400 !important;
+      letter-spacing: 1px !important;
       margin: 0 0 10px 0 !important;
     }
     h5 {
@@ -50,26 +51,38 @@
       align-self: bottom !important;
       justify-self: center !important;
       margin-top: 40px;
-      font-weight: 400!important;
-      letter-spacing: 1px!important;
+      font-weight: 400 !important;
+      letter-spacing: 1px !important;
     }
   }
-  .firsthash{
+  .firsthash {
     position: absolute;
-    left: 40px;
+    left: -12px;
     top: 120px;
   }
-  .secondhash{
+  .secondhash {
     position: absolute;
-    left: 290px;
-    top: 85px;
+    left: 376px;
+    top: 100px;
+  }
+  .thirdhash {
+    position: absolute;
+    left: 277px;
+    top: 0px;
+  }
+  .fourthash{
+    position: absolute;
+    left: 356px;
+    top: 392px;
   }
 }
+
 .path {
   stroke-dasharray: 1000;
   stroke-linecap: round;
   animation: dash 7s linear;
 }
+
 @keyframes dash {
   from {
     stroke-dashoffset: 1000;
@@ -78,16 +91,22 @@
     stroke-dashoffset: 0;
   }
 }
+
 .line1 {
   height: 500px;
   width: 500px;
   justify-self: center;
 }
+.hash2{
+  color: $white;
+  font-weight: 400 !important;
+  letter-spacing: 1px;
+  animation: transparence2 3s;
+}
 .hash {
   color: $white;
   font-weight: 400 !important;
   letter-spacing: 1px;
-  text-transform: uppercase !important;
   animation: transparence 3s;
   .fas {
     padding-left: 6px;
@@ -127,4 +146,40 @@
       }
     }
   }
+}
+
+.st0 {
+  fill: none;
+  stroke: $yellow;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-width: 1px;
+
+}
+.st1 {
+  opacity: 0.59;
+  fill: $yellow;
+}
+.st2 {
+  fill: #FEFA4F;
+}
+.st3 {
+  fill: #35CCCC;
+}
+.etherium{
+  animation: transparence3 3s;
+  animation-delay: 9s;
+  @keyframes transparence3 {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+}
+.ipfs{
+
 }
