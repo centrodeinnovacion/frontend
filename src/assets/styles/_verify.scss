@@ -24,6 +24,9 @@
     display: flex;
     align-content: end;
     justify-content: center;
+    h5{
+    font-size: 17px!important;
+    }
     .linebottom {
       position: relative;
       align-items: center;
@@ -107,13 +110,12 @@
   color: $white;
   font-weight: 400 !important;
   letter-spacing: 1px;
-  animation: transparence2 3s;
-  animation-delay: 7s;
+  animation: transparence2 6s;
   @keyframes transparence2 {
     0% {
       opacity: 0;
     }
-    40% {
+    20% {
       opacity: 0;
     }
     100% {
@@ -154,6 +156,9 @@
     }
     @keyframes transparence {
       0% {
+        opacity: 0;
+      }
+      35% {
         opacity: 0;
       }
       100% {
