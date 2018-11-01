@@ -4,12 +4,12 @@
       <i class="fas fa-file-alt"></i>
     </div>
     <div class="alingnicon">
-      <h3 class="coloryellow"> Documento subido </br> en nodos de IPFS </h3>
+      <h3 class="coloryellow"> Documento subido <br> en nodos de IPFS </h3>
       <p>El documento es almacenado y distribuido a través de IPFS, que sirve para descentralizar información
         almacenándola en varios nodos de forma simultánea, lo que asegura que esta no
         podrá ser alterada.</p>
       <h4 class="coloryellow">Hash:</h4>
-      <h5 class="coloryellow odometer">
+      <h5 class="coloryellow" data-chaffle="en">
         {{hash.hash}}
       </h5>
       <p>Al cargar el archivo, IPFS devuelve al usuario el resumen matemático del documento o un “Hash”. El hash
@@ -20,6 +20,7 @@
 
 <script>
   import {mapState} from 'vuex'
+  import Chaffle from 'chaffle'
 
   export default {
     name: 'Dashboard',
@@ -27,6 +28,19 @@
       ...mapState({
         hash: state => state.Toolkit.hash
       })
+    },
+    methods: {
+      chaffleIt() {
+        const elements = document.querySelectorAll('[data-chaffle]')
+        Array.prototype.forEach.call(elements, el => {
+          const chaffle = new Chaffle(el, {
+            lang: 'en',
+            speed: 5,
+            delay: 10
+          })
+          chaffle.init()
+        })
+      }
     }
   }
 </script>

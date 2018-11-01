@@ -9,7 +9,7 @@
 
 <script>
     export default {
-        name: "verify_blockchain"
+        name: "VerifyBlockchain"
     }
 </script>
 
