@@ -78,6 +78,11 @@
     left: 356px;
     top: 392px;
   }
+  .fifthash{
+    position: absolute;
+    left: 396px;
+    top: 12px;
+  }
 }
 
 .path {
@@ -132,28 +137,6 @@
     padding-left: 6px;
     font-size: 20px;
     animation: bounceIn 7s;
-    @keyframes bounceIn {
-      0% {
-        opacity: 0;
-      }
-      85% {
-        opacity: 0;
-        transform: scale(0.3) translate3d(0, 0, 0);
-      }
-      90% {
-        opacity: 0.9;
-        transform: scale(1.5);
-      }
-      95% {
-        opacity: 1;
-        transform: scale(0.89);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translate3d(0, 0, 0);
-      }
-
-    }
     @keyframes transparence {
       0% {
         opacity: 0;
@@ -166,26 +149,6 @@
       }
     }
   }
-}
-
-.st0 {
-  fill: none;
-  stroke: $yellow;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10;
-  stroke-width: 1px;
-
-}
-.st1 {
-  opacity: 0.6;
-  fill: $yellow;
-}
-.st2 {
-  fill: #FEFA4F;
-}
-.st3 {
-  fill: #35CCCC;
 }
 .etherium {
   animation: transparence3 3s;
@@ -200,5 +163,72 @@
     }
 }
 .ipfs{
+}
+.st0 {
+  fill: none;
+  stroke: $yellow;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-width: 1px;
+
+}
+.st1 {
+  opacity: 0.6;
+  fill: $yellow;
+}
+.st2 {
+  fill: $yellow;
+}
+.st3 {
+  fill: $lightgreen;
+}
+.st4{
+  fill:none;
+  stroke:$white;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+  stroke-dasharray:2,4;
+}
+.st5{
+  fill:$red;
+}
+.st6{
+  fill:$whitetransparent;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+.st7{
+  stroke:$white;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+
+mt-6{
+  margin-top: 30%;
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 0;
+    transform: scale(0.3) translate3d(0, 0, 0);
+  }
+  90% {
+    opacity: 0.9;
+    transform: scale(1.5);
+  }
+  95% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
 
 }
