@@ -60,10 +60,12 @@
 
     </div>
     <div class="hashbig"><p class="linebottom">HASH</p>
-      <h5 data-chaffle="en" class="coloryellow">
-        0x96eb99488b230cce33d210a2831f8da2a6cd3581dfbb4aaa02a8893893a7262d
+      <h5 data-chaffle="en" class="coloryellow" v-clipboard:copy="ipfshash"
+          v-clipboard:success="onCopy"
+          v-clipboard:error="onError">
+        {{ipfshash}}
       </h5>
-      <button class="btn" @click="chaffleIt">Chaffle</button>
+      <button class="btn" @click="chaffleIt" >Chaffle</button>
     </div>
   </div>
 
@@ -79,7 +81,7 @@
     },
     data() {
       return {
-        ipfshash: '3581dfbb4aaa02a8893893a7262d'
+        ipfshash: '0x96eb99488b230cce33d210a2831f8da2a6cd3581dfbb4aaa02a8893893a7262d'
       }
     },
     methods: {
@@ -88,11 +90,17 @@
         Array.prototype.forEach.call(elements, el => {
           const chaffle = new Chaffle(el, {
             lang: 'en',
-            speed: 20,
-            delay: 100
+            speed: 40,
+            delay: 80
           })
           chaffle.init()
         })
+      },
+      onCopy(e) {
+        alert('You just copied: ' + e.text)
+      },
+      onError(e) {
+        alert('Failed to copy texts')
       }
     }
   }
