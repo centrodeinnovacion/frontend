@@ -1,5 +1,5 @@
 <template>
-  <div class="alignicon2 upload align-middle">
+  <div class="alignicon2 upload align-middle" id="upload-ipfs">
     <div class="alingnicon">
       <div class="sizeicon colorgreen">
         <i class="fas fa-layer-group"></i>
@@ -19,6 +19,11 @@
 
   export default {
     name: "Uploadipfs",
+    mounted(){
+      setTimeout(()=>{
+        this.chaffleIt()
+      },3000)
+    },
     methods: {
       chaffleIt() {
         const elements = document.querySelectorAll('[data-chaffle]')
