@@ -28,9 +28,10 @@
     font-size: 17px!important;
     }
     .linebottom {
-      position: relative;
-      align-items: center;
+      align-items: content!important;
       justify-content: center;
+      -webkit-box-pack: center;
+      -moz-text-align-last: center!important;
     }
     .linebottom:before {
       background-color: $white;
@@ -50,7 +51,6 @@
       margin: 0 0 10px 0 !important;
     }
     h5 {
-      position: absolute;
       align-self: bottom !important;
       justify-self: center !important;
       margin-top: 40px;
