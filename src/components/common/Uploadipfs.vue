@@ -1,5 +1,5 @@
 <template>
-    <div class="upload d-flex align-items-start mt-6">
+    <div class="upload d-flex align-items-start mt-6 scroll">
             <div class="colorgreen">
                 <i class="fas fa-layer-group"></i>
             </div>

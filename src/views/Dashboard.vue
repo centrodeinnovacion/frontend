@@ -13,9 +13,9 @@
         <div class="explanation">
         <!--<verify_blockchain></verify_blockchain>-->
         <!--<filenofound></filenofound>-->
-        <filefound></filefound>
-        <!--<upload></upload>-->
-        <!--<uploadipfs></uploadipfs>-->
+        <!--<filefound></filefound>-->
+        <upload></upload>
+        <uploadipfs></uploadipfs>
         </div>
       </div>
     </div>
