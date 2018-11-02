@@ -9,8 +9,8 @@
         almacenándola en varios nodos de forma simultánea, lo que asegura que esta no
         podrá ser alterada.</p>
       <h4 class="coloryellow">Hash:</h4>
-      <h5 class="coloryellow" data-chaffle="en">
-        {{hash.hash}}
+      <h5 class="coloryellow"> <!-- chaffle-data="en"-->
+        {{ hash.hash }}
       </h5>
       <p>Al cargar el archivo, IPFS devuelve al usuario el resumen matemático del documento o un “Hash”. El hash
         será visible para todos en la red pero es imposible deducir el contenido sólo leyéndolo.</p>
