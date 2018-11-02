@@ -14,8 +14,10 @@
         <!--<verify_blockchain></verify_blockchain>-->
         <!--<filenofound></filenofound>-->
         <!--<filefound></filefound>-->
+          <div class="scroll">
         <upload></upload>
         <uploadipfs></uploadipfs>
+          </div>
         </div>
       </div>
     </div>

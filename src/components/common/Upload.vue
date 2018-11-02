@@ -1,5 +1,5 @@
 <template>
-  <div class="upload d-flex align-items-start scroll">
+  <div class="upload d-flex align-items-start">
       <div class="coloryellow">
         <i class="fas fa-file-alt"></i>
       </div>

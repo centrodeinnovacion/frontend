@@ -26,6 +26,8 @@
   background-repeat: repeat;
   .scroll{
     overflow-y: scroll;
+    height: 80vh;
+    float: left;
   }
   .explanation {
     position: relative;
