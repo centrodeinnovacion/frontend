@@ -112,7 +112,66 @@
     transform: scale(1) translate3d(0, 0, 0);
   }
 }
+.path {
+  stroke-dasharray: 1000;
+  stroke-linecap: round;
+  animation: dash 4s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+    stroke-width: 1px;
+  }
+  to {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 100;
+    stroke-width: 1px;
+  }
+}
+
+
+.hash {
+  color: $white;
+  font-weight: 400 !important;
+  letter-spacing: 1px;
+  animation: transparence 6s;
+  .fas {
+    padding-left: 6px;
+    font-size: 20px;
+    animation: bounceIn 7s;
+    @keyframes transparence {
+      0% {
+        opacity: 0;
+      }
+      35% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
 .Fileanimation{
   height: 100vh;
   width: 100%;
+}
+.ad-1{
+  animation-duration: 1s!important;
+}
+.ad-9{
+  animation-duration: 9s!important;
+}
+.ade-1{
+   animation-delay: 1s!important;
+   opacity: 0!important;
+ }
+.ade-4{
+  animation-delay: 4s!important;
+  opacity: 0!important;
+}
+.ade-2{
+  animation-delay: 2s!important;
 }

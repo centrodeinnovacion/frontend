@@ -79,26 +79,7 @@
   }
 }
 
-.path {
-  stroke-dasharray: 1000;
-  stroke-linecap: round;
-  animation: dash 8s linear;
-}
 
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 1000;
-    opacity: 1;
-  }
-  65% {
-    stroke-dashoffset: 0;
-    opacity:1
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity:1
-  }
-}
 
 .line1 {
   height: 500px;
@@ -122,28 +103,7 @@
     }
   }
 }
-.hash {
-  color: $white;
-  font-weight: 400 !important;
-  letter-spacing: 1px;
-  animation: transparence 6s;
-  .fas {
-    padding-left: 6px;
-    font-size: 20px;
-    animation: bounceIn 7s;
-    @keyframes transparence {
-      0% {
-        opacity: 0;
-      }
-      35% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-  }
-}
+
 .etherium {
   animation: transparence3 3s;
   animation-delay: 9s;
