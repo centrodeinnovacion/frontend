@@ -11,13 +11,14 @@
       </div>
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <div class="explanation">
+          <DownloadPdf></DownloadPdf>
         <!--<verify_blockchain></verify_blockchain>-->
         <!--<filenofound></filenofound>-->
         <!--<filefound></filefound>-->
-          <div class="scroll">
-        <upload></upload>
-        <uploadipfs></uploadipfs>
-          </div>
+          <!--<div class="scroll">-->
+        <!--<upload></upload>-->
+        <!--<uploadipfs></uploadipfs>-->
+          <!--</div>-->
         </div>
       </div>
     </div>
@@ -40,6 +41,7 @@
   import Searchipfs from '@/components/common/Searchipfs'
   import Filenofound from '@/components/common/Filenofound'
   import Filefound from '@/components/common/Filefound'
+  import DownloadPdf from '@/components/common/DownloadPdf'
 
   export default {
     name: 'Dashboard',
@@ -53,7 +55,8 @@
       verify_blockchain,
       Searchipfs,
       Filenofound,
-      Filefound
+      Filefound,
+      DownloadPdf
     }
   }
 </script>

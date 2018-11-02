@@ -1,6 +1,6 @@
 <template>
-  <div class="explanation">
-      <svg class="mt-9"x="0px" y="0" width="120.5px" height="92px" viewBox="10 0 54.5 65" style="enable-background:new 0 0 54.5 58;"xml:space="preserve">
+  <div class="Fileanimation d-flex flex-column justify-content-center">
+      <svg class="align-self-center"x="0px" y="0" width="120.5px" height="92px" viewBox="10 0 54.5 65" style="enable-background:new 0 0 54.5 58;"xml:space="preserve">
        <g class="blink">
 	<path class="st4" d="M36.5,17.3H26.5c-0.7,0-1.3,0.6-1.3,1.3v25.7c0,0.7,0.6,1.3,1.3,1.3h18.6c0.7,0,1.3-0.6,1.3-1.3V27.2"/>
 	<g>
