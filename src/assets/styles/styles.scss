@@ -1,14 +1,13 @@
 @import "variables";
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
-@import "navbar";
 @import "dashboard";
 @import "home";
 @import "upload";
 @import "download";
 @import "verify";
-@import "odometer-theme-car";
-
+@import "about";
+@import "animations";
 @font-face {
   font-family: 'Toolkit-Icon';
   src: url('assets/fonts/Toolkit-Icon.eot?os9i8d');
@@ -25,190 +24,44 @@
   height: 100vh;
   background-image: url("./assets/frame.png");
   background-repeat: repeat;
-  .buttontextdiamond {
-    position: absolute;
-    color: $lightgreen !important;
-    text-transform: uppercase !important;
-    font-weight: 500 !important;
-    font-size: $textbutton !important;
-    letter-spacing: 0.15em !important;
-    -webkit-align-content: center;
-    align-content: center;
-    -webkit-transform: rotate(-45deg) !important;
-    -moz-transform: rotate(-45deg) !important;
-    -ms-transform: rotate(-45deg) !important;
-    -o-transform: rotate(-45deg) !important;
-    transform: rotate(-45deg) !important;
-  }
-  .btndiamond {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid $lightgreen;
-    background-color: transparent;
-    width: 50px;
-    height: 50px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    border-radius: 0 !important;
-    align-self: center;
-    margin-top: 20px;
-  }
-  .btndiamond:hover {
-    background-color: $lightgreen;
-    text-decoration-color: $darkblue !important;
-    .buttontextdiamond {
-      color: $darkblue !important;
-    }
-  }
   .explanation {
     position: relative;
-    display: flex;
     width: 100%;
     height: 100vh;
     background-color: $blue;
-    align-content: center;
+    align-items: center;
     justify-content: center;
-    padding: 30px 30px 30px 30px !important;
+    padding: 50px 30px 30px 30px !important;
+    flex-direction: column;
+    overflow-y: scroll;
+    p {
+      margin: 0 !important;
+    }
     .mt-9 {
-      position: absolute;
       justify-self: center;
       top: 35%;
     }
+    .pl-6{
+      padding-left: 20px;
+    }
+    .mt-6{
+      margin-top: 50px;
+    }
     .fas {
-      position: absolute;
       top: 45%;
       justify-self: center;
       font-size: 30px;
-      animation: rot 1.5s infinite linear;
+    }
+    .explanation-text {
+      align-self: center;
+      justify-self: center;
+      text-align: center !important;
+      font-weight: 400 !important;
+      font-size: 16px !important;
+      color: $lightgreen !important;
     }
   }
-  @keyframes rot {
-    from {
-      transform: rotate(0deg) translate(-8px) rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg) translate(-8px) rotate(-360deg);
-    }
-  }
-
   .color_lightgreen {
     color: $lightgreen;
   }
-  .explanation-text {
-    position: absolute;
-    align-self: center;
-    justify-self: center;
-    text-align: center !important;
-    font-weight: 400 !important;
-    font-size: 16px !important;
-    color: $lightgreen !important;
-  }
-  @keyframes blink {
-
-    0% {
-      opacity: .2;
-    }
-    20% {
-      opacity: 1;
-    }
-    100% {
-      opacity: .2;
-    }
-  }
-  .saving span {
-    animation-name: blink;
-    animation-duration: 1.4s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
-    font-size: 50px !important;
-    margin-top: 120px !important;
-  }
-  .saving span:nth-child(2) {
-    animation-delay: .2s;
-  }
-  .saving span:nth-child(3) {
-    animation-delay: .4s;
-  }
-  .blink {
-    opacity: 0;
-    animation-name: blink2;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    @keyframes blink2 {
-
-      0% {
-        opacity: 1;
-      }
-      51% {
-        opacity: 1;
-      }
-      65% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 0.1;
-      }
-    }
-  }
-  .animationnotfound {
-    opacity: 0;
-    animation-name: disappear;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-delay: 0.7s;
-  }
-  @keyframes disappear {
-
-    40% {
-      opacity: 0;
-    }
-    42% {
-      opacity: 1;
-    }
-    44% {
-      opacity: 0;
-    }
-    45% {
-      opacity: 0;
-    }
-    47% {
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    72% {
-      opacity: 0;
-    }
-  }
-  .bounceinslow {
-    animation: bounceinslow;
-    animation-duration: 450ms;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-  }
-  @keyframes bounceinslow{
-    0%{
-      opacity: 0;
-      transform: scale(0.3) translate3d(0,0,0);
-    }
-    50%{
-      opacity: 0.9;
-      transform: scale(1.1);
-    }
-    80%{
-      opacity: 1;
-      transform: scale(0.89);
-    }
-    100%{
-      opacity: 1;
-      transform: scale(1) translate3d(0,0,0);
-    }
-  }
-
 }

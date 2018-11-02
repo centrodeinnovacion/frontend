@@ -1,5 +1,9 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="More d-flex justify-content-center">
+    <div class="contentMore">
+  <h2>¿Quieres saber más?</h2>
+    <p>Colsulta la documentación para desarrolladores <a href="">aquí</a>.</p>
+      <router-link class="btnDiamond" :to="{name: 'dashboard'}"><i class="fas fa-arrow-left"></i></router-link>
+    </div>
   </div>
 </template>

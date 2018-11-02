@@ -6,7 +6,6 @@
     text-align: left;
     letter-spacing: 0.1em;
     line-height: 1.2em;
-    margin-top: 50px;
   }
   .alignicon2 {
     position: relative !important;
@@ -34,7 +33,6 @@ h5 {
   font-family: 'Roboto', sans-serif !important;
   font-size: 25px !important;
   font-weight: 500 !important;
-  text-transform: uppercase;
   text-align: left;
   letter-spacing: 0.1em;
   line-height: 1.0em;
@@ -44,4 +42,10 @@ h5 {
 }
 .colorgreen {
   color: $red !important;
+}
+.upload{
+  .explanation{
+    flex-direction: initial!important;
+    align-items: start!important;
+  }
 }

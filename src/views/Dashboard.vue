@@ -6,14 +6,17 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <global></global>
-        <searchipfs></searchipfs>
-        <!--<verify></verify>-->
+        <!--<searchipfs></searchipfs>-->
+        <verify></verify>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <div class="explanation">
         <!--<verify_blockchain></verify_blockchain>-->
         <!--<filenofound></filenofound>-->
         <filefound></filefound>
-
+        <!--<upload></upload>-->
+        <!--<uploadipfs></uploadipfs>-->
+        </div>
       </div>
     </div>
     <div class="row download">
