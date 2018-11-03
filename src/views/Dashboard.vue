@@ -36,7 +36,7 @@
   import Upload from '@/components/common/Upload'
   import Download from '@/components/common/Download'
   import Uploadipfs from '@/components/common/Uploadipfs'
-  import verify from '@/components/common/verify'
+  import verify from '@/components/common/Searchbc'
   import verify_blockchain from '@/components/common/verify_blockchain'
   import Searchipfs from '@/components/common/Searchipfs'
   import Filenofound from '@/components/common/Filenofound'
