@@ -115,19 +115,18 @@
 .path {
   stroke-dasharray: 1000;
   stroke-linecap: round;
-  animation: dash 4s linear;
+  animation: dash 7s linear;
   animation-fill-mode: forwards;
 }
 @keyframes dash {
-  from {
-    stroke-dashoffset: 100;
-    stroke-dasharray: 100;
-    stroke-width: 1px;
+  0% {
+    stroke-dashoffset: 1000;
   }
-  to {
-    stroke-dasharray: 0;
-    stroke-dashoffset: 100;
-    stroke-width: 1px;
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1000;
   }
 }
 
