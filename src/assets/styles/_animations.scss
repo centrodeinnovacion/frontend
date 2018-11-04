@@ -130,7 +130,10 @@
   }
 }
 
-
+.ellispsenf{
+  opacity: 0!important;
+  animation: transparence 7s;
+}
 .hash {
   color: $white;
   font-weight: 400 !important;
