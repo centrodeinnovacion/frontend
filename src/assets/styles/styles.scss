@@ -21,9 +21,11 @@
 
 #app {
   background-color: $darkblue !important;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   background-image: url("./assets/frame.png");
   background-repeat: repeat;
+
   .scrollbar{
     overflow-y: scroll;
     height: 80vh;
@@ -87,5 +89,10 @@
   .pdf{
     height: 80vh;
     width: 100%;
+  }
+}
+footer{
+  @media screen and (max-width: 960px) {
+    visibility: hidden!important;
   }
 }

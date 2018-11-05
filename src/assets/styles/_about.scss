@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url("./assets/backgroundMore.png");
+  background-image: url("./assets/img/backgroundMore.png");
   background-size: cover;
   background-repeat: no-repeat;
   .contentMore {
@@ -18,47 +18,92 @@
       line-height: 1.2em;
       color: $lightgreen;
     }
-    a {
-      color: $lightgreen;
-      font-style: italic;
-      font-weight: 500;
-    }
+
     p {
       text-align: center;
       margin-left: auto !important;
       margin-right: auto !important;
     }
-    .btnDiamond {
-      margin-top: 50px!important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $lightgreen;
-      width: 50px;
-      height: 50px;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      border-radius: 0 !important;
-      .fas {
-        color: $lightgreen !important;
-        -webkit-transform: rotate(-45deg) !important;
-        -moz-transform: rotate(-45deg) !important;
-        -ms-transform: rotate(-45deg) !important;
-        -o-transform: rotate(-45deg) !important;
-        transform: rotate(-45deg) !important;
-      }
-    }
-    .btnDiamond:hover {
-      background-color: $lightgreen;
-      text-decoration-color: $darkblue !important;
-      .fas {
-        color: $darkblue !important;
-      }
-    }
+
+  }
+}
+a {
+  color: $lightgreen;
+  font-style: reular;
+  font-weight: 500;
+  &:hover{
+    color: $lightgreen;
+    font-style: italic;
+  }
+}
+.btnDiamond {
+  margin-top: 50px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $lightgreen;
+  width: 50px;
+  height: 50px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-radius: 0 !important;
+  .fas {
+    color: $lightgreen !important;
+    -webkit-transform: rotate(-45deg) !important;
+    -moz-transform: rotate(-45deg) !important;
+    -ms-transform: rotate(-45deg) !important;
+    -o-transform: rotate(-45deg) !important;
+    transform: rotate(-45deg) !important;
+  }
+}
+
+.btnDiamond:hover {
+  background-color: $lightgreen;
+  text-decoration-color: $darkblue !important;
+  .fas {
+    color: $darkblue !important;
+  }
+}
+
+.step {
+  p {
+    text-align: right !important;
+  }
+  .fas {
+    font-size: 50px;
+    color: $lightgreen;
+  }
+}
+
+.howitworks {overflow: hidden;
+  h2 {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.2em;
+    color: $lightgreen;
+  }
+}
+
+.number {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  color: $lightgreen;
+}
+
+.stepright {
+  p {
+    text-align: left !important;margin-top: 60px;
   }
 }
