@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: frontend-toolkit
+    volumes:
+      - ./ssl-front/:/etc/ssl/:ro
+    ports:
+    - "80:80"
+    - "443:443"
+    depends_on:
+      - api
+  api:
+    build: ../api/
+    container_name: api-toolkit
+    volumes:
+    - ../api/ssl-api/:/etc/ssl/:ro
+    ports:
+    - "10443:10443"
+    env_file:
+    - ../api/.env
