@@ -17,7 +17,7 @@
                </div>
 
                <div class="form-group inputstyle">
-                   <input type="file" placeholder="Drag a file to upload" id="Verify">
+                   <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified">
                    <div class="d-flex">
                        <div><p class="buttontittle">Verificar documento</p>
                            <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
@@ -47,7 +47,8 @@
     name: 'Buttons',
     methods: {
       ...mapActions({
-        uploadFile: constants.TOOLKIT_UPLOAD_FILE
+        uploadFile: constants.TOOLKIT_UPLOAD_FILE,
+        verifiedFile: constants.TOOLKIT_VERIFIED_FILE
       }),
       ...mapMutations({
         setProperty: constants.TOOLKIT_SET_PROPERTY
@@ -58,7 +59,16 @@
         this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
         const file = files[0]
         console.log(file)
-        this.uploadFile(file)
+        const uplo = this.uploadFile(file)
+        console.log(uplo)
+      },
+      verified(e) {
+        const files = e.target.files
+        if(!files.length){ return }
+        const file = files[0]
+        console.log(file)
+        const verf = this.verifiedFile(file)
+        console.log(verf)
       }
     }
   }

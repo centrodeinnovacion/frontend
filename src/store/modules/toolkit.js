@@ -7,7 +7,8 @@ const state = {
     hash: null,
     tx: null
   },
-  file: null
+  file: null,
+  validate: null
 }
 
 const actions = {
@@ -20,8 +21,17 @@ const actions = {
         commit(constants.TOOLKIT_SET_PROPERTY, {hash})
       })
   },
+  [constants.TOOLKIT_VERIFIED_FILE]: ({commit}, data) => {
+    const formData = new FormData()
+    formData.append('file', data)
+    Vue.axios.post('/validate', formData, { headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
+        .then(response => response.data.result)
+        .then(validate => {
+          commit(constants.TOOLKIT_SET_PROPERTY, {validate})
+        })
+  },
   [constants.TOOLKIT_DOWNLOAD_FILE]: ({commit}, hash) => {
-    Vue.axios.get(`/document/hash=${hash}`)
+    Vue.axios.get(`/document/${hash}`)
       .then(response => response.data)
       .then(file => {
         commit(constants.TOOLKIT_SET_PROPERTY, {file})

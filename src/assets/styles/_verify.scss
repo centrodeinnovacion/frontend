@@ -1,63 +1,118 @@
 .verify {
   margin-top: 54px !important;
-  background-image: url("././assets/red.png");
+  background-image: url("././assets/img/red.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 523px;
   width: 536px;
   justify-self: center;
-  .cls-1 {
-    fill: none;
-    stroke: #fff;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 6 6;
-  }
-  .cls-2 {
-    fill: #fff;
-  }
   .hashbig {
-    margin-top: 510px;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    align-items: center;
+    justify-content: flex-end;
     width: 100%;
     height: 100%;
-    position: relative;
-    display: flex;
-    align-content: end;
-    justify-content: center;
-    h5{
-    font-size: 17px!important;
-    }
     .linebottom {
-      position: relative;
-      align-items: center;
+      align-items: center!important;
       justify-content: center;
+      -webkit-box-pack: center;
+      -moz-text-align-last: center!important;
     }
     .linebottom:before {
       background-color: $white;
       content: '';
-      width: 100%;
+      width: 7%;
       position: absolute;
-      top: 33px;
+      margin-top: 33px;
       height: 1px;
       justify-self: center;
     }
     p {
-      position: absolute;
-      align-self: end !important;
-      justify-self: center !important;
       font-weight: 400 !important;
       letter-spacing: 1px !important;
       margin: 0 0 10px 0 !important;
     }
     h5 {
-      position: absolute;
-      align-self: bottom !important;
-      justify-self: center !important;
-      margin-top: 40px;
+      margin-top: 15px;
       font-weight: 400 !important;
       letter-spacing: 1px !important;
+      font-size: 17px!important;
     }
   }
+}
+  .nofilefound-1{
+    position: absolute;
+    left: 135px;
+    top: 130px;
+    font-size: 12px!important;
+    font-weight: 500!important;
+    line-height: 16px;
+    animation: transparence 10s;
+    color: $white;
+  }
+  .nofilefound-2{
+    position: absolute;
+    left: 384px;
+    top: 60px;
+    font-size: 12px!important;
+    font-weight: 500!important;
+    line-height: 16px;
+    animation: transparence 10s;
+    color: $white;
+  }
+  .nofilefound-3{
+    position: absolute;
+    left: 353px;
+    top: -10px;
+    font-size: 12px!important;
+    font-weight: 500!important;
+    line-height: 16px;
+    animation: transparence 10s;
+    color: $white;
+  }
+  .nofilefound-4{
+    position: absolute;
+    left: 328px;
+    top: 350px;
+    font-size: 12px!important;
+    font-weight: 500!important;
+    line-height: 16px;
+    animation: transparence 10s;
+    color: $white;
+  }
+.nofilefound-5{
+  position: absolute;
+  left: 150px;
+  top: 148px;
+  font-size: 12px!important;
+  font-weight: 500!important;
+  line-height: 16px;
+  animation: transparence 7s;
+  color: $white;
+}
+.nofilefound-6{
+  position: absolute;
+  left: 276px;
+  top: 350px;
+  font-size: 12px!important;
+  font-weight: 500!important;
+  line-height: 16px;
+  animation: transparence 3s;
+  color: $white;
+}
+.nofilefound-7{
+  position: absolute;
+  left: 380px;
+  top: 10px;
+  font-size: 12px!important;
+  font-weight: 500!important;
+  line-height: 16px;
+  animation: transparence 12s;
+  color: $white;
+}
   .firsthash {
     position: absolute;
     left: -12px;
@@ -78,29 +133,11 @@
     left: 356px;
     top: 392px;
   }
-}
-
-.path {
-  stroke-dasharray: 1000;
-  stroke-linecap: round;
-  animation: dash 8s linear;
-}
-
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 1000;
-    opacity: 1;
+  .fifthash{
+    position: absolute;
+    left: 396px;
+    top: 12px;
   }
-  65% {
-    stroke-dashoffset: 0;
-    opacity:1
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity:1
-  }
-}
-
 .line1 {
   height: 500px;
   width: 500px;
@@ -123,70 +160,6 @@
     }
   }
 }
-.hash {
-  color: $white;
-  font-weight: 400 !important;
-  letter-spacing: 1px;
-  animation: transparence 6s;
-  .fas {
-    padding-left: 6px;
-    font-size: 20px;
-    animation: bounceIn 7s;
-    @keyframes bounceIn {
-      0% {
-        opacity: 0;
-      }
-      85% {
-        opacity: 0;
-        transform: scale(0.3) translate3d(0, 0, 0);
-      }
-      90% {
-        opacity: 0.9;
-        transform: scale(1.5);
-      }
-      95% {
-        opacity: 1;
-        transform: scale(0.89);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translate3d(0, 0, 0);
-      }
-
-    }
-    @keyframes transparence {
-      0% {
-        opacity: 0;
-      }
-      35% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-  }
-}
-
-.st0 {
-  fill: none;
-  stroke: $yellow;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10;
-  stroke-width: 1px;
-
-}
-.st1 {
-  opacity: 0.6;
-  fill: $yellow;
-}
-.st2 {
-  fill: #FEFA4F;
-}
-.st3 {
-  fill: #35CCCC;
-}
 .etherium {
   animation: transparence3 3s;
   animation-delay: 9s;
@@ -199,6 +172,50 @@
       opacity: 0;
     }
 }
-.ipfs{
-
+.st0 {
+  fill: none;
+  stroke: $yellow;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-width: 1px;
 }
+.st1 {
+  opacity: 0.6;
+  fill: $yellow;
+}
+.st2 {
+  fill: $yellow;
+}
+.st3 {
+  fill: $lightgreen;
+}
+.st4{
+  fill:none;
+  stroke:$white;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+  stroke-dasharray:2,4;
+}
+.st5{
+  fill:$red;
+}
+.st6{
+  fill:$whitetransparent;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+.st7{
+  stroke:$white;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+
+mt-6{
+  margin-top: 30%;
+}
+
+

@@ -1,15 +1,23 @@
-<template>
-    <div class="verify mx-auto fixed-top ">
-        <div class="hash odometer firsthash">
-            ...<i class="fas fa-thumbs-up"></i></div>
-        <div class="hash odometer secondhash">
-            ...<i class="fas fa-thumbs-up"></i></div>
-        <div class="hash odometer thirdhash">
-            ...<i class="fas fa-thumbs-up"></i></div>
-        <div class="hash odometer fourthash">
-            ...<i class="fas fa-thumbs-up"></i></div>
-        <div class="line1 mx-auto fixed-top">
-            <svg width="500px" height="550px"  viewBox="0 0 500 450" enable-background="new 0 0 340 333" xml:space="preserve">
+<template xmlns:v-clipboard="http://www.w3.org/1999/xhtml">
+  <div class="verify mx-auto fixed-top ">
+    <div class="hash firsthash">
+      <p data-chaffle="en" v-model="ipfshash">{{ `${ipfshash.substr(0,8)}...` }}</p>
+      <i class="fas fa-thumbs-up"></i>
+    </div>
+    <div class="hash secondhash">
+      <p data-chaffle="en">{{ `${ipfshash.substr(0,8)}...` }}</p>
+      <i class="fas fa-thumbs-up"></i>
+    </div>
+    <div class="hash thirdhash">
+      <p data-chaffle="en">{{ `${ipfshash.substr(0,8)}...` }}</p>
+      <i class="fas fa-thumbs-up"></i>
+    </div>
+    <div class="hash fourthash">
+      <p data-chaffle="en">{{ `${ipfshash.substr(0,8)}...` }}</p>
+      <i class="fas fa-thumbs-up"></i>
+    </div>
+    <div class="line1 mx-auto fixed-top">
+      <svg width="500px" height="550px"  viewBox="0 0 500 450" enable-background="new 0 0 340 333" xml:space="preserve">
 
         <path class="st0 path" d="M184.5,461.2c0,0,282-147,234.6-293.6"/>
         <ellipse transform="matrix(9.188243e-03 -1 1 9.188243e-03 247.5492 585.8514)" class="st1 hash" cx="419.4" cy="168" rx="3.7" ry="3.7"/>
@@ -48,33 +56,58 @@
         <path class="st0 path" d="M184.6,461.4c0,0-82.7-446,114.2-413.7"/>
         <path class="st0 path" d="M184.5,461.2c0,0,127.2,34,179-1.2"/>
 </svg>
-            </svg>
-        </div>
-        <div class="hashbig"><p class="linebottom">HASH</p><h5 class="coloryellow">
-            0x7ba87aac76d29f20cefa161dabe300039d569b3cb5a1acb768af84c1bd063ff3</h5></div>
+
     </div>
+    <div class="hashbig"><p class="linebottom">HASH</p>
+      <h5 data-chaffle="en" class="coloryellow" v-clipboard:copy="ipfshash" v-clipboard:success="onCopy"
+          v-clipboard:error="onError">
+        {{ipfshash}}
+      </h5>
+      <div v-if="hashCopied" class="alert alert-secondary" role="alert">
+        {{`You just copied: ${ipfshash}`}}
+      </div>
+      <button class="btn" @click="chaffleIt">Chaffle</button>
+    </div>
+  </div>
 
 </template>
 
 
 <script>
-    export default {
-        name: 'verify',
-        components: {
-        },
-        data() {
-            return {
-                ipfshash: '353534'
-            }
-        },
-        mounted() {
-            setTimeout(() => {
-                this.ipfshash = '057678'
-            }, 2000)
-        }
+  import Chaffle from 'chaffle'
+
+  export default {
+    name: 'Verify',
+    components: {},
+    data() {
+      return {
+        ipfshash: 'verificando...',
+        hashCopied: false
+      }
+    },
+    mounted() {
+      setTimeout(() => {
+        this.ipfshash = '0x96eb99488b230cce33d210a2831f8da2a6cd3581dfbb4aaa02a8893893a7262d'
+      }, 4000)
+    },
+    methods: {
+      chaffleIt() {
+        const elements = document.querySelectorAll('[data-chaffle]')
+        Array.prototype.forEach.call(elements, el => {
+          const chaffle = new Chaffle(el, {
+            lang: 'en',
+            speed: 40,
+            delay: 80
+          })
+          chaffle.init()
+        })
+      },
+      onCopy(e) {
+        alert('You just copied: ' + e.text)
+      },
+      onError(e) {
+        alert('Failed to copy texts')
+      }
     }
+  }
 </script>
-
-<style scoped>
-
-</style>
