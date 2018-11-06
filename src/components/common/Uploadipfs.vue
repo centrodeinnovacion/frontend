@@ -6,7 +6,7 @@
     <div class="pl-6">
       <h3 class="colorgreen">Transacción de IPFS a Blockchain</h3>
       <p> El hash del documento es transferido de <a href="https://ipfs.io/" target="_blank">IPFS</a> a nodos de la red de
-        Blockchain en este caso <a href="https://www.ethereum.org/" target="_blank">Ethereum</a> a través del <a href="https://hipertextual.com/archivo/2014/05/que-es-api/" target="_blank">API</a> (En este caso, este toolkit) .</p>
+        Blockchain en este caso <a href="https://www.ethereum.org/" target="_blank">Ethereum</a> a través del <a href="https://hipertextual.com/archivo/2014/05/que-es-api/" target="_blank">API</a>.</p>
       <h4 class="colorgreen">Hash:</h4>
       <h5 class="colorgreen" v-clipboard:copy="hash.tx" v-clipboard:success="onCopy" v-clipboard:error="onError">
         <!-- chaffle-data="en"-->
