@@ -14,14 +14,14 @@
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <div class="explanation">
           <!--<DownloadPdf></DownloadPdf>-->
-          <verify_blockchain></verify_blockchain>
+          <!--<verify_blockchain></verify_blockchain>-->
           <!--<filenofound></filenofound>
           <!--<filefound></filefound>-->
-          <!--<div class="scrollbar">
+          <div class="scrollbar">
           <div class="force-overflow"></div>
           <upload></upload>
           <uploadipfs></uploadipfs>
-          </div>-->
+          </div>
         </div>
       </div>
     </div>

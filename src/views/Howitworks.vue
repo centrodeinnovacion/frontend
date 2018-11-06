@@ -11,12 +11,13 @@
                     Un usuario de la red realiza una transacción. (Carga o envía cualquier tipo de
                     información).</p></div>
                 <div class="step mt pl-5 fadeInLeft ad-1 pb-2"><p><span class="green number text-right">3.</span></br>
-                    Cada 10 minutos se cierra un bloque con el registro de las transacciones realizadas y se crea un
+                    Cada cierta cantidad de tiempo (generalmente minutos) se cierra un bloque con el registro de las transacciones realizadas y se crea un
                     nuevo bloque.</p></div>
                 <div class="step mt pl-5 pt-3 fadeInLeft ad-1 pb-5"><p><span class="orangelight number text-right">5.</span></br>
                     Cada nodo de la red tiene una copia de la cadena de bloques.</p></div>
                 <div class="step mt pl-5 pt-5 fadeInLeft ad-1"><p><span class="colorgreen number text-right">7.</span></br>
-                    Y también modificar o destruir cada cadena de bloques en todos los nodos de la red, lo cual es imposible debido a la magnitud de bloques y nodos.
+                    En la cadena de bloques es imposible destruir o modificar información, pues para hacerlo la información se debe modificar en el 51% de los nodos.
+                    Sin embargo en redes públicas de blockchain como Etherium la gran cantidad de nodos que la componen hacen imposible lo anterior.
                     Por esta razón Blockchain es considerado en extremo seguro.</p></div>
                 </div>
 
@@ -146,11 +147,9 @@
                 <div class="stepright mt-2 pt-3 pr-5 fadeInRight ad-1"><p class="text-left"><span class="color_lightgreen number text-left">2.</span></br>
                     La transacción es almacenada en un bloque con otras transacciones.</p></div>
                 <div class="stepright mt-2 pr-5 pt-5 pb-5 fadeInRight ad-1"><p class="text-left"><span class="coloryellow number text-left">4.</span></br>
-                    El bloque se envía a todos los nodos o computadores conectados a la red, y se enlaza con los
-                    bloques anteriores.</p></div>
+                    El bloque se enlaza con los bloques anteriores y es enviado a todos los nodos o computadores conectados a la red.</p></div>
                 <div class="stepright mt-5 pr-5 pt-5 fadeInRight ad-1"><p class="text-left"><span class="orange number text-left">6.</span></br>
-                    Para destruir o modificar un bloque de la cadena hay que destruir los bloques que se encuentran
-                    encima.</p></div>
+                    Si un usuario quiere modificar alguna información almacenada en la cadena de bloques, deberá crear una nueva transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p></div>
             </div>
             </div>
         <footer>

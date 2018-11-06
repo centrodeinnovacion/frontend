@@ -5,9 +5,8 @@
     </div>
     <div class="pl-6">
       <h3 class="coloryellow"> Documento subido en nodos de IPFS </h3>
-      <p>El documento es almacenado y distribuido a través de <a href="https://ipfs.io/" target="_blank">IPFS</a>,
-        un dropbox que sirve para descentralizar información
-        almacenándola en varios nodos de forma simultánea.</p>
+      <a>El documento es almacenado y distribuido a través de <a href="https://ipfs.io/" target="_blank">IPFS</a>,
+        un <a href="https://es.wikipedia.org/wiki/Protocolo_de_internet"></a> protocolo</a> (http es un protocolo) que utiliza múltiples nodos para almacenar la información de forma descentralizada.</p>
       <h4 class="coloryellow">Hash:</h4>
       <h5 class="coloryellow" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
         <!-- chaffle-data="en"-->
