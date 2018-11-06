@@ -70,6 +70,7 @@ a {
 }
 
 .step {
+  width: 400px;
   p {
     text-align: right !important;
   }
@@ -78,7 +79,9 @@ a {
     color: $lightgreen;
   }
 }
-
+.mt{
+  margin-top: 250px!important;
+}
 .howitworks {overflow: hidden;
   h2 {
     font-family: 'Roboto', sans-serif !important;
@@ -98,11 +101,12 @@ a {
   font-weight: 500 !important;
   text-transform: uppercase;
   line-height: 1.2em;
-  color: $lightgreen;
 }
 
 .stepright {
+  width: 400px;
   p {
-    text-align: left !important;margin-top: 60px;
+    text-align: left !important;
+    margin-top: 200px;
   }
 }
