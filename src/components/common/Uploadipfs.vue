@@ -1,18 +1,19 @@
 <template xmlns:v-clipboard="http://www.w3.org/1999/xhtml">
-  <div class="alignicon2 upload align-middle" id="upload-ipfs">
-    <div class="alingnicon">
-      <div class="sizeicon colorgreen">
-        <i class="fas fa-layer-group"></i>
-      </div>
-      <h3 class="colorgreen">Transacción de <br> IPFS a Blockchain</h3>
-      <p> El documento es transferido de IPFS a nodos en la red de Blockchain de Ethereum.</p>
-      <h4 class="colorgreen">Hash:</h4>
-      <h5 class="colorgreen" v-clipboard:copy="hash.tx" v-clipboard:success="onCopy" v-clipboard:error="onError"> <!-- chaffle-data="en"-->
-        {{ hash.tx.substr(0,13) }}...
-      </h5>
-      <p> Blockchain devuelve al usuario un hash que indentifica la transacción. </p>
+  <div class="upload d-flex align-items-start mt-6">
+    <div class="colorgreen">
+      <i class="fas fa-layer-group"></i>
     </div>
-
+    <div class="pl-6">
+      <h3 class="colorgreen">Transacción de IPFS a Blockchain</h3>
+      <p> El documento es transferido de <a href="https://ipfs.io/" target="_blank">IPFS</a> a nodos de la red de
+        Blockchain de <a href="https://www.ethereum.org/" target="_blank">Ethereum</a>.</p>
+      <h4 class="colorgreen">Hash:</h4>
+      <h5 class="colorgreen" v-clipboard:copy="hash.tx" v-clipboard:success="onCopy" v-clipboard:error="onError">
+        <!-- chaffle-data="en"-->
+        {{hash.tx}}
+      </h5>
+      <p class="mb-5">Blockchain devuelve al usuario un hash que indentifica la transacción.</p>
+    </div>
   </div>
 </template>
 
@@ -22,10 +23,10 @@
 
   export default {
     name: "Uploadipfs",
-    mounted(){
-      setTimeout(()=>{
+    mounted() {
+      setTimeout(() => {
         this.chaffleIt()
-      },3000)
+      }, 3000)
     },
     computed: {
       ...mapState({

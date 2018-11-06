@@ -5,15 +5,15 @@
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash secondhash">
-      <p data-chaffle="en" >{{ `${ipfshash.substr(0,8)}...` }}</p>
+      <p data-chaffle="en">{{ `${ipfshash.substr(0,8)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash thirdhash">
-      <p data-chaffle="en" >{{ `${ipfshash.substr(0,8)}...` }}</p>
+      <p data-chaffle="en">{{ `${ipfshash.substr(0,8)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash fourthash">
-      <p data-chaffle="en" >{{ `${ipfshash.substr(0,8)}...` }}</p>
+      <p data-chaffle="en">{{ `${ipfshash.substr(0,8)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="line1 mx-auto fixed-top">
@@ -59,13 +59,14 @@
 
     </div>
     <div class="hashbig"><p class="linebottom">HASH</p>
-      <h5 data-chaffle="en" class="coloryellow" v-clipboard:copy="ipfshash" v-clipboard:success="onCopy" v-clipboard:error="onError">
+      <h5 data-chaffle="en" class="coloryellow" v-clipboard:copy="ipfshash" v-clipboard:success="onCopy"
+          v-clipboard:error="onError">
         {{ipfshash}}
       </h5>
       <div v-if="hashCopied" class="alert alert-secondary" role="alert">
         {{`You just copied: ${ipfshash}`}}
       </div>
-      <button class="btn" @click="chaffleIt" >Chaffle</button>
+      <button class="btn" @click="chaffleIt">Chaffle</button>
     </div>
   </div>
 
@@ -77,15 +78,14 @@
 
   export default {
     name: 'Verify',
-    components: {
-    },
+    components: {},
     data() {
       return {
         ipfshash: 'verificando...',
         hashCopied: false
       }
     },
-    mounted(){
+    mounted() {
       setTimeout(() => {
         this.ipfshash = '0x96eb99488b230cce33d210a2831f8da2a6cd3581dfbb4aaa02a8893893a7262d'
       }, 4000)
