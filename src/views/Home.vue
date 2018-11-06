@@ -1,5 +1,5 @@
 <template>
-    <div class="home pt-5">
+    <div class="home pt-5 d-flex flex-column justify-content-center align-items-center">
         <div class="mt-5 content text-center" data-text="Blockchain"><span class="">
             <span class="linetext">Blockchain</span></span>
         </div>
