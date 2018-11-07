@@ -5,6 +5,7 @@ services:
     container_name: frontend-toolkit
     volumes:
       - ./ssl-front/:/etc/ssl/:ro
+      - ./default.conf:/etc/nginx/conf.d/
     ports:
     - "80:80"
     - "443:443"
