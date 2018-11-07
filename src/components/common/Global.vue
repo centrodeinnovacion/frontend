@@ -3,8 +3,6 @@
     <div class="global d-flex justify-content-center">
       <canvas id="3DView"></canvas>
     </div>
-    <button @click="ipfs()" class="btn" type="submit">IPFS</button>
-    <button @click="ethereum()" class="btn" type="submit">Ethereum</button>
   </div>
 </template>
 
@@ -72,6 +70,34 @@
         this.imageETH = new Image()
         this.imageIPFS.src = IPFSmarker
         this.imageETH.src = ETHEmarker
+      },
+      markers(){
+        const IPFSinterval = setInterval(() => {
+          this.globe.addImage(48.8566667, 2.3509871, this.imageIPFS)  // Francia
+          this.globe.addImage(4.570868, -74.297333, this.imageIPFS) // Colombia
+          this.globe.addImage(this.countries[46][0], this.countries[46][0], this.imageIPFS)
+          this.globe.addImage(this.countries[40][0], this.countries[40][1], this.imageIPFS)
+          this.globe.addImage(this.countries[34][0], this.countries[34][1], this.imageIPFS)
+          this.globe.addImage(this.countries[60][0], this.countries[60][1], this.imageIPFS)
+          this.globe.addImage(this.countries[100][0], this.countries[100][1], this.imageIPFS)
+          this.globe.addImage(this.countries[95][0], this.countries[95][1], this.imageIPFS)
+        }, 1800)
+        setTimeout(()=>{
+          clearInterval(IPFSinterval)
+        },8000)
+        const ETHinterval = setInterval(() => {
+          this.globe.addImage(48.8566667, 2.3509871, this.imageETH)  // Francia
+          this.globe.addImage(4.570868, -74.297333, this.imageETH) // Colombia
+          this.globe.addImage(this.countries[20][0], this.countries[20][0], this.imageETH)
+          this.globe.addImage(this.countries[31][0], this.countries[31][1], this.imageETH)
+          this.globe.addImage(this.countries[90][0], this.countries[90][1], this.imageETH)
+          this.globe.addImage(this.countries[63][0], this.countries[63][1], this.imageETH)
+          this.globe.addImage(this.countries[50][0], this.countries[50][1], this.imageETH)
+          this.globe.addImage(this.countries[41][0], this.countries[41][1], this.imageETH)
+        }, 1800)
+        setTimeout(()=>{
+          clearInterval(ETHinterval)
+        },8000)
       },
       ipfs() {
         const IPFSinterval = setInterval(() => {

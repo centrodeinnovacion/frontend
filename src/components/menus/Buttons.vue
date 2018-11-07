@@ -33,18 +33,20 @@
                    </div>
                </div>
            </div>
-
        </form>
-
    </div>
 </template>
 
 <script>
   import {mapActions, mapMutations} from 'vuex'
   import * as constants from '@/store/constants'
+  import Upload from '@/components/common/Upload'
 
   export default {
     name: 'Buttons',
+    components:{
+      Upload
+    },
     methods: {
       ...mapActions({
         uploadFile: constants.TOOLKIT_UPLOAD_FILE,
