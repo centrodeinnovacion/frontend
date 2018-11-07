@@ -1,5 +1,5 @@
 <template xmlns:v-clipboard="http://www.w3.org/1999/xhtml">
-  <div class="upload d-flex align-items-start">
+  <div class="upload d-flex align-items-start"> <!--v-if="ethFlag">-->
     <div class="coloryellow">
       <i class="fas fa-file-alt"></i>
     </div>
@@ -9,10 +9,9 @@
         un dropbox que sirve para descentralizar información
         almacenándola en varios nodos de forma simultánea.</p>
       <h4 class="coloryellow">Hash:</h4>
-      <h5 class="coloryellow" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
-        <!-- chaffle-data="en"-->
+      <textarea class="coloryellow" id="ipfsHash" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
         {{hash.hash}}
-      </h5>
+      </textarea>
       <p>Al cargar el archivo, <a href="https://ipfs.io/" target="_blank">IPFS</a> devuelve al usuario el resumen
         matemático del documento o un “Hash”. El hash
         será visible para todos en la red pero es imposible deducir su contenido sólo leyéndolo.</p>
@@ -26,7 +25,7 @@
 
   export default {
     name: 'Dashboard',
-    hash: 'skdfhsdjhfsjdkfhsdjkfh',
+    // props: [ethFlag],
     computed: {
       ...mapState({
         hash: state => state.Toolkit.hash
