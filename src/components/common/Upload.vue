@@ -9,7 +9,7 @@
         un dropbox que sirve para descentralizar información
         almacenándola en varios nodos de forma simultánea.</p>
       <h4 class="coloryellow">Hash:</h4>
-      <textarea class="coloryellow" id="ipfsHash" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
+      <textarea readonly class="coloryellow" id="ipfsHash" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
         {{hash.hash}}
       </textarea>
       <p>Al cargar el archivo, <a href="https://ipfs.io/" target="_blank">IPFS</a> devuelve al usuario el resumen
@@ -25,7 +25,6 @@
 
   export default {
     name: 'Dashboard',
-    // props: [ethFlag],
     computed: {
       ...mapState({
         hash: state => state.Toolkit.hash

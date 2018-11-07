@@ -8,7 +8,7 @@
       <p> El documento es transferido de <a href="https://ipfs.io/" target="_blank">IPFS</a> a nodos de la red de
         Blockchain de <a href="https://www.ethereum.org/" target="_blank">Ethereum</a>.</p>
       <h4 class="colorgreen">Hash:</h4>
-      <textarea class="colorgreen" id="etheHash" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
+      <textarea readonly class="colorgreen" id="etheHash" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
         {{hash.tx}}
       </textarea>
       <p class="mb-5">Blockchain devuelve al usuario un hash que indentifica la transacción.</p>

@@ -8,7 +8,7 @@
 
 <script>
   import IPFSmarker from '@/assets/file-alt-solid.svg'
-  import ETHEmarker from '@/assets/layer-group-solid.svg'
+  import ETHmarker from '@/assets/layer-group-solid.svg'
 
 
   export default {
@@ -19,7 +19,7 @@
           globeBackColor: '#396A92aa',
           globeFrontColor: '#9AB4CBbb',
           globeLinesColor: '#00000044',
-          rotationIdleSpeedFactor: 10.0,
+          rotationIdleSpeedFactor: 20.0,
           rotationSpeedFactor: 1.5,
           wave: false,
           width: 650
@@ -69,65 +69,36 @@
         this.imageIPFS = new Image()
         this.imageETH = new Image()
         this.imageIPFS.src = IPFSmarker
-        this.imageETH.src = ETHEmarker
-      },
-      markers(){
-        const IPFSinterval = setInterval(() => {
-          this.globe.addImage(48.8566667, 2.3509871, this.imageIPFS)  // Francia
-          this.globe.addImage(4.570868, -74.297333, this.imageIPFS) // Colombia
-          this.globe.addImage(this.countries[46][0], this.countries[46][0], this.imageIPFS)
-          this.globe.addImage(this.countries[40][0], this.countries[40][1], this.imageIPFS)
-          this.globe.addImage(this.countries[34][0], this.countries[34][1], this.imageIPFS)
-          this.globe.addImage(this.countries[60][0], this.countries[60][1], this.imageIPFS)
-          this.globe.addImage(this.countries[100][0], this.countries[100][1], this.imageIPFS)
-          this.globe.addImage(this.countries[95][0], this.countries[95][1], this.imageIPFS)
-        }, 1800)
-        setTimeout(()=>{
-          clearInterval(IPFSinterval)
-        },8000)
-        const ETHinterval = setInterval(() => {
-          this.globe.addImage(48.8566667, 2.3509871, this.imageETH)  // Francia
-          this.globe.addImage(4.570868, -74.297333, this.imageETH) // Colombia
-          this.globe.addImage(this.countries[20][0], this.countries[20][0], this.imageETH)
-          this.globe.addImage(this.countries[31][0], this.countries[31][1], this.imageETH)
-          this.globe.addImage(this.countries[90][0], this.countries[90][1], this.imageETH)
-          this.globe.addImage(this.countries[63][0], this.countries[63][1], this.imageETH)
-          this.globe.addImage(this.countries[50][0], this.countries[50][1], this.imageETH)
-          this.globe.addImage(this.countries[41][0], this.countries[41][1], this.imageETH)
-        }, 1800)
-        setTimeout(()=>{
-          clearInterval(ETHinterval)
-        },8000)
+        this.imageETH.src = ETHmarker
       },
       ipfs() {
         const IPFSinterval = setInterval(() => {
-          this.globe.addImage(48.8566667, 2.3509871, this.imageIPFS)  // Francia
-          this.globe.addImage(4.570868, -74.297333, this.imageIPFS) // Colombia
-          this.globe.addImage(this.countries[46][0], this.countries[46][0], this.imageIPFS)
-          this.globe.addImage(this.countries[40][0], this.countries[40][1], this.imageIPFS)
-          this.globe.addImage(this.countries[34][0], this.countries[34][1], this.imageIPFS)
-          this.globe.addImage(this.countries[60][0], this.countries[60][1], this.imageIPFS)
-          this.globe.addImage(this.countries[100][0], this.countries[100][1], this.imageIPFS)
-          this.globe.addImage(this.countries[95][0], this.countries[95][1], this.imageIPFS)
+            this.globe.addImage(4.570868, -74.297333, this.imageIPFS) // Colombia
         }, 1800)
         setTimeout(()=>{
           clearInterval(IPFSinterval)
-        },8000)
+        },10000)
       },
       ethereum() {
         const ETHinterval = setInterval(() => {
-          this.globe.addImage(48.8566667, 2.3509871, this.imageETH)  // Francia
-          this.globe.addImage(4.570868, -74.297333, this.imageETH) // Colombia
-          this.globe.addImage(this.countries[20][0], this.countries[20][0], this.imageETH)
-          this.globe.addImage(this.countries[31][0], this.countries[31][1], this.imageETH)
-          this.globe.addImage(this.countries[90][0], this.countries[90][1], this.imageETH)
-          this.globe.addImage(this.countries[63][0], this.countries[63][1], this.imageETH)
-          this.globe.addImage(this.countries[50][0], this.countries[50][1], this.imageETH)
-          this.globe.addImage(this.countries[41][0], this.countries[41][1], this.imageETH)
+          const i1 = Math.floor(Math.random() * (this.countries.length))
+          this.globe.addImage(this.countries[i1][0], this.countries[i1][1], this.imageETH)
+          const i2 = Math.floor(Math.random() * (this.countries.length))
+          this.globe.addImage(this.countries[i2][0], this.countries[i2][1], this.imageETH)
+          const i3 = Math.floor(Math.random() * (this.countries.length))
+          this.globe.addImage(this.countries[i3][0], this.countries[i3][1], this.imageETH)
+          const i4 = Math.floor(Math.random() * (this.countries.length))
+          this.globe.addImage(this.countries[i4][0], this.countries[i4][1], this.imageETH)
+          const i5 = Math.floor(Math.random() * (this.countries.length))
+          this.globe.addImage(this.countries[i5][0], this.countries[i5][1], this.imageETH)
+          const i6 = Math.floor(Math.random() * (this.countries.length))
+          this.globe.addImage(this.countries[i6][0], this.countries[i6][1], this.imageETH)
+          const i7 = Math.floor(Math.random() * (this.countries.length))
+          this.globe.addImage(this.countries[i7][0], this.countries[i7][1], this.imageETH)
         }, 1800)
         setTimeout(()=>{
           clearInterval(ETHinterval)
-        },8000)
+        },10000)
       }
     },
     mounted() {
