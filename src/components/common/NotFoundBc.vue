@@ -68,15 +68,13 @@
         <path class="st0 path" d="M184.5,461.2c0,0,127.2,34,179-1.2"/>
       </svg>
         </div>
-        <div class="hashbig"><p class="linebottom">HASH</p>
-            <h5 class="coloryellow">0x7ba87aac76d29f20cefa161dabe300039d569b3cb5a1acb768af84c1bd063ff3</h5></div>
     </div>
 
 </template>
 
 <script>
     export default {
-        name: "Notfoundbc"
+        name: "NotFoundBc"
     }
 </script>
 

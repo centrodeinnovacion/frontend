@@ -1,19 +1,19 @@
 <template>
   <div class="verify mx-auto fixed-top ">
     <div class="hash firsthash">
-      <p data-chaffle="en">{{ `${ipfshash.substr(0,11)}...` }}</p>
+      <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash secondhash">
-      <p data-chaffle="en">{{ `${ipfshash.substr(0,11)}...` }}</p>
+      <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash thirdhash">
-      <p data-chaffle="en">{{ `${ipfshash.substr(0,11)}...` }}</p>
+      <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash fourthash">
-      <p data-chaffle="en">{{ `${ipfshash.substr(0,11)}...` }}</p>
+      <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="line1 mx-auto fixed-top">
@@ -58,7 +58,9 @@
 </svg>
 
     </div>
-    <div class="hashbig"><p class="linebottom">HASH</p></div>
+    <div class="hashbig">
+      <p class="linebottom">HASH</p>
+    </div>
   </div>
 
 </template>
@@ -66,22 +68,28 @@
 
 <script>
   import Chaffle from 'chaffle'
+  import {mapState} from 'vuex'
 
   export default {
     name: 'Verify',
-    data() {
+    /*data() {
       return {
         ipfshash: 'verificando...'
       }
+    },*/
+    computed: {
+      ...mapState({
+        validate: state => state.Toolkit.validate
+      })
     },
-    mounted() {
+    /*mounted() {
       setTimeout(() => {
         this.ipfshash = '0x96eb99488b230cce33d210a2831f8da2a6cd3581dfbb4aaa02a8893893a7262d'
       }, 4000)
       setTimeout(()=>{
         this.chaffleIt()
       },4002)
-    },
+    },*/
     methods: {
       chaffleIt() {
         const elements = document.querySelectorAll('[data-chaffle]')

@@ -70,35 +70,6 @@
         this.imageETH = new Image()
         this.imageIPFS.src = IPFSmarker
         this.imageETH.src = ETHmarker
-      },
-      ipfs() {
-        const IPFSinterval = setInterval(() => {
-            this.globe.addImage(4.570868, -74.297333, this.imageIPFS) // Colombia
-        }, 1800)
-        setTimeout(()=>{
-          clearInterval(IPFSinterval)
-        },10000)
-      },
-      ethereum() {
-        const ETHinterval = setInterval(() => {
-          const i1 = Math.floor(Math.random() * (this.countries.length))
-          this.globe.addImage(this.countries[i1][0], this.countries[i1][1], this.imageETH)
-          const i2 = Math.floor(Math.random() * (this.countries.length))
-          this.globe.addImage(this.countries[i2][0], this.countries[i2][1], this.imageETH)
-          const i3 = Math.floor(Math.random() * (this.countries.length))
-          this.globe.addImage(this.countries[i3][0], this.countries[i3][1], this.imageETH)
-          const i4 = Math.floor(Math.random() * (this.countries.length))
-          this.globe.addImage(this.countries[i4][0], this.countries[i4][1], this.imageETH)
-          const i5 = Math.floor(Math.random() * (this.countries.length))
-          this.globe.addImage(this.countries[i5][0], this.countries[i5][1], this.imageETH)
-          const i6 = Math.floor(Math.random() * (this.countries.length))
-          this.globe.addImage(this.countries[i6][0], this.countries[i6][1], this.imageETH)
-          const i7 = Math.floor(Math.random() * (this.countries.length))
-          this.globe.addImage(this.countries[i7][0], this.countries[i7][1], this.imageETH)
-        }, 1800)
-        setTimeout(()=>{
-          clearInterval(ETHinterval)
-        },10000)
       }
     },
     mounted() {

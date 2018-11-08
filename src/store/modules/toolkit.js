@@ -8,7 +8,10 @@ const state = {
     tx: null
   },
   file: null,
-  validate: null
+  validate: {
+    hash: null,
+    fileName: null
+  }
 }
 
 const actions = {

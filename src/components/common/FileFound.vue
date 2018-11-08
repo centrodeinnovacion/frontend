@@ -10,10 +10,6 @@
 
 <script>
   export default {
-    name: "Filefound"
+    name: "FileFound"
   }
 </script>
-
-<style scoped>
-
-</style>
