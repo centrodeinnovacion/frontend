@@ -10,6 +10,7 @@
         <!--<Notfoundipfs></Notfoundipfs>-->
         <Notfoundbc></Notfoundbc>
         <!--<verify></verify>-->
+        <Gif></Gif>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <div class="explanation">
@@ -59,6 +60,7 @@
   import DownloadPdf from '@/components/common/DownloadPdf'
   import Notfoundbc from '@/components/common/Notfoundbc'
   import Notfoundipfs from '@/components/common/Notfoundipfs'
+  import Gif from '@/components/common/Gif'
 
   export default {
     name: 'Dashboard',
@@ -75,7 +77,8 @@
       Filefound,
       DownloadPdf,
       Notfoundbc,
-      Notfoundipfs
+      Notfoundipfs,
+      Gif
     }
   }
 </script>
