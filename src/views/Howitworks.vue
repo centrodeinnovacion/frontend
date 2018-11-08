@@ -1,28 +1,38 @@
 <template>
-    <div class="howitworks ">
-        <div class="contentMore d-flex align-items-start flex-column pt-5 pl-5">
-            <h2 class="mt-3">¿Cómo funciona Blockchain?</h2>
-            <p class="pt-0">Para empezar haga scroll hacia abajo.</p></div>
-        <div class="d-flex justify-content-center">
+  <div class="howitworks ">
+    <div class="contentMore d-flex align-items-start flex-column pt-5 pl-5">
+      <h2 class="mt-3">¿Cómo funciona Blockchain?</h2>
+      <p class="pt-0">Para empezar haga scroll hacia abajo.</p></div>
+    <div class="d-flex justify-content-center">
 
-                <div class="d-flex align-items-start flex-column pr-3">
-                <div class="step mt-3 pl-5 pt-5 fadeInLeft ad-1">
-                    <p><span class="purple number text-right">1.</span></br>
-                    Un usuario de la red realiza una transacción. (Carga o envía cualquier tipo de
-                    información).</p></div>
-                <div class="step mt pl-5 fadeInLeft ad-1 pb-2"><p><span class="green number text-right">3.</span></br>
-                    Cada cierta cantidad de tiempo (generalmente minutos) se cierra un bloque con el registro de las transacciones realizadas y se crea un
-                    nuevo bloque.</p></div>
-                <div class="step mt pl-5 pt-3 fadeInLeft ad-1 pb-5"><p><span class="orangelight number text-right">5.</span></br>
-                    Cada nodo de la red tiene una copia de la cadena de bloques.</p></div>
-                <div class="step mt pl-5 pt-5 fadeInLeft ad-1"><p><span class="colorgreen number text-right">7.</span></br>
-                    En la cadena de bloques es imposible destruir o modificar información, pues para hacerlo la información se debe modificar en el 51% de los nodos.
-                    Sin embargo en redes públicas de blockchain como Etherium la gran cantidad de nodos que la componen hacen imposible lo anterior.
-                    Por esta razón Blockchain es considerado en extremo seguro.</p></div>
-                </div>
+      <div class="d-flex align-items-start flex-column pr-3">
+        <div class="step mt-3 pl-5 pt-2 pb-5 fadeInLeft ad-1">
+          <p><span class="purple number text-right">1.</span></br>
+            Un usuario realiza una operación, bien sea cargar o enviar cualquier tipo de información. A esta
+            operación se le denomina transacción. El usuario recibe un reporte certificando la operación, en
+            Blockchain
+            a este reporte se le denomina "hash".
+          </p></div>
+        <div class="step mt-5 pt-5 pl-5 fadeInLeft pb-5 ad-1"><p><span class="green number text-right">3.</span></br>
+          Al completar la capacidad de almacenaje (generalmente en minutos), el bloque se cierra con el registro de las
+          transacciones realizadas y se crea uno nuevo. Al cerrarse se genera otro hash, que contiene el reporte del contenido del
+          bloque junto a una referencia al bloque anterior. </p></div>
+        <div class="step mt-5 pt-5 pl-5 fadeInLeft ad-1 pb-5"><p><span
+                class="orangelight number text-right">5.</span></br>
+          Las cadenas de bloques se encuentran almacenadas dentro de la red de Blockchain, la cual se compone de nodos,
+          estos son puntos de almacenamiento que se encuentran ubicados en diferentes lugares del planeta, lo que
+          permite la descentralización la información. Cada nodo de la red tiene una copia de la cadena de bloques.</p>
+        </div>
+        <div class="step mt pt-5 pl-5 fadeInLeft ad-1"><p><span class="colorgreen number text-right">7.</span></br>
+          En la cadena de bloques es imposible destruir o modificar información, pues para hacerlo la información se
+          debe modificar en el 51% de los nodos.
+          Sin embargo en redes públicas de blockchain como Etherium la gran cantidad de nodos que la componen hacen
+          imposible lo anterior.
+          Por esta razón Blockchain es considerado en extremo seguro.</p></div>
+      </div>
 
-            <div class="d-flex align-items-start pt-5 mt-3">
-                    <svg class="draw align-self-center"x="0px" y="0" width="300px" height="1500px" viewBox="0 520 250 200" xml:space="preserve">
+      <div class="d-flex align-items-start pt-5 mt-3">
+        <svg class="draw align-self-center"x="0px" y="0" width="300px" height="1500px" viewBox="0 520 250 200" xml:space="preserve">
                         <g><path class="st8" d="M118.1,69.3V56.6H99.5c-1.2,0-2.2,1-2.2,2.2v43.3c0,1.2,1,2.2,2.2,2.2h31.4c1.2,0,2.2-1,2.2-2.2V71.5h-12.7 C119.1,71.5,118.1,70.5,118.1,69.3z M133.1,68v0.6h-11.9V56.6h0.6c0.6,0,1.2,0.2,1.6,0.7l9.1,9.1C132.8,66.8,133.1,67.4,133.1,68z"/><ellipse transform="matrix(1.314359e-02 -0.9999 0.9999 1.314359e-02 -5.3856 19.5856)" class="st8" cx="7.2" cy="12.5" rx="5" ry="5"/>
                             <ellipse transform="matrix(1.314359e-02 -0.9999 0.9999 1.314359e-02 71.217 154.2018)" class="st8" cx="113.7" cy="41" rx="5" ry="5"/>
                             <polyline class="st8" points="12.2,13 114.2,13 114.2,36 	"/>
@@ -142,33 +152,40 @@
                             <path class="st5" d="M113.7,1112.2c-1.9,0-3.4,1.5-3.4,3.4c0,1.2,0.6,2.3,1.6,2.9v2.8c0,1,0.8,1.8,1.8,1.8c1,0,1.8-0.8,1.8-1.8 v-2.8c1-0.6,1.6-1.7,1.6-2.9C117.2,1113.7,115.6,1112.2,113.7,1112.2z M114.7,1117.7c-0.2,0.1-0.3,0.3-0.3,0.5v3.1 c0,0.4-0.3,0.7-0.7,0.7c-0.4,0-0.7-0.3-0.7-0.7v-3.1c0-0.2-0.1-0.4-0.3-0.5c-0.8-0.4-1.3-1.2-1.3-2.1c0-1.3,1-2.3,2.3-2.3 c1.3,0,2.3,1,2.3,2.3C116,1116.5,115.5,1117.3,114.7,1117.7z"/>
                         </g>
                     </svg>
-                </div>
-            <div class="d-flex align-items-start flex-column pl-5">
-                <div class="stepright mt-2 pt-3 pr-5 fadeInRight ad-1"><p class="text-left"><span class="color_lightgreen number text-left">2.</span></br>
-                    La transacción es almacenada en un bloque con otras transacciones.</p></div>
-                <div class="stepright mt-2 pr-5 pt-5 pb-5 fadeInRight ad-1"><p class="text-left"><span class="coloryellow number text-left">4.</span></br>
-                    El bloque se enlaza con los bloques anteriores y es enviado a todos los nodos o computadores conectados a la red.</p></div>
-                <div class="stepright mt-5 pr-5 pt-5 fadeInRight ad-1"><p class="text-left"><span class="orange number text-left">6.</span></br>
-                    Si un usuario quiere modificar alguna información almacenada en la cadena de bloques, deberá crear una nueva transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p></div>
-            </div>
-            </div>
-        <footer class="inferior">
-            <div class="d-flex flex-row-reverse align-items-end">
-                <div class="p-2 mr-3 mb-3">
-                    <router-link class="btnDiamond" :to="{name: 'dashboard'}"><i class="fas fa-arrow-right"></i>
-                    </router-link>
-                </div>
-                <div class="p-2 mb-3"><p>Prueba blockchain con un ejemplo.</p></div>
-            </div>
-        </footer>
+      </div>
+      <div class="d-flex align-items-start flex-column pl-5">
+        <div class="stepright mt-2 pt-3 pr-5 fadeInRight ad-1"><p class="text-left"><span
+                class="color_lightgreen number text-left">2.</span></br>
+          La transacción es almacenada con otras transacciones, en una caja de seguridad representada en
+          Blockchain como un bloque.</p>
+        </div>
+        <div class="stepright mt-2 pr-5 pt-3 pb-5 fadeInRight ad-1"><p class="text-left"><span
+                class="coloryellow number text-left">4.</span></br>
+          El bloque se enlaza con los bloques anteriores a través del hash o la referencia del bloque anterior.</p>
+        </div>
+        <div class="stepright mt-5 pr-5 pt-5 fadeInRight ad-1"><p class="text-left"><span
+                class="orange number text-left">6.</span></br>
+          Si un usuario quiere modificar alguna información almacenada en la cadena de bloques, deberá crear una nueva
+          transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p></div>
+      </div>
     </div>
+    <footer class="inferior">
+      <div class="d-flex flex-row-reverse align-items-end">
+        <div class="p-2 mr-3 mb-3">
+          <router-link class="btnDiamond" :to="{name: 'dashboard'}"><i class="fas fa-arrow-right"></i>
+          </router-link>
+        </div>
+        <div class="p-2 mb-3"><p>Prueba blockchain con un ejemplo.</p></div>
+      </div>
+    </footer>
+  </div>
 
 </template>
 
 <script>
-    export default {
-        name: "Howitworks"
-    }
+  export default {
+    name: "Howitworks"
+  }
 </script>
 
 <style scoped>
