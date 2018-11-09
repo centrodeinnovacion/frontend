@@ -9,7 +9,3 @@
     name: "Gif"
   }
 </script>
-
-<style scoped>
-
-</style>

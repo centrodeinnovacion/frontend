@@ -76,6 +76,18 @@
         <download ref="modalDownload"></download>
       </div>
     </div>
+    <footer class="inferior">
+      <div class="d-flex flex-row-reverse align-items-end">
+        <div class="p-2 mr-3 mb-3">
+          <router-link class="btnDiamond" :to="{name: 'about'}"><i class="fas fa-arrow-right"></i>
+          </router-link>
+        </div>
+        <div class="p-2 mr-3 mb-3">
+            <router-link class="btnDiamond" :to="{name: 'howitworks'}"><i class="fas fa-arrow-left"></i>
+          </router-link>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
