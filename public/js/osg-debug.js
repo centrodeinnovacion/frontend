@@ -93,17 +93,17 @@ osg.checkError = function (error) {
         return;
     }
     if (error === 0x0500) {
-        osg.log("detected error INVALID_ENUM");
+        // osg.log("detected error INVALID_ENUM");
     } else if (error === 0x0501) {
-        osg.log("detected error INVALID_VALUE");
+        // osg.log("detected error INVALID_VALUE");
     } else if (error === 0x0502) {
-        osg.log("detected error INVALID_OPERATION");
+        // osg.log("detected error INVALID_OPERATION");
     } else if (error === 0x0505) {
-        osg.log("detected error OUT_OF_MEMORY");
+        // osg.log("detected error OUT_OF_MEMORY");
     } else if (error === 0x0506) {
-        osg.log("detected error INVALID_FRAMEBUFFER_OPERATION");
+        // osg.log("detected error INVALID_FRAMEBUFFER_OPERATION");
     } else {
-        osg.log("detected error UNKNOWN");
+        // osg.log("detected error UNKNOWN");
     }
 };
 
@@ -516,7 +516,7 @@ osg.Matrix = {
     makeIdentity: function(matrix) {
         if (matrix === undefined) {
             matrix = [];
-            osg.log("osg.Matrix.makeIdentity without matrix destination is deprecated"); 
+            // osg.log("osg.Matrix.makeIdentity without matrix destination is deprecated");
         }
         osg.Matrix.setRow(matrix, 0,    1, 0, 0, 0 );
         osg.Matrix.setRow(matrix, 1,    0, 1, 0, 0 );
@@ -1021,7 +1021,7 @@ osg.Matrix = {
 
     makeRotate: function (angle, x, y, z, result) {
         if (result === undefined) {
-            osg.log("osg.makeRotate without given matrix destination is deprecated");
+            // osg.log("osg.makeRotate without given matrix destination is deprecated");
             result = [];
         }
 
@@ -1210,7 +1210,7 @@ osg.Matrix = {
 
         var d1 = (matrix[0] * t0 + matrix[4] * t1 + matrix[8] * t2 + matrix[12] * t3);
         if (Math.abs(d1) < 1e-5) {
-            osg.log("Warning can't inverse matrix " + matrix);
+            // osg.log("Warning can't inverse matrix " + matrix);
             return false;
         }
         var d = 1.0 / d1;
@@ -1592,7 +1592,7 @@ osg.Shader.prototype = {
         gl.shaderSource(this.shader, this.text);
         gl.compileShader(this.shader);
         if (!gl.getShaderParameter(this.shader, gl.COMPILE_STATUS) && !gl.isContextLost()) {
-            osg.log("can't compile shader:\n" + this.text + "\n");
+            // osg.log("can't compile shader:\n" + this.text + "\n");
             var tmpText = "\n" + this.text;
             var splittedText = tmpText.split("\n");
             var newText = "\n";
@@ -1607,7 +1607,7 @@ osg.Shader.prototype = {
 
 osg.Shader.create = function( type, text )
 {
-    osg.log("osg.Shader.create is deprecated, use new osg.Shader with the same arguments instead");
+    // osg.log("osg.Shader.create is deprecated, use new osg.Shader with the same arguments instead");
     return new osg.Shader(type, text);
 };
 /** 
@@ -2644,7 +2644,7 @@ osg.BufferArray.prototype = {
 };
 
 osg.BufferArray.create = function(type, elements, itemSize) {
-    osg.log("osg.BufferArray.create is deprecated, use new osg.BufferArray with same arguments instead");
+    // osg.log("osg.BufferArray.create is deprecated, use new osg.BufferArray with same arguments instead");
     return new osg.BufferArray(type, elements, itemSize);
 };
 /** 
@@ -3028,7 +3028,7 @@ osg.FrameBufferObject.prototype = osg.objectInehrit(osg.StateAttribute.prototype
                 }
                 status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
                 if (status !== 0x8CD5) {
-                    osg.log("framebuffer error check " + status);
+                    // osg.log("framebuffer error check " + status);
                 }
                 
                 if (hasRenderBuffer) { // set it to null only if used renderbuffer
@@ -3040,7 +3040,7 @@ osg.FrameBufferObject.prototype = osg.objectInehrit(osg.StateAttribute.prototype
                 if (osg.reportErrorGL === true) {
                     status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
                     if (status !== 0x8CD5) {
-                        osg.log("framebuffer error check " + status);
+                        // osg.log("framebuffer error check " + status);
                     }
                 }
             }
@@ -3734,7 +3734,7 @@ osg.DrawArrays.prototype = {
     getFirst: function() { return this.first; }
 };
 osg.DrawArrays.create = function(mode, first, count) {
-    osg.log("osg.DrawArrays.create is deprecated, use new osg.DrawArrays with same arguments");
+    // osg.log("osg.DrawArrays.create is deprecated, use new osg.DrawArrays with same arguments");
     var d = new osg.DrawArrays(mode, first, count);
     return d;
 };
@@ -3814,7 +3814,7 @@ osg.DrawElements.prototype = {
 };
 
 osg.DrawElements.create = function(mode, indices) {
-    osg.log("osg.DrawElements.create is deprecated, use new osg.DrawElements with same arguments");
+    // osg.log("osg.DrawElements.create is deprecated, use new osg.DrawElements with same arguments");
     return new osg.DrawElements(mode, indices);
 };
 /** 
@@ -3868,7 +3868,7 @@ osg.Program.prototype = osg.objectInehrit(osg.StateAttribute.prototype, {
             gl.validateProgram(this.program);
             if (!gl.getProgramParameter(this.program, gl.LINK_STATUS) &&
                 !gl.isContextLost()) {
-                osg.log("can't link program\n" + "vertex shader:\n" + this.vertex.text +  "\n fragment shader:\n" + this.fragment.text);
+                // osg.log("can't link program\n" + "vertex shader:\n" + this.vertex.text +  "\n fragment shader:\n" + this.fragment.text);
                 osg.log(gl.getProgramInfoLog(this.program));
                 this.setDirty(false);
                 //debugger;
@@ -3926,7 +3926,7 @@ osg.Program.prototype = osg.objectInehrit(osg.StateAttribute.prototype, {
 });
 
 osg.Program.create = function(vShader, fShader) {
-    console.log("osg.Program.create is deprecated use new osg.Program(vertex, fragment) instead");
+    // console.log("osg.Program.create is deprecated use new osg.Program(vertex, fragment) instead");
     var program = new osg.Program(vShader, fShader);
     return program;
 };
@@ -4672,7 +4672,7 @@ osg.RenderStage.prototype = osg.objectInehrit(osg.RenderBin.prototype, {
         this.applyCamera(state);
 
         if (this.viewport === undefined) {
-            osg.log("RenderStage does not have a valid viewport");
+            // osg.log("RenderStage does not have a valid viewport");
         }
 
         state.applyAttribute(this.viewport);
@@ -5399,7 +5399,7 @@ osg.createTexturedQuadGeometry = function(cornerx, cornery, cornerz,
 
 osg.createTexturedBox = function(centerx, centery, centerz,
                                  sizex, sizey, sizez) {
-    osg.log("osg.createTexturedBox is deprecated use instead osg.createTexturedBoxGeometry");
+    // osg.log("osg.createTexturedBox is deprecated use instead osg.createTexturedBoxGeometry");
     return osg.createTexturedBoxGeometry(centerx, centery, centerz,
                                          sizex, sizey, sizez);
 };
@@ -5408,7 +5408,7 @@ osg.createTexturedQuad = function(cornerx, cornery, cornerz,
                                   wx, wy, wz,
                                   hx, hy, hz,
                                   l,b,r,t) {
-    osg.log("osg.createTexturedQuad is deprecated use instead osg.createTexturedQuadGeometry");
+    // osg.log("osg.createTexturedQuad is deprecated use instead osg.createTexturedQuadGeometry");
     return osg.createTexturedQuadGeometry(cornerx, cornery, cornerz,
                                           wx, wy, wz,
                                           hx, hy, hz,
@@ -6676,7 +6676,7 @@ osg.Texture.createFromCanvas = function(ctx, format) {
 };
 
 osg.Texture.create = function(url) {
-    osg.log("osg.Texture.create is deprecated, use osg.Texture.createFromURL instead");
+    // osg.log("osg.Texture.create is deprecated, use osg.Texture.createFromURL instead");
     return osg.Texture.createFromURL(url);
 };
 /** 
@@ -6986,7 +6986,7 @@ osg.CullVisitor.prototype = osg.objectInehrit(osg.CullStack.prototype ,osg.objec
     clampProjectionMatrix: function(projection, znear, zfar, nearFarRatio, resultNearFar) {
         var epsilon = 1e-6;
         if (zfar<znear-epsilon) {
-            osg.log("clampProjectionMatrix not applied, invalid depth range, znear = " + znear + "  zfar = " + zfar);
+            // osg.log("clampProjectionMatrix not applied, invalid depth range, znear = " + znear + "  zfar = " + zfar);
             return false;
         }
         
@@ -7379,7 +7379,7 @@ osg.CullVisitor.prototype[osg.Geometry.prototype.objectType] = function (node) {
         depth = this.distance(bb.center(), modelview);
     }
     if (isNaN(depth)) {
-        osg.log("warning geometry has a NaN depth, " + modelview + " center " + bb.center());
+        // osg.log("warning geometry has a NaN depth, " + modelview + " center " + bb.center());
     } else {
         //leaf.id = this._reserveLeafStack.current;
         leaf.parent = this._currentStateGraph;
@@ -7619,7 +7619,7 @@ osgAnimation.BasicAnimationManager.prototype = osg.objectInehrit(osg.Object.prot
 
         var anim = this._animations[obj.name];
         if (anim === undefined) {
-            osg.log("no animation " + obj.name + " found");
+            // osg.log("no animation " + obj.name + " found");
             return;
         }
 
@@ -8153,7 +8153,7 @@ osgAnimation.LinkVisitor.prototype = osg.objectInehrit(osg.NodeVisitor.prototype
             result += animCallback.linkAnimation(anim);
         }
         this._nbLinkedTarget += result;
-        osg.log("linked " + result + " for \"" + animCallback.getName() + '"');
+        // osg.log("linked " + result + " for \"" + animCallback.getName() + '"');
     }
 
 });/** -*- compile-command: "jslint-cli Sampler.js" -*-
@@ -8536,7 +8536,7 @@ osgAnimation.AnimationUpdateCallback.prototype = osg.objectInehrit(osg.Object.pr
     linkAnimation: function(anim) {
         var name = this.getName();
         if (name.length === 0) {
-            osg.log("no name on an update callback, discard");
+            // osg.log("no name on an update callback, discard");
             return 0;
         }
         var nbLinks = 0;
@@ -8611,7 +8611,7 @@ osgAnimation.UpdateMatrixTransform.prototype = osg.objectInehrit(osgAnimation.An
                 }
             }
         }
-        osg.log("can't link channel " + channelName + ", does not contain a symbolic name that can be linked to TransformElements");
+        // osg.log("can't link channel " + channelName + ", does not contain a symbolic name that can be linked to TransformElements");
     }
 
 });/** -*- compile-command: "jslint-cli osgUtil.js" -*-
@@ -8934,11 +8934,11 @@ osgUtil.TriangleIntersect.prototype = {
                      inside, 
                      inside);
         if (!osg.Vec3.valid(inside)) {
-            osg.log("Warning: TriangleIntersect ");
-            osg.log("hit:     " + inside );
-            osg.log("         " + v1);
-            osg.log("         " + v2);
-            osg.log("         " + v3);
+            // osg.log("Warning: TriangleIntersect ");
+            // osg.log("hit:     " + inside );
+            // osg.log("         " + v1);
+            // osg.log("         " + v2);
+            // osg.log("         " + v3);
             return;
         }
 
@@ -9729,13 +9729,13 @@ osgDB.ObjectWrapper.readObject = function (jsonObj) {
 
     var prop = Object.keys(jsonObj)[0];
     if (!prop) {
-        osg.log("can't find property for object " + jsonObj);
+        // osg.log("can't find property for object " + jsonObj);
         return undefined;
     }
 
     var obj = osgDB.ObjectWrapper.getObject(prop);
     if (!obj) {
-        osg.log("can't instanciate object " + prop);
+        // osg.log("can't instanciate object " + prop);
         return undefined;
     }
 
@@ -9744,7 +9744,7 @@ osgDB.ObjectWrapper.readObject = function (jsonObj) {
     for (var i = 0, l = splittedPath.length; i < l; i++) {
         var reader = scope[ splittedPath[i] ];
         if (reader === undefined) {
-            osg.log("can't find function to read object " + prop + " - undefined");
+            // osg.log("can't find function to read object " + prop + " - undefined");
             return undefined;
         }
         scope = reader;
@@ -9781,7 +9781,7 @@ osgDB.parseSceneGraph = function (node) {
             obj[key] = node[key];
             return osgDB.ObjectWrapper.readObject(obj);
         } else {
-            osg.log("Can't parse scenegraph " + node);
+            // osg.log("Can't parse scenegraph " + node);
         }
     } else {
         return osgDB.parseSceneGraph_deprecated(node);
@@ -9849,7 +9849,7 @@ osgDB.parseSceneGraph_deprecated = function (node)
             for (var t = 0, tl = textures.length; t < tl; t++) {
                 var file = getFieldBackwardCompatible("File", textures[t]);
                 if (!file) {
-                    osg.log("no texture on unit " + t + " skip it");
+                    // osg.log("no texture on unit " + t + " skip it");
                     continue;
                 }
                 var tex = new osg.Texture();
@@ -11199,11 +11199,11 @@ osgViewer.Viewer = function(canvas, options, error) {
 osgViewer.Viewer.prototype = osg.objectInehrit(osgViewer.View.prototype, {
 
     contextLost: function() {
-        osg.log("webgl context lost");
+        // osg.log("webgl context lost");
         cancelRequestAnimFrame(this._requestID);
     },
     contextRestored: function() {
-        osg.log("webgl context restored, but not supported - reload the page");
+        // osg.log("webgl context restored, but not supported - reload the page");
     },
 
     init: function() {
@@ -11733,7 +11733,7 @@ osgViewer.Viewer.prototype = osg.objectInehrit(osgViewer.View.prototype, {
                 self._canvas.height = h;
                 self._canvas.style.width = w;
                 self._canvas.style.height = h;
-                osg.log("window resize "  + prevWidth + "x" + prevHeight + " to " + w + "x" + h);
+                // osg.log("window resize "  + prevWidth + "x" + prevHeight + " to " + w + "x" + h);
                 var camera = self.getCamera();
                 var vp = camera.getViewport();
                 var widthChangeRatio = w/vp.width();
@@ -12611,7 +12611,7 @@ osgDB.ObjectWrapper.serializers.osgAnimation.Animation = function(jsonObj, anima
             return true;
         }
         if (!o.Name) {
-            osg.log("animation has field Name, error");
+            // osg.log("animation has field Name, error");
             return false;
         }
         return false;
