@@ -13,7 +13,8 @@ Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 
-Vue.axios.defaults.baseURL = 'https://localhost:10443'
+//Vue.axios.defaults.baseURL = 'http://localhost:10010'
+Vue.axios.defaults.baseURL = '/api/'
 
 new Vue({
   router,

@@ -1,7 +1,8 @@
 <template>
   <div>
-    <object class="d-flex pdf embed-responsive embed-responsive-1by1">
-      <embed class="embed-responsive-item" :src="`https://ipfs.infura.io/ipfs/${hash}`"></object>
+    <object class="d-flex pdf embed-responsive embed-responsive-1by1" type="application/pdf" :data="pdf">
+      <p>Insert your error message here, if the PDF cannot be displayed.</p>
+    </object>
   </div>
 </template>
 
@@ -10,9 +11,10 @@
 
   export default {
     name: "DownloadPdf",
-    data(){
+    data() {
       return {
-        hash: 'QmdFyM4C5SxQU4ti5pwU4NN2NiyLLgLc6o97MMZi3t72yG'
+        reader: new FileReader(),
+        pdf: null
       }
     },
     computed: {
@@ -20,5 +22,17 @@
         file: state => state.Toolkit.file
       })
     },
+    watch: {
+      file (e) {
+        if (e) {
+          this.reader.readAsDataURL(e)
+        }
+      }
+    },
+    created () {
+      this.reader.addEventListener('load', () => {
+        this.pdf = this.reader.result
+      })
+    }
   }
 </script>

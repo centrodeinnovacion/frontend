@@ -7,9 +7,8 @@
 </template>
 
 <script>
-  import IPFSmarker from '@/assets/file-alt-solid.svg'
-  import ETHmarker from '@/assets/layer-group-solid.svg'
-
+  import IPFSmarker from './img/file-alt-solid.svg'
+  import ETHmarker from './img/layer-group-solid.svg'
 
   export default {
     name: 'global',
@@ -65,11 +64,11 @@
     },
     methods: {
       init() {
-        this.globe = new Globe(document.getElementById("3DView"), this.options)
         this.imageIPFS = new Image()
         this.imageETH = new Image()
         this.imageIPFS.src = IPFSmarker
         this.imageETH.src = ETHmarker
+        this.globe = new Globe(document.getElementById("3DView"), this.options)
       }
     },
     mounted() {

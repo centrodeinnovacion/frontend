@@ -65,7 +65,8 @@
             <div class="force-overflow"></div>
             <component :is="uploadComponent"></component>
             <component :is="uploadIpfsComponent"></component>
-            <component :is="downloadPdf"></component>
+            <!--<component :is="downloadPdf"></component>-->
+            <downloadPdf></downloadPdf>
           </div>
         </div>
       </div>
