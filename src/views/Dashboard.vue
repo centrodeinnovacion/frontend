@@ -7,16 +7,17 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <global></global>
         <searchipfs></searchipfs>
-        <!--<Notfoundipfs></Notfoundipfs>
+        <!--<Notfoundipfs></Notfoundipfs>-->
         <!--<Notfoundbc></Notfoundbc>-->
         <!--<verify></verify>-->
+        <!--<Gif></Gif>-->
       </div>
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <div class="explanation">
           <!--<DownloadPdf></DownloadPdf>-->
-          <verify_blockchain></verify_blockchain>
-          <!--<filenofound></filenofound>
-          <!--<filefound></filefound>-->
+          <verifyBlockchain></verifyBlockchain>
+          <!--<filenofound></filenofound>-->
+         <!--<filefound></filefound>-->
           <!--<div class="scrollbar">
           <div class="force-overflow"></div>
           <upload></upload>
@@ -30,6 +31,18 @@
         <download></download>
       </div>
     </div>
+    <footer class="inferior">
+      <div class="d-flex flex-row-reverse align-items-end">
+        <div class="p-2 mr-3 mb-3">
+          <router-link class="btnDiamond" :to="{name: 'about'}"><i class="fas fa-arrow-right"></i>
+          </router-link>
+        </div>
+        <div class="p-2 mr-3 mb-3">
+            <router-link class="btnDiamond" :to="{name: 'howitworks'}"><i class="fas fa-arrow-left"></i>
+          </router-link>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -47,6 +60,7 @@
   import DownloadPdf from '@/components/common/DownloadPdf'
   import Notfoundbc from '@/components/common/Notfoundbc'
   import Notfoundipfs from '@/components/common/Notfoundipfs'
+  import Gif from '@/components/common/Gif'
 
   export default {
     name: 'Dashboard',
@@ -63,7 +77,8 @@
       Filefound,
       DownloadPdf,
       Notfoundbc,
-      Notfoundipfs
+      Notfoundipfs,
+      Gif
     }
   }
 </script>
