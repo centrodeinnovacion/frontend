@@ -8,7 +8,10 @@ const state = {
     tx: null
   },
   file: null,
-  validate: null
+  validate: {
+    hash: null,
+    fileName: null
+  }
 }
 
 const actions = {
@@ -31,8 +34,9 @@ const actions = {
         })
   },
   [constants.TOOLKIT_DOWNLOAD_FILE]: ({commit}, hash) => {
-    Vue.axios.get(`/document/${hash}`)
+    Vue.axios.get(`/document/${hash}`, {responseType: 'blob'})
       .then(response => response.data)
+      .then(fileRaw => new Blob([fileRaw], {type: 'application/pdf'}))
       .then(file => {
         commit(constants.TOOLKIT_SET_PROPERTY, {file})
       })

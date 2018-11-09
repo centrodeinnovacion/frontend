@@ -3,15 +3,12 @@
     <div class="global d-flex justify-content-center">
       <canvas id="3DView"></canvas>
     </div>
-    <button @click="ipfs()" class="btn" type="submit">IPFS</button>
-    <button @click="ethereum()" class="btn" type="submit">Ethereum</button>
   </div>
 </template>
 
 <script>
-  import IPFSmarker from '@/assets/file-alt-solid.svg'
-  import ETHEmarker from '@/assets/layer-group-solid.svg'
-
+  import IPFSmarker from './img/file-alt-solid.svg'
+  import ETHmarker from './img/layer-group-solid.svg'
 
   export default {
     name: 'global',
@@ -21,7 +18,7 @@
           globeBackColor: '#396A92aa',
           globeFrontColor: '#9AB4CBbb',
           globeLinesColor: '#00000044',
-          rotationIdleSpeedFactor: 10.0,
+          rotationIdleSpeedFactor: 20.0,
           rotationSpeedFactor: 1.5,
           wave: false,
           width: 650
@@ -67,41 +64,11 @@
     },
     methods: {
       init() {
-        this.globe = new Globe(document.getElementById("3DView"), this.options)
         this.imageIPFS = new Image()
         this.imageETH = new Image()
         this.imageIPFS.src = IPFSmarker
-        this.imageETH.src = ETHEmarker
-      },
-      ipfs() {
-        const IPFSinterval = setInterval(() => {
-          this.globe.addImage(48.8566667, 2.3509871, this.imageIPFS)  // Francia
-          this.globe.addImage(4.570868, -74.297333, this.imageIPFS) // Colombia
-          this.globe.addImage(this.countries[46][0], this.countries[46][0], this.imageIPFS)
-          this.globe.addImage(this.countries[40][0], this.countries[40][1], this.imageIPFS)
-          this.globe.addImage(this.countries[34][0], this.countries[34][1], this.imageIPFS)
-          this.globe.addImage(this.countries[60][0], this.countries[60][1], this.imageIPFS)
-          this.globe.addImage(this.countries[100][0], this.countries[100][1], this.imageIPFS)
-          this.globe.addImage(this.countries[95][0], this.countries[95][1], this.imageIPFS)
-        }, 1800)
-        setTimeout(()=>{
-          clearInterval(IPFSinterval)
-        },8000)
-      },
-      ethereum() {
-        const ETHinterval = setInterval(() => {
-          this.globe.addImage(48.8566667, 2.3509871, this.imageETH)  // Francia
-          this.globe.addImage(4.570868, -74.297333, this.imageETH) // Colombia
-          this.globe.addImage(this.countries[20][0], this.countries[20][0], this.imageETH)
-          this.globe.addImage(this.countries[31][0], this.countries[31][1], this.imageETH)
-          this.globe.addImage(this.countries[90][0], this.countries[90][1], this.imageETH)
-          this.globe.addImage(this.countries[63][0], this.countries[63][1], this.imageETH)
-          this.globe.addImage(this.countries[50][0], this.countries[50][1], this.imageETH)
-          this.globe.addImage(this.countries[41][0], this.countries[41][1], this.imageETH)
-        }, 1800)
-        setTimeout(()=>{
-          clearInterval(ETHinterval)
-        },8000)
+        this.imageETH.src = ETHmarker
+        this.globe = new Globe(document.getElementById("3DView"), this.options)
       }
     },
     mounted() {
