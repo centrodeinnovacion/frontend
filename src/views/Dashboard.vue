@@ -30,7 +30,7 @@
               </div>
 
               <div class="form-group inputstyle" id="Input-Download">
-                <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download" @click="setToNull"></button>
+                <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download" @click="showModal"></button> <!--@click="showModal"   data-toggle="modal" data-target="#downloadModal"-->
                 <div class="d-flex">
                   <div><p class="buttontittle">Descargar documento</p></div>
                   <div class="pt-2 pr-2 ml-auto align-self-start"><i class="iconbutton icon-download"></i></div>
@@ -59,14 +59,10 @@
           <component :is="downloadPdf"></component>
           <component :is="fileFound"></component>
           <component :is="fileNotFound"></component>
-          <!--<filenofound></filenofound>
-          <!--<filefound></filefound>-->
-          <div class="scrollbar">
-            <div class="force-overflow"></div>
+
+          <div v-if="uploadIpfsComponent || uploadComponent || downloadPdf" class="scrollbar force-overflow">
             <component :is="uploadComponent"></component>
             <component :is="uploadIpfsComponent"></component>
-            <!--<component :is="downloadPdf"></component>-->
-            <downloadPdf></downloadPdf>
           </div>
         </div>
       </div>
@@ -74,7 +70,7 @@
     </div>
     <div class="row download">
       <div>
-        <download ref="modalDownload"></download>
+        <download></download>
       </div>
     </div>
     <footer class="inferior">
@@ -84,7 +80,7 @@
           </router-link>
         </div>
         <div class="p-2 mr-3 mb-3">
-            <router-link class="btnDiamond" :to="{name: 'howitworks'}"><i class="fas fa-arrow-left"></i>
+          <router-link class="btnDiamond" :to="{name: 'howitworks'}"><i class="fas fa-arrow-left"></i>
           </router-link>
         </div>
       </div>
@@ -102,13 +98,11 @@
   import Uploadipfs from '@/components/common/Uploadipfs'
   import Verify from '@/components/common/Verify'
   import VerifyBlockchain from '@/components/common/VerifyBlockchain'
-  import Searchipfs from '@/components/common/Searchipfs'
   import FileNotFound from '@/components/common/FileNotFound'
   import FileFound from '@/components/common/FileFound'
   import DownloadPdf from '@/components/common/DownloadPdf'
   import NotFoundBc from '@/components/common/NotFoundBc'
-  import Notfoundipfs from '@/components/common/Notfoundipfs'
-  import HashVerified from '@/components/common/HashVerified'
+  import Hash from '@/components/common/Hash'
   import Gif from '@/components/common/Gif'
 
   export default {
@@ -128,6 +122,7 @@
         fileFound: null,
         fileNotFound: null,
         notFoundBc: null,
+        download: null
       }
     },
     components: {
@@ -137,19 +132,37 @@
       Download,
       Verify,
       VerifyBlockchain,
-      Searchipfs,
       FileNotFound,
       FileFound,
       DownloadPdf,
       NotFoundBc,
-      Notfoundipfs,
-      HashVerified,
+      Hash,
       Gif
     },
-    methods: {
+    computed:{
       ...mapState({
-        validate: state => state.Toolkit.validate()
-      }),
+        validate: state => state.Toolkit.validate,
+        notValid: state => state.Toolkit.notValid
+      })
+    },
+    watch:{
+      validate(e){
+        if(e){
+          this.setToNull()
+          this.verifyComponent = 'Verify'
+          this.hashVerified = 'Hash'
+          setTimeout( () => {
+            this.fileFound = 'FileFound'
+          },5000)
+        }
+      },
+      notValid(e){
+        this.setToNull()
+        this.notFoundBc = 'NotFoundBc'
+        this.fileNotFound = 'FileNotFound'
+      }
+    },
+    methods: {
       ...mapActions({
         uploadFile: constants.TOOLKIT_UPLOAD_FILE,
         verifiedFile: constants.TOOLKIT_VERIFIED_FILE
@@ -170,10 +183,8 @@
       },
       verified(e) {
         this.setToNull()
-
         const files = e.target.files
         if(!files.length){ return }
-        this.setProperty({validate: {hash: 'procesando...', fileName: 'procesando...'}})
         const file = files[0]
         console.log(file)
         this.verifiedFile(file)
@@ -182,8 +193,6 @@
       },
       addMarkersToGlobe(){
         this.setToNull()
-
-        //this.$refs.globe.ipfs()
         this.ipfsInterval = setInterval(() => {
           this.$refs.globe.globe.addImage(4.570868, -74.297333, this.$refs.globe.imageIPFS) // Colombia
         }, 1800)
@@ -194,7 +203,6 @@
         this.uploadComponent = 'Upload'
 
         this.ethereumTimeOut = setTimeout(() => {
-          //this.$refs.globe.ethereum()
           this.ethInterval = setInterval(() => {
             const i1 = Math.floor(Math.random() * (this.$refs.globe.countries.length))
             this.$refs.globe.globe.addImage(this.$refs.globe.countries[i1][0], this.$refs.globe.countries[i1][1], this.$refs.globe.imageETH)
@@ -232,32 +240,13 @@
         this.fileNotFound = null
         this.notFoundBc = null
       },
-      getHashToDownload(){
-        return this.$refs.modalDownload.hash
-      },
       verifyBlockchain(){
         this.gifComponent = 'Gif'
         this.verifyBlockchainComponent = 'VerifyBlockchain'
-        //if(this.validate){
-          setTimeout(()=>{
-            this.setToNull()
-            this.verifyComponent = 'Verify'
-            this.hashVerified = 'HashVerified'
-            this.fileFound = 'FileFound'
-            setTimeout(()=>{
-              this.setToNull()
-              this.notFoundBc = 'NotFoundBc'
-              this.hashVerified = 'HashVerified'
-              this.fileNotFound = 'FileNotFound'
-            }, 4000)
-          }, 4000)
-        /*}else{
-          setTimeout(()=>{
-            this.setToNull()
-            this.notFoundBc = 'NotFoundBc'
-            this.fileNotFound = 'FileNotFound'
-          }, 4000)
-        }*/
+      },
+      showModal(){
+        this.setToNull()
+        this.downloadPdf = 'DownloadPdf'
       }
     }
   }

@@ -22,19 +22,12 @@
 <line class="st7" x1="35.6" y1="60.2" x2="35.6" y2="53.2"/>
 </g>
       </svg>
-    <p class="explanation-text mt-2">El documento con el hash {{validate.hash}} no se encuentra registrado</p>
+    <p class="explanation-text mt-2">El documento no es valido</p>
   </div>
 </template>
 
 <script>
-  import {mapState} from 'vuex'
-
   export default {
     name: "FileNotFound",
-    computed: {
-      ...mapState({
-        validate: state => state.Toolkit.validate
-      }),
-    }
   }
 </script>
