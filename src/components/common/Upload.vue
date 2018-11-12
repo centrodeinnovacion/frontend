@@ -8,7 +8,7 @@
       <p>El documento es almacenado y distribuido a través de <a href="https://ipfs.io/" target="_blank">IPFS</a>,
         un <a href="https://es.wikipedia.org/wiki/Protocolo_de_internet" target="_blank">protocolo</a> (http es también un protocolo), que utiliza múltiples nodos para almacenar la información de forma descentralizada.</p>
       <h4 class="coloryellow">Hash:</h4>
-      <textarea readonly class="coloryellow" id="ipfsHash" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
+      <textarea data-toggle="tooltip" data-placement="top" title="Clic para copiar hash y poder descargar el documento" readonly class="coloryellow" id="ipfsHash" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
         {{hash.hash}}
       </textarea>
       <p>Al cargar el archivo, <a href="https://ipfs.io/" target="_blank">IPFS</a> devuelve al usuario el resumen
@@ -47,6 +47,7 @@
       onError(e) {
         alert('Failed to copy texts')
       }
-    }
+    },
+      
   }
 </script>

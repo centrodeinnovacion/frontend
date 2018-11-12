@@ -1,6 +1,6 @@
 <template xmlns:v-clipboard="http://www.w3.org/1999/xhtml">
   <div id="hashVerified">
-    <h5 data-chaffle="en" class="coloryellow hashbig" v-clipboard:copy="validate.hash" v-clipboard:success="onCopy"
+    <h5 data-toggle="tooltip" data-placement="top" title="Clic para copiar hash y poder descargar el documento" data-chaffle="en" class="coloryellow hashbig" v-clipboard:copy="validate.hash" v-clipboard:success="onCopy"
         v-clipboard:error="onError">
       {{ validate.hash }}
     </h5>
