@@ -1,7 +1,7 @@
 <template>
   <div id="hash" @click="doCopy">
-    <div class="hashbig inferior d-flex align-items-center">
-      <p class="linebottom">HASH del documento</p>
+    <div class="hashbig2 inferior d-flex align-items-center">
+      <p class="linebottom">HASH DEL DOCUMENTO</p>
       <textarea data-toggle="tooltip" data-placement="top" title="Clic para copiar hash (Necesario al querer descargar un documento)" readonly class="coloryellow" id="verifiedHash">
         {{ validate.hash }}
       </textarea>
