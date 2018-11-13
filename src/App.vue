@@ -6,6 +6,7 @@
       <div class="d-flex fixed-bottom" v-if="route !== 'home' && route !== 'about'">
         <div class="p-2 ml-5 mr-auto mb-3">
           <button type="button"  class="btnDiamond" data-toggle="modal" data-target="#tutorialModal" id="Tutorial"><i class="fas fa-question"></i></button>
+          <p class="pl-4 mt-3">¿Cómo usar este toolkit?</p>
         </div>
         <div class="p-2 mr-3 mb-3">
           <router-link class="btnDiamond" :to="{name: back}"><i class="fas fa-arrow-left"></i>
