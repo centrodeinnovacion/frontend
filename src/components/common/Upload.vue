@@ -48,6 +48,7 @@
           alert('No se pudo copiar')
         })
       }
-    }
+    },
+      
   }
 </script>
