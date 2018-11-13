@@ -22,7 +22,8 @@
 <line class="st7" x1="35.6" y1="60.2" x2="35.6" y2="53.2"/>
 </g>
       </svg>
-    <p class="explanation-text mt-2">El documento no es valido</p>
+    <p class="explanation-text mt-2">El documento no es válido</p>
+    <p class="text-center"> Este documento pudo ser cargado a IPFS pero no a la red de blockchain usando este toolkit, por lo tanto no es válido. </p>
   </div>
 </template>
 

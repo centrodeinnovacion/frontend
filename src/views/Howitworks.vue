@@ -171,7 +171,6 @@
           transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p></div>
       </div>
     </div>
-
   </div>
 
 </template>
