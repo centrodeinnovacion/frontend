@@ -201,33 +201,18 @@
 
         this.ethereumTimeOut = setTimeout(() => {
           this.ethInterval = setInterval(() => {
-            // const i1 = Math.floor(Math.random() * (this.$refs.globe.countries.length))
-            this.$refs.globe.globe.addImage(24.9056, 67.0822, this.$refs.globe.imageETH) //14.192.152.183
+            this.$refs.globe.globe.addImage(35.685, 139.7514, this.$refs.globe.imageETH) //52.193.60.84 ec2-52-193-60-84.ap-northeast-1.compute.amazonaws.com
             this.$refs.globe.globe.addImage(22.25, 114.1667, this.$refs.globe.imageETH) //150.109.46.182
-            // this.$refs.globe.globe.addImage(, , this.$refs.globe.imageETH) //
-            /*this.$refs.globe.globe.addImage(this.$refs.globe.countries[187][0], this.$refs.globe.countries[187][1], this.$refs.globe.imageETH) //Russia
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[102][0], this.$refs.globe.countries[102][1], this.$refs.globe.imageETH) //India
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[45][0], this.$refs.globe.countries[45][1], this.$refs.globe.imageETH) //China
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[13][0], this.$refs.globe.countries[13][1], this.$refs.globe.imageETH) //Australia 13
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[119][0], this.$refs.globe.countries[119][1], this.$refs.globe.imageETH) //South Korea 119
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[242][0], this.$refs.globe.countries[242][1], this.$refs.globe.imageETH) //South Africa 242
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[71][0], this.$refs.globe.countries[71][1], this.$refs.globe.imageETH) //France 71
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[1][0], this.$refs.globe.countries[1][1], this.$refs.globe.imageETH) //United Arab Emirates 1
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[73][0], this.$refs.globe.countries[73][1], this.$refs.globe.imageETH) //United Kingdom 73
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[227][0], this.$refs.globe.countries[227][1], this.$refs.globe.imageETH) //United States 227
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[232][0], this.$refs.globe.countries[232][1], this.$refs.globe.imageETH) //Venezuela 232
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[32][0], this.$refs.globe.countries[32][1], this.$refs.globe.imageETH) //Canada 32
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[40][0], this.$refs.globe.countries[40][1], this.$refs.globe.imageETH) //Switzerland 40
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[193][0], this.$refs.globe.countries[193][1], this.$refs.globe.imageETH) //Sweden 193*/
-            /*this.$refs.globe.globe.addImage(this.$refs.globe.countries[20][0], this.$refs.globe.countries[20][1], this.$refs.globe.imageETH)
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[90][0], this.$refs.globe.countries[90][1], this.$refs.globe.imageETH)
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[63][0], this.$refs.globe.countries[63][1], this.$refs.globe.imageETH)
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[41][0], this.$refs.globe.countries[41][1], this.$refs.globe.imageETH)
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[40][0], this.$refs.globe.countries[40][1], this.$refs.globe.imageETH)
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[34][0], this.$refs.globe.countries[34][1], this.$refs.globe.imageETH)
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[60][0], this.$refs.globe.countries[60][1], this.$refs.globe.imageETH)
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[95][0], this.$refs.globe.countries[95][1], this.$refs.globe.imageETH)
-            this.$refs.globe.globe.addImage(this.$refs.globe.countries[100][0], this.$refs.globe.countries[100][1], this.$refs.globe.imageETH)*/
+            this.$refs.globe.globe.addImage(37.751, -97.822, this.$refs.globe.imageETH) //34.45.109.226 ec2-34-245-109-226.eu-west-1.compute.amazonaws.com sea!!
+            this.$refs.globe.globe.addImage(24.9056, 67.0822, this.$refs.globe.imageETH) //14.192.152.183
+            this.$refs.globe.globe.addImage(53.3331, -6.2489 , this.$refs.globe.imageETH) //54.229.6.221 ec2-54-229-6-221.eu-west-1.compute.amazonaws.com
+            this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //88.198.169.253 static.88-198-169-253.clients.your-server.de
+            this.$refs.globe.globe.addImage(48.8582, 2.3387, this.$refs.globe.imageETH) //94.23.49.75 forum.getmasari.org
+            this.$refs.globe.globe.addImage(40.8344, -74.1377, this.$refs.globe.imageETH) //159.203.79.51
+            this.$refs.globe.globe.addImage(34.7725, 113.7266, this.$refs.globe.imageETH) //120.78.194.152
+            this.$refs.globe.globe.addImage(35.69, 139.69, this.$refs.globe.imageETH) //163.143.196.35.bc.googleusercontent.com
+            this.$refs.globe.globe.addImage(38.6582, -77.2497, this.$refs.globe.imageETH) //35.196.143.163
+            this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //87.106.111.132 s19433107.onlinehome-server.info
           }, 1800)
           this.uploadIpfsComponent = 'Uploadipfs'
         }, 2000) //20000
