@@ -1,6 +1,6 @@
 <template>
   <div id="hash" @click="doCopy">
-    <div class="hashbig">
+    <div class="hashbig inferior d-flex justify-content-center align-items-end">
       <p class="linebottom">HASH</p>
       <textarea readonly class="coloryellow" id="verifiedHash">
         {{ validate.hash }}

@@ -44,10 +44,6 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <global ref="globe"></global>
         <gif :is="gifComponent"></gif>
-        <!--<searchipfs></searchipfs>-->
-        <!--<Notfoundipfs></Notfoundipfs>
-        <!--<Notfoundbc></Notfoundbc>-->
-        <!--<verify></verify>-->
         <component :is="verifyComponent"></component>
         <component :is="hashVerified"></component>
         <component :is="notFoundBc"></component>
@@ -199,7 +195,8 @@
         setTimeout(()=>{
           clearInterval(this.ipfsInterval)
         },10000)
-
+        
+        this.gifComponent = 'Gif'
         this.uploadComponent = 'Upload'
 
         this.ethereumTimeOut = setTimeout(() => {
