@@ -71,16 +71,21 @@
     <div class="row download">
       <div>
         <download></download>
+        <Tutorial></Tutorial>
       </div>
     </div>
     <footer class="inferior">
-      <div class="d-flex flex-row-reverse align-items-end">
+      <div class="d-flex">
+        <div class="p-2 ml-5 mr-auto mb-3">
+          <button type="button"  class="btnDiamond" data-toggle="modal" data-target="#tutorialModal" id="Tutorial" @click="showModal"><i class="fas fa-question"></i></button>
+        </div>
+
         <div class="p-2 mr-3 mb-3">
-          <router-link class="btnDiamond" :to="{name: 'about'}"><i class="fas fa-arrow-right"></i>
+          <router-link class="btnDiamond" :to="{name: 'howitworks'}"><i class="fas fa-arrow-left"></i>
           </router-link>
         </div>
         <div class="p-2 mr-3 mb-3">
-          <router-link class="btnDiamond" :to="{name: 'howitworks'}"><i class="fas fa-arrow-left"></i>
+          <router-link class="btnDiamond" :to="{name: 'about'}"><i class="fas fa-arrow-right"></i>
           </router-link>
         </div>
       </div>
@@ -95,6 +100,7 @@
   import Global from '@/components/common/Global'
   import Upload from '@/components/common/Upload'
   import Download from '@/components/common/Download'
+  import Tutorial from '@/components/common/Tutorial'
   import Uploadipfs from '@/components/common/Uploadipfs'
   import Verify from '@/components/common/Verify'
   import VerifyBlockchain from '@/components/common/VerifyBlockchain'
@@ -122,7 +128,8 @@
         fileFound: null,
         fileNotFound: null,
         notFoundBc: null,
-        download: null
+        download: null,
+        tutorial:null
       }
     },
     components: {
@@ -137,7 +144,8 @@
       DownloadPdf,
       NotFoundBc,
       Hash,
-      Gif
+      Gif,
+      Tutorial
     },
     computed:{
       ...mapState({
