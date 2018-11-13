@@ -7,7 +7,6 @@
         <div class="p-2 ml-5 mr-auto mb-3">
           <button type="button"  class="btnDiamond" data-toggle="modal" data-target="#tutorialModal" id="Tutorial"><i class="fas fa-question"></i></button>
         </div>
-
         <div class="p-2 mr-3 mb-3">
           <router-link class="btnDiamond" :to="{name: back}"><i class="fas fa-arrow-left"></i>
           </router-link>
@@ -18,6 +17,9 @@
         </div>
       </div>
     </footer>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright.
+      <a href=""> Términos y condiciones de uso.</a>
+    </div>
   </div>
 </template>
 
