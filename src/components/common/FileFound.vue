@@ -5,7 +5,7 @@
       <path class="st2" d="M29.4,51.4l2.4-2.3c0.7-0.7,0.4-1.8-0.5-2.1L28,46.2l0.9-3.2c0.3-0.9-0.6-1.8-1.5-1.5l-3.2,0.9l-0.8-3.2 c-0.2-0.9-1.4-1.2-2.1-0.5L19,41l-2.3-2.4c-0.6-0.7-1.9-0.4-2.1,0.5l-0.8,3.2l-3.2-0.9c-0.9-0.3-1.8,0.6-1.5,1.5l0.9,3.2L6.8,47 c-0.9,0.2-1.3,1.4-0.5,2.1l2.4,2.3l-2.4,2.3c-0.7,0.7-0.4,1.8,0.5,2.1l3.2,0.8l-0.9,3.2c-0.3,0.9,0.6,1.8,1.5,1.5l2.4-0.7V72l6-3 l6,3V60.6l2.4,0.7c0.9,0.3,1.8-0.6,1.5-1.5L28,56.6l3.2-0.8c0.9-0.2,1.3-1.4,0.5-2.1L29.4,51.4z M19,57.8c-3.6,0-6.4-2.9-6.4-6.4 s2.9-6.4,6.4-6.4s6.4,2.9,6.4,6.4S22.6,57.8,19,57.8z"/>
       </svg>
     <p class="explanation-text mt-2">Este es un documento válido</p>
-    <p class="text-center"> Este documento fue cargado a la red de blockchain usando este toolkit, por lo tanto es válido. </p>
+    <p class="text-center"> Este documento fue cargado a la red de blockchain usando este toolkit pues se encontró en los nodos de la red. </p>
   </div>
 </template>
 

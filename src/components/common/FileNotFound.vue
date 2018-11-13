@@ -23,7 +23,7 @@
 </g>
       </svg>
     <p class="explanation-text mt-2">El documento no es válido</p>
-    <p class="text-center"> Este documento pudo ser cargado a IPFS pero no a la red de blockchain usando este toolkit, por lo tanto no es válido. </p>
+    <p class="text-center"> Este documento pudo ser cargado a IPFS pero no a la red de blockchain usando este toolkit, pues no se encontró en los nodos de la red, por lo tanto no es válido. </p>
   </div>
 </template>
 
