@@ -11,6 +11,9 @@ const state = {
   validate: {
     hash: null,
     fileName: null
+  },
+  notValid:{
+    Error: null
   }
 }
 
@@ -19,10 +22,10 @@ const actions = {
     const formData = new FormData()
     formData.append('file', data)
     Vue.axios.post('/document', formData, { headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
-      .then(response => response.data.result)
-      .then(hash => {
-        commit(constants.TOOLKIT_SET_PROPERTY, {hash})
-      })
+        .then(response => response.data.result)
+        .then(hash => {
+          commit(constants.TOOLKIT_SET_PROPERTY, {hash})
+        })
   },
   [constants.TOOLKIT_VERIFIED_FILE]: ({commit}, data) => {
     const formData = new FormData()
@@ -32,14 +35,17 @@ const actions = {
         .then(validate => {
           commit(constants.TOOLKIT_SET_PROPERTY, {validate})
         })
+        .catch(notValid => {
+          commit(constants.TOOLKIT_SET_PROPERTY, {notValid})
+        })
   },
   [constants.TOOLKIT_DOWNLOAD_FILE]: ({commit}, hash) => {
     Vue.axios.get(`/document/${hash}`, {responseType: 'blob'})
-      .then(response => response.data)
-      .then(fileRaw => new Blob([fileRaw], {type: 'application/pdf'}))
-      .then(file => {
-        commit(constants.TOOLKIT_SET_PROPERTY, {file})
-      })
+        .then(response => response.data)
+        .then(fileRaw => new Blob([fileRaw], {type: 'application/pdf'}))
+        .then(file => {
+          commit(constants.TOOLKIT_SET_PROPERTY, {file})
+        })
   }
 }
 
