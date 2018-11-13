@@ -7,23 +7,23 @@
 
       <div class="d-flex align-items-start flex-column pr-3">
         <div class="step mt-3 pl-5 pt-2 pb-5 fadeInLeft ad-1">
-          <p><span class="purple number text-right">1.</span></br>
+          <p><span class="purple number text-right">1.</span><br>
             Un usuario realiza una operación, bien sea cargar o enviar cualquier tipo de información. A esta
             operación se le denomina transacción. El usuario recibe un reporte certificando la operación, en
             Blockchain
             a este reporte se le denomina "hash".
           </p></div>
-        <div class="step mt-5 pt-5 pl-5 fadeInLeft pb-5 ad-1"><p><span class="green number text-right">3.</span></br>
+        <div class="step mt-5 pt-5 pl-5 fadeInLeft pb-5 ad-1"><p><span class="green number text-right">3.</span><br>
           Al completar la capacidad de almacenaje (generalmente en minutos), el bloque se cierra con el registro de las
           transacciones realizadas y se crea uno nuevo. Al cerrarse se genera otro hash, que contiene el reporte del contenido del
           bloque junto a una referencia al bloque anterior. </p></div>
         <div class="step mt-5 pt-5 pl-5 fadeInLeft ad-1 pb-5"><p><span
-                class="orangelight number text-right">5.</span></br>
+                class="orangelight number text-right">5.</span><br>
           Las cadenas de bloques se encuentran almacenadas dentro de la red de Blockchain, la cual se compone de nodos,
           estos son puntos de almacenamiento que se encuentran ubicados en diferentes lugares del planeta, lo que
           permite la descentralización la información. Cada nodo de la red tiene una copia de la cadena de bloques.</p>
         </div>
-        <div class="step mt pt-5 pl-5 fadeInLeft ad-1"><p><span class="colorgreen number text-right">7.</span></br>
+        <div class="step mt pt-5 pl-5 fadeInLeft ad-1"><p><span class="colorgreen number text-right">7.</span><br>
           En la cadena de bloques es imposible destruir o modificar información, pues para hacerlo la información se
           debe modificar en el 51% de los nodos.
           Sin embargo en redes públicas de blockchain como Etherium la gran cantidad de nodos que la componen hacen
@@ -155,16 +155,16 @@
       </div>
       <div class="d-flex align-items-start flex-column pl-5">
         <div class="stepright mt-2 pt-3 pr-5 fadeInRight ad-1"><p class="text-left"><span
-                class="color_lightgreen number text-left">2.</span></br>
+                class="color_lightgreen number text-left">2.</span><br>
           La transacción es almacenada con otras transacciones, en una caja de seguridad representada en
           Blockchain como un bloque.</p>
         </div>
         <div class="stepright mt-2 pr-5 pt-3 pb-5 fadeInRight ad-1"><p class="text-left"><span
-                class="coloryellow number text-left">4.</span></br>
+                class="coloryellow number text-left">4.</span><br>
           El bloque se enlaza con los bloques anteriores a través del hash o la referencia del bloque anterior.</p>
         </div>
         <div class="stepright mt-5 pr-5 pt-5 fadeInRight ad-1"><p class="text-left"><span
-                class="orange number text-left">6.</span></br>
+                class="orange number text-left">6.</span><br>
           Si un usuario quiere modificar alguna información almacenada en la cadena de bloques, deberá crear una nueva
           transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p></div>
       </div>
@@ -184,10 +184,6 @@
 
 <script>
   export default {
-    name: "Howitworks"
+    name: "HowItWorks"
   }
 </script>
-
-<style scoped>
-
-</style>

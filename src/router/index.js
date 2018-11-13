@@ -17,7 +17,7 @@ export default new Router({
       {
           path: '/howitworks',
           name: 'howitworks',
-          component: () => import(/* webpackChunkName: "about" */ '@/views/Howitworks.vue')
+          component: () => import(/* webpackChunkName: "about" */ '@/views/HowItWorks.vue')
       },
     {
       path: '/dashboard',
