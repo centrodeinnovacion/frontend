@@ -74,22 +74,8 @@
         <Tutorial></Tutorial>
       </div>
     </div>
-    <footer class="inferior">
-      <div class="d-flex">
-        <div class="p-2 ml-5 mr-auto mb-3">
-          <button type="button"  class="btnDiamond" data-toggle="modal" data-target="#tutorialModal" id="Tutorial" @click="showModal"><i class="fas fa-question"></i></button>
-        </div>
 
-        <div class="p-2 mr-3 mb-3">
-          <router-link class="btnDiamond" :to="{name: 'howitworks'}"><i class="fas fa-arrow-left"></i>
-          </router-link>
-        </div>
-        <div class="p-2 mr-3 mb-3">
-          <router-link class="btnDiamond" :to="{name: 'about'}"><i class="fas fa-arrow-right"></i>
-          </router-link>
-        </div>
-      </div>
-    </footer>
+
   </div>
 </template>
 
