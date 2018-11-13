@@ -194,8 +194,8 @@
         }, 1800)
         setTimeout(()=>{
           clearInterval(this.ipfsInterval)
-        },10000)
-        
+        },20000)
+
         this.gifComponent = 'Gif'
         this.uploadComponent = 'Upload'
 
@@ -218,9 +218,9 @@
           }, 1800)
           setTimeout(()=>{
             clearInterval(this.ethInterval)
-          },10000)
+          },20000)
           this.uploadIpfsComponent = 'Uploadipfs'
-        }, 12000)
+        }, 22000)
       },
       setToNull() {
         this.uploadComponent = null
