@@ -1,4 +1,4 @@
-<template xmlns:v-clipboard="http://www.w3.org/1999/xhtml">
+<template>
   <div class="upload d-flex align-items-start mt-6">
     <div class="colorgreen">
       <i class="fas fa-layer-group"></i>
@@ -8,7 +8,7 @@
       <p> El hash del documento es transferido de <a href="https://ipfs.io/" target="_blank">IPFS</a> a nodos de la red de
         Blockchain en este caso <a href="https://www.ethereum.org/" target="_blank">Ethereum</a> a través del <a href="https://hipertextual.com/archivo/2014/05/que-es-api/" target="_blank">API</a>.</p>
       <h4 class="colorgreen">Hash:</h4>
-      <textarea readonly class="colorgreen" id="etheHash" v-clipboard:copy="hash.hash" v-clipboard:success="onCopy" v-clipboard:error="onError">
+      <textarea readonly class="colorgreen" id="etheHash" @click="doCopy">
         {{hash.tx}}
       </textarea>
       <p class="mb-5">Blockchain devuelve al usuario un hash que indentifica la transacción.</p>
@@ -44,11 +44,12 @@
           chaffle.init()
         })
       },
-      onCopy(e) {
-        alert('You just copied: ' + e.text)
-      },
-      onError(e) {
-        alert('Failed to copy texts')
+      doCopy () {
+        this.$copyText(this.hash.tx).then( (e) => {
+          alert(`Se ha copiado: ${this.hash.tx}`)
+        }, (e)  =>{
+          alert('No se pudo copiar')
+        })
       }
     }
   }

@@ -58,9 +58,6 @@
 </svg>
 
     </div>
-    <div class="hashbig">
-      <p class="linebottom">HASH</p>
-    </div>
   </div>
 
 </template>
@@ -72,24 +69,11 @@
 
   export default {
     name: 'Verify',
-    /*data() {
-      return {
-        ipfshash: 'verificando...'
-      }
-    },*/
     computed: {
       ...mapState({
         validate: state => state.Toolkit.validate
       })
     },
-    /*mounted() {
-      setTimeout(() => {
-        this.ipfshash = '0x96eb99488b230cce33d210a2831f8da2a6cd3581dfbb4aaa02a8893893a7262d'
-      }, 4000)
-      setTimeout(()=>{
-        this.chaffleIt()
-      },4002)
-    },*/
     methods: {
       chaffleIt() {
         const elements = document.querySelectorAll('[data-chaffle]')

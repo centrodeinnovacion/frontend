@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-center align-items-end">
+  <div class="inferior d-flex justify-content-center align-items-end">
     <img src="../../assets/img/docabinario.gif" height="auto" width="200px"/>
   </div>
 </template>
