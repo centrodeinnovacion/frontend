@@ -1,5 +1,6 @@
 <template>
   <div class="howitworks ">
+    <Tutorial></Tutorial>
     <div class="contentMore d-flex align-items-start flex-column pt-5 pl-5">
       <h2 class="mt-3">¿Cómo funciona Blockchain?</h2>
       <p class="pt-0">Para empezar haga scroll hacia abajo.</p></div>
@@ -15,7 +16,8 @@
           </p></div>
         <div class="step mt-5 pt-5 pl-5 fadeInLeft pb-5 ad-1"><p><span class="green number text-right">3.</span></br>
           Al completar la capacidad de almacenaje (generalmente en minutos), el bloque se cierra con el registro de las
-          transacciones realizadas y se crea uno nuevo. Al cerrarse se genera otro hash, que contiene el reporte del contenido del
+          transacciones realizadas y se crea uno nuevo. Al cerrarse se genera otro hash, que contiene el reporte del
+          contenido del
           bloque junto a una referencia al bloque anterior. </p></div>
         <div class="step mt-5 pt-5 pl-5 fadeInLeft ad-1 pb-5"><p><span
                 class="orangelight number text-right">5.</span></br>
@@ -169,15 +171,7 @@
           transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p></div>
       </div>
     </div>
-    <footer class="inferior">
-      <div class="d-flex flex-row-reverse align-items-end">
-        <div class="p-2 mr-3 mb-3">
-          <router-link class="btnDiamond" :to="{name: 'dashboard'}"><i class="fas fa-arrow-right"></i>
-          </router-link>
-        </div>
-        <div class="p-2 mb-3"><p>Prueba blockchain con un ejemplo.</p></div>
-      </div>
-    </footer>
+
   </div>
 
 </template>
