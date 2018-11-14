@@ -21,7 +21,7 @@
   import {mapState} from 'vuex'
 
   export default {
-    name: "Uploadipfs",
+    name: "UploadBlockchain",
     mounted() {
       setTimeout(() => {
         this.chaffleIt()
@@ -47,6 +47,9 @@
       doCopy () {
         this.$copyText(this.hash.tx).then( (e) => {
           alert(`Se ha copiado: ${this.hash.tx}`)
+          if(confirm(`Será redirigido a Etherscan para que verifique la transacción ${this.hash.tx} que fue copiada en su portapapeles, desea continuar?`)) {
+            window.open("https://etherscan.io/", '_blank');
+          }
         }, (e)  =>{
           alert('No se pudo copiar')
         })
