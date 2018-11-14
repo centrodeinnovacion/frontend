@@ -42,6 +42,7 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <img v-if="globeComponent == null" class="d-flex justify-content-center" src="@/assets/img/red.png" alt="">
         <component :is="globeComponent" ref="globe"></component>
         <gif :is="gifComponent"></gif>
         <component :is="verifyComponent"></component>
