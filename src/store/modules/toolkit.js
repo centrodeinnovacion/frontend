@@ -42,7 +42,15 @@ const actions = {
   [constants.TOOLKIT_DOWNLOAD_FILE]: ({commit}, hash) => {
     Vue.axios.get(`/document/${hash}`, {responseType: 'blob'})
       .then(response => response.data)
-      .then(fileRaw => new Blob([fileRaw], {type: fileRaw.type}))
+      .then(fileRaw => {
+        console.log(fileRaw)
+        const blob = new Blob([fileRaw], {type: fileRaw.type})
+        const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+        link.href = URL.createObjectURL(blob)
+        fileRaw.type === "application/pdf" ? link.download = 'download.pdf' : link.download = 'download.jpg'
+        link.click();
+        return blob
+      })
       .then(file => {
         commit(constants.TOOLKIT_SET_PROPERTY, {file})
       })
