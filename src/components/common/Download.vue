@@ -31,11 +31,10 @@
     },
     methods: {
       ...mapActions({
-        downloadFile: constants.TOOLKIT_DOWNLOAD_FILE
+        document: constants.TOOLKIT_DOWNLOAD_FILE
       }),
       getFile(e){
-        console.log(this.hash)
-        this.downloadFile(this.hash)
+        this.document(this.hash)
       }
     }
   }

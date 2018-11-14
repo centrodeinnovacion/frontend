@@ -1,9 +1,9 @@
 <template>
     <div class="verify mx-auto fixed-top ">
-        <div class="nofilefound-1 ad-4">No se encontró el </br>archivo en el nodo</div>
-        <div class="hash ad-4 nofilefound-2">No se encontró el </br>archivo en el nodo</div>
-        <div class="hash ad-4 nofilefound-3">No se encontró el </br>archivo en el nodo</div>
-        <div class="hash ad-4 nofilefound-4">No se encontró el </br>archivo en el nodo</div>
+        <div class="nofilefound-1 ad-4">No se encontró el <br>archivo en el nodo</div>
+        <div class="hash ad-4 nofilefound-2">No se encontró el <br>archivo en el nodo</div>
+        <div class="hash ad-4 nofilefound-3">No se encontró el <br>archivo en el nodo</div>
+        <div class="hash ad-4 nofilefound-4">No se encontró el <br>archivo en el nodo</div>
         <div class="line1 mx-auto fixed-top">
             <svg width="500px" height="550px"  viewBox="0 0 500 450" enable-background="new 0 0 340 333" xml:space="preserve">
         <path class="st0 path" d="M184.5,461.2c0,0,282-147,234.6-293.6"/>
@@ -77,7 +77,3 @@
         name: "NotFoundBc"
     }
 </script>
-
-<style scoped>
-
-</style>

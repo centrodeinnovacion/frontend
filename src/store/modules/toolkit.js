@@ -12,7 +12,7 @@ const state = {
     hash: null,
     fileName: null
   },
-  notValid:{
+  notValid: {
     Error: null
   }
 }
@@ -21,31 +21,39 @@ const actions = {
   [constants.TOOLKIT_UPLOAD_FILE]: ({commit}, data) => {
     const formData = new FormData()
     formData.append('file', data)
-    Vue.axios.post('/document', formData, { headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
-        .then(response => response.data.result)
-        .then(hash => {
-          commit(constants.TOOLKIT_SET_PROPERTY, {hash})
-        })
+    Vue.axios.post('/document', formData, {headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
+      .then(response => response.data.result)
+      .then(hash => {
+        commit(constants.TOOLKIT_SET_PROPERTY, {hash})
+      })
   },
   [constants.TOOLKIT_VERIFIED_FILE]: ({commit}, data) => {
     const formData = new FormData()
     formData.append('file', data)
-    Vue.axios.post('/validate', formData, { headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
-        .then(response => response.data.result)
-        .then(validate => {
-          commit(constants.TOOLKIT_SET_PROPERTY, {validate})
-        })
-        .catch(notValid => {
-          commit(constants.TOOLKIT_SET_PROPERTY, {notValid})
-        })
+    Vue.axios.post('/validate', formData, {headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
+      .then(response => response.data.result)
+      .then(validate => {
+        commit(constants.TOOLKIT_SET_PROPERTY, {validate})
+      })
+      .catch(notValid => {
+        commit(constants.TOOLKIT_SET_PROPERTY, {notValid})
+      })
   },
   [constants.TOOLKIT_DOWNLOAD_FILE]: ({commit}, hash) => {
     Vue.axios.get(`/document/${hash}`, {responseType: 'blob'})
-        .then(response => response.data)
-        .then(fileRaw => new Blob([fileRaw], {type: 'application/pdf'}))
-        .then(file => {
-          commit(constants.TOOLKIT_SET_PROPERTY, {file})
-        })
+      .then(response => response.data)
+      .then(fileRaw => {
+        console.log(fileRaw)
+        const blob = new Blob([fileRaw], {type: fileRaw.type})
+        const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+        link.href = URL.createObjectURL(blob)
+        fileRaw.type === "application/pdf" ? link.download = 'download.pdf' : link.download = 'download.jpg'
+        link.click();
+        return blob
+      })
+      .then(file => {
+        commit(constants.TOOLKIT_SET_PROPERTY, {file})
+      })
   }
 }
 

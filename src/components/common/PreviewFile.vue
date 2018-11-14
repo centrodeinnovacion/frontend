@@ -1,8 +1,10 @@
 <template>
   <div>
-    <object class="d-flex pdf embed-responsive embed-responsive-1by1" type="application/pdf" :data="pdf">
+    <object class="d-flex embed-responsive embed-responsive-1by1 pdf" type="application/pdf" :data="document"
+    v-if="document && document.toString().match(/application\/pdf/g)">
       <p>Insert your error message here, if the PDF cannot be displayed.</p>
     </object>
+    <img :src="document" alt="" class="d-flex embed-responsive embed-responsive-1by1 img-fluid">
   </div>
 </template>
 
@@ -10,11 +12,11 @@
   import {mapState} from 'vuex'
 
   export default {
-    name: "DownloadPdf",
+    name: "PreviewFile",
     data() {
       return {
         reader: new FileReader(),
-        pdf: null
+        document: null
       }
     },
     computed: {
@@ -23,16 +25,17 @@
       })
     },
     watch: {
-      file (e) {
+      file(e) {
         if (e) {
           this.reader.readAsDataURL(e)
         }
       }
     },
-    created () {
+    created() {
       this.reader.addEventListener('load', () => {
-        this.pdf = this.reader.result
+        this.document = this.reader.result
       })
     }
   }
+
 </script>
