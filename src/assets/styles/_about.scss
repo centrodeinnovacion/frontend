@@ -72,8 +72,16 @@ a {
 
 .step {
   width: 400px;
+  @media screen and (max-width: 960px) {
+    position: absolute;
+    width: 100%;
+    align-self: center;
+  }
   p {
     text-align: right !important;
+    @media screen and (max-width: 960px) {
+      text-align: left!important;
+    }
   }
   .fas {
     font-size: 50px;
@@ -103,9 +111,28 @@ a {
   text-transform: uppercase;
   line-height: 1.2em;
 }
-
+.mtsm {
+  @media screen and (max-width: 960px) {
+   margin-top: 800px!important;
+  }
+}
+.mtsm2 {
+  @media screen and (max-width: 960px) {
+    margin-top: 300px!important;
+  }
+}
+.mtsm3 {
+  @media screen and (max-width: 960px) {
+    margin-top: 320px!important;
+  }
+}
 .stepright {
   width: 400px;
+  @media screen and (max-width: 960px) {
+    position: absolute;
+    width: 100%;
+    align-self: center;
+  }
   p {
     text-align: left !important;
     margin-top: 200px;
@@ -118,4 +145,10 @@ a {
   bottom:0px;
   height:150px;
   z-index:0;
+}
+.drawhowitworks{
+  @media screen and (max-width: 960px) {
+    visibility: hidden;
+    width: 0px!important;
+  }
 }

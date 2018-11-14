@@ -67,20 +67,10 @@
     <div class="row download">
       <div>
         <download></download>
+        <Tutorial></Tutorial>
       </div>
     </div>
-    <footer class="inferior">
-      <div class="d-flex flex-row-reverse align-items-end">
-        <div class="p-2 mr-3 mb-3">
-          <router-link class="btnDiamond" :to="{name: 'about'}"><i class="fas fa-arrow-right"></i>
-          </router-link>
-        </div>
-        <div class="p-2 mr-3 mb-3">
-          <router-link class="btnDiamond" :to="{name: 'howitworks'}"><i class="fas fa-arrow-left"></i>
-          </router-link>
-        </div>
-      </div>
-    </footer>
+
   </div>
 </template>
 
@@ -92,6 +82,7 @@
   import Upload from '@/components/common/Upload'
   import Download from '@/components/common/Download'
   import UploadBlockchain from '@/components/common/UploadBlockchain'
+  import Tutorial from '@/components/common/Tutorial'
   import Verify from '@/components/common/Verify'
   import VerifyBlockchain from '@/components/common/VerifyBlockchain'
   import FileNotFound from '@/components/common/FileNotFound'
@@ -119,7 +110,8 @@
         fileFound: null,
         fileNotFound: null,
         notFoundBc: null,
-        download: null
+        download: null,
+        tutorial:null
       }
     },
     components: {
@@ -134,7 +126,8 @@
       PreviewFile,
       NotFoundBc,
       Hash,
-      Gif
+      Gif,
+      Tutorial
     },
     computed:{
       ...mapState({

@@ -105,6 +105,16 @@
 }
 footer{
   @media screen and (max-width: 960px) {
-    visibility: hidden!important;
   }
+}
+.modal-header{
+  border-bottom: none!important;
+}
+.close{
+  color: $white!important;
+}
+.footer-copyright{
+  color: white;
+  font-size: 12px!important;
+  width: 100% !important;
 }

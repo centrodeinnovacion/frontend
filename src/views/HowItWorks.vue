@@ -1,29 +1,31 @@
 <template>
   <div class="howitworks ">
-    <div class="contentMore d-flex align-items-start flex-column pt-5 pl-5">
+    <Tutorial></Tutorial>
+    <div class="contentMore d-flex align-items-start flex-column pt-5 pl-lg-5 pl-md-5">
       <h2 class="mt-3">¿Cómo funciona Blockchain?</h2>
       <p class="pt-0">Para empezar haga scroll hacia abajo.</p></div>
     <div class="d-flex justify-content-center">
-
-      <div class="d-flex align-items-start flex-column pr-3">
-        <div class="step mt-3 pl-5 pt-2 pb-5 fadeInLeft ad-1">
+      <div class="d-flex align-items-lg-start align-items-md-start flex-column pr-lg-3">
+        <div class="step mt-3 pl-5 pt-2 mb-lg-5 mb-md-5 mb-sm-0 pb-lg-5 pb-md-5 pb-sm-0 fadeInLeft ad-1">
           <p><span class="purple number text-right">1.</span><br>
             Un usuario realiza una operación, bien sea cargar o enviar cualquier tipo de información. A esta
             operación se le denomina transacción. El usuario recibe un reporte certificando la operación, en
             Blockchain
             a este reporte se le denomina "hash".
           </p></div>
-        <div class="step mt-5 pt-5 pl-5 fadeInLeft pb-5 ad-1"><p><span class="green number text-right">3.</span><br>
+        <div class="step mtsm2 o mt-5 pt-5 pl-5 fadeInLeft pb-5 ad-1 mb-5"><p><span
+            class="green number text-right">3.</span><br>
           Al completar la capacidad de almacenaje (generalmente en minutos), el bloque se cierra con el registro de las
-          transacciones realizadas y se crea uno nuevo. Al cerrarse se genera otro hash, que contiene el reporte del contenido del
+          transacciones realizadas y se crea uno nuevo. Al cerrarse se genera otro hash, que contiene el reporte del
+          contenido del
           bloque junto a una referencia al bloque anterior. </p></div>
-        <div class="step mt-5 pt-5 pl-5 fadeInLeft ad-1 pb-5"><p><span
-                class="orangelight number text-right">5.</span><br>
+        <div class="step mtsm  mt-5 pt-5 pl-5 fadeInLeft ad-1 pb-5 mb-5"><p><span
+            class="orangelight number text-right">5.</span><br>
           Las cadenas de bloques se encuentran almacenadas dentro de la red de Blockchain, la cual se compone de nodos,
           estos son puntos de almacenamiento que se encuentran ubicados en diferentes lugares del planeta, lo que
           permite la descentralización la información. Cada nodo de la red tiene una copia de la cadena de bloques.</p>
         </div>
-        <div class="step mt pt-5 pl-5 fadeInLeft ad-1"><p><span class="colorgreen number text-right">7.</span><br>
+        <div class="step mtsm  mt pt-5 pl-5 fadeInLeft ad-1"><p><span class="colorgreen number text-right">7.</span><br>
           En la cadena de bloques es imposible destruir o modificar información, pues para hacerlo la información se
           debe modificar en el 51% de los nodos.
           Sin embargo en redes públicas de blockchain como Etherium la gran cantidad de nodos que la componen hacen
@@ -31,7 +33,7 @@
           Por esta razón Blockchain es considerado en extremo seguro.</p></div>
       </div>
 
-      <div class="d-flex align-items-start pt-5 mt-3">
+      <div class="drawhowitworks d-flex align-items-start pt-5 mt-3">
         <svg class="draw align-self-center"x="0px" y="0" width="300px" height="1500px" viewBox="0 520 250 200" xml:space="preserve">
                         <g><path class="st8" d="M118.1,69.3V56.6H99.5c-1.2,0-2.2,1-2.2,2.2v43.3c0,1.2,1,2.2,2.2,2.2h31.4c1.2,0,2.2-1,2.2-2.2V71.5h-12.7 C119.1,71.5,118.1,70.5,118.1,69.3z M133.1,68v0.6h-11.9V56.6h0.6c0.6,0,1.2,0.2,1.6,0.7l9.1,9.1C132.8,66.8,133.1,67.4,133.1,68z"/><ellipse transform="matrix(1.314359e-02 -0.9999 0.9999 1.314359e-02 -5.3856 19.5856)" class="st8" cx="7.2" cy="12.5" rx="5" ry="5"/>
                             <ellipse transform="matrix(1.314359e-02 -0.9999 0.9999 1.314359e-02 71.217 154.2018)" class="st8" cx="113.7" cy="41" rx="5" ry="5"/>
@@ -155,29 +157,21 @@
       </div>
       <div class="d-flex align-items-start flex-column pl-5">
         <div class="stepright mt-2 pt-3 pr-5 fadeInRight ad-1"><p class="text-left"><span
-                class="color_lightgreen number text-left">2.</span><br>
+            class="color_lightgreen number text-left">2.</span><br>
           La transacción es almacenada con otras transacciones, en una caja de seguridad representada en
           Blockchain como un bloque.</p>
         </div>
-        <div class="stepright mt-2 pr-5 pt-3 pb-5 fadeInRight ad-1"><p class="text-left"><span
-                class="coloryellow number text-left">4.</span><br>
+        <div class="stepright mtsm3 mt-2 pr-5 pt-3 pb-5 fadeInRight ad-1 mb-5"><p class="text-left"><span
+            class="coloryellow number text-left">4.</span><br>
           El bloque se enlaza con los bloques anteriores a través del hash o la referencia del bloque anterior.</p>
         </div>
-        <div class="stepright mt-5 pr-5 pt-5 fadeInRight ad-1"><p class="text-left"><span
-                class="orange number text-left">6.</span><br>
-          Si un usuario quiere modificar alguna información almacenada en la cadena de bloques, deberá crear una nueva
-          transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p></div>
+        <div class="stepright mtsm  mt-5 pr-5 pt-5 fadeInRight ad-1">
+          <p class="text-left"><span class="orange number text-left">6.</span><br>
+            Si un usuario quiere modificar alguna información almacenada en la cadena de bloques, deberá crear una nueva
+            transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p>
+        </div>
       </div>
     </div>
-    <footer class="inferior">
-      <div class="d-flex flex-row-reverse align-items-end">
-        <div class="p-2 mr-3 mb-3">
-          <router-link class="btnDiamond" :to="{name: 'dashboard'}"><i class="fas fa-arrow-right"></i>
-          </router-link>
-        </div>
-        <div class="p-2 mb-3"><p>Prueba blockchain con un ejemplo.</p></div>
-      </div>
-    </footer>
   </div>
 
 </template>
