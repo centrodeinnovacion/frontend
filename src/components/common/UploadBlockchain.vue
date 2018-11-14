@@ -46,12 +46,9 @@
       },
       doCopy () {
         this.$copyText(this.hash.tx).then( (e) => {
-          alert(`Se ha copiado: ${this.hash.tx}`)
           if(confirm(`Será redirigido a Etherscan para que verifique la transacción ${this.hash.tx} que fue copiada en su portapapeles, desea continuar?`)) {
-            window.open("https://etherscan.io/", '_blank');
+            window.open(`https://etherscan.io/tx/${this.hash.tx}`, '_blank');
           }
-        }, (e)  =>{
-          alert('No se pudo copiar')
         })
       }
     }

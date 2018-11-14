@@ -12,7 +12,7 @@
 
             <div class="d-flex align-items-start flex-column justify-content-start">
               <div class="form-group inputstyle">
-                <input type="file" placeholder="Drag a file to upload" id="Upload" @change="upload" accept=".jpg,.jpeg,.pdf">
+                <input type="file" placeholder="Drag a file to upload" id="Upload" @click="throwWarning" @change="upload" accept=".jpg,.jpeg,.pdf">
                 <div class="d-flex">
                   <div><p class="buttontittle">Subir documento</p>
                     <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
@@ -241,6 +241,10 @@
         this.setToNull()
         this.globeComponent = 'Global'
         this.previewFile = 'PreviewFile'
+      },
+      throwWarning(){
+        alert('Tenga en cuenta que los archivos aquí subidos quedarán guardados en IPFS y en la cadena de bloques,' +
+            ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales')
       }
     }
   }

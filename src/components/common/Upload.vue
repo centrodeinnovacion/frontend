@@ -44,8 +44,6 @@
       doCopy () {
         this.$copyText(this.hash.hash).then( (e) => {
           alert(`Se ha copiado: ${this.hash.hash}`)
-        }, (e)  =>{
-          alert('No se pudo copiar')
         })
       }
     },
