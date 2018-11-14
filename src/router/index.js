@@ -17,13 +17,15 @@ export default new Router({
     {
       path: '/howitworks',
       name: 'howitworks',
-      component: () => import(/* webpackChunkName: "about" */ '@/views/HowItWorks.vue')
+      component: () => import(/* webpackChunkName: "about" */ '@/views/HowItWorks.vue'),
+      meta: {back: 'home', forward: 'dashboard'}
     },
     {
       path: '/dashboard',
       name: 'dashboard',
       props: {back: 'howitworks', forward: 'about'},
-      component: () => import(/*webpackChunkName: "dashboard"*/ '@/views/Dashboard')
+      component: () => import(/*webpackChunkName: "dashboard"*/ '@/views/Dashboard'),
+      meta: {back: 'howitworks', forward: 'about'}
     }
   ]
 })
