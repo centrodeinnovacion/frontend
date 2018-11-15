@@ -137,3 +137,10 @@ p {
   text-align: right !important;
   font-size: 20px !important;
 }
+.globe{
+  @media screen and (max-width: 500px) {
+    visibility: hidden;
+    display: none;
+    height: 50px!important;
+  }
+}

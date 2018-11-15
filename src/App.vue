@@ -3,7 +3,7 @@
   <div id="app" class="container-fluid">
     <router-view/>
     <footer class="" v-if="route !== 'home' && route !== 'about'">
-      <div class="d-flex fixed-bottom">
+      <div class="d-flex fixed-bottom mb-4">
         <div class="p-2 ml-5 mr-auto mb-0 pb-0" data-toggle="tooltip" data-placement="top" title="¿Cómo usar este tooltip?">
           <button type="button"  class="btnDiamond" data-toggle="modal" data-target="#tutorialModal" id="Tutorial" ><i class="fas fa-question"></i></button>
         </div>
@@ -16,14 +16,7 @@
           </router-link>
         </div>
       </div>
-      <div class="footer-copyright text-center py-3">© 2018.
-        <a href=""> Términos y condiciones de uso.</a>
-      </div>
-      <div class="d-flex fixed-bottom footer-copyright justify-content-center align-content-center text-center py-3">© 2018.
-        <a href=""> Términos y condiciones de uso.</a>
-      </div>
     </footer>
-
   </div>
 </template>
 

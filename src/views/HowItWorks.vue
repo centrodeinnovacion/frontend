@@ -3,7 +3,7 @@
     <Tutorial></Tutorial>
     <div class="contentMore d-flex align-items-start flex-column pt-5 pl-lg-5 pl-md-5">
       <h2 class="mt-3">¿Cómo funciona Blockchain?</h2>
-      <p class="pt-0">Para empezar haga scroll hacia abajo.</p></div>
+      <p class="pt-0 plsm">Para empezar haga scroll hacia abajo.</p></div>
     <div class="d-flex justify-content-center">
       <div class="d-flex align-items-lg-start align-items-md-start flex-column pr-lg-3">
         <div class="step mt-3 pl-5 pt-2 mb-lg-5 mb-md-5 mb-sm-0 pb-lg-5 pb-md-5 pb-sm-0 fadeInLeft ad-1">
@@ -19,7 +19,7 @@
           transacciones realizadas y se crea uno nuevo. Al cerrarse se genera otro hash, que contiene el reporte del
           contenido del
           bloque junto a una referencia al bloque anterior. </p></div>
-        <div class="step mtsm  mt-5 pt-5 pl-5 fadeInLeft ad-1 pb-5 mb-5"><p><span
+        <div class="step mtsm4 mt-5 pt-5 pl-5 fadeInLeft ad-1 pb-5 mb-5"><p><span
             class="orangelight number text-right">5.</span><br>
           Las cadenas de bloques se encuentran almacenadas dentro de la red de Blockchain, la cual se compone de nodos,
           estos son puntos de almacenamiento que se encuentran ubicados en diferentes lugares del planeta, lo que
@@ -156,7 +156,7 @@
                     </svg>
       </div>
       <div class="d-flex align-items-start flex-column pl-5">
-        <div class="stepright mt-2 pt-3 pr-5 fadeInRight ad-1"><p class="text-left"><span
+        <div class="stepright mtsm6 mt-2 pt-3 pr-5 fadeInRight ad-1"><p class="text-left"><span
             class="color_lightgreen number text-left">2.</span><br>
           La transacción es almacenada con otras transacciones, en una caja de seguridad representada en
           Blockchain como un bloque.</p>
@@ -165,13 +165,16 @@
             class="coloryellow number text-left">4.</span><br>
           El bloque se enlaza con los bloques anteriores a través del hash o la referencia del bloque anterior.</p>
         </div>
-        <div class="stepright mtsm  mt-5 pr-5 pt-5 fadeInRight ad-1">
+        <div class="stepright mtsm5  mt-5 pr-5 pt-5 fadeInRight ad-1">
           <p class="text-left"><span class="orange number text-left">6.</span><br>
             Si un usuario quiere modificar alguna información almacenada en la cadena de bloques, deberá crear una nueva
             transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p>
         </div>
       </div>
     </div>
+      <div class="text-center py-3 pt-2 footer-copyright falsefooter" >© 2018.
+          <a href="" target="_blank"> Términos y condiciones de uso.</a>
+      </div>
   </div>
 
 </template>

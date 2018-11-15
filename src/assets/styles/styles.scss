@@ -30,11 +30,13 @@
     overflow-y: scroll;
     height: 80vh;
     float: left;
+
   }
   .scrollbar::-webkit-scrollbar-track
   {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: $whitetransparent;
+
   }
 
   .scrollbar::-webkit-scrollbar
@@ -56,6 +58,11 @@
     justify-content: center;
     padding: 50px 30px 30px 30px !important;
     flex-direction: column;
+    @media (max-width: 960px) {
+      padding: 50px 5px 5px 5px!important;
+      height: auto!important;
+
+    }
     p {
       margin: 0 !important;
     }
@@ -103,10 +110,6 @@
     width: 100%;
   }
 }
-footer{
-  @media screen and (max-width: 960px) {
-  }
-}
 .modal-header{
   border-bottom: none!important;
 }
@@ -114,7 +117,15 @@ footer{
   color: $white!important;
 }
 .footer-copyright{
-  color: white;
+  color: white!important;
   font-size: 12px!important;
-  width: 100% !important;
+  z-index: 1000;
+}
+.falsefooter{
+  bottom: 0;
+  @media screen and (max-width: 960px) {
+    position: relative!important;
+    bottom: 0!important;
+    margin-bottom: 0!important;
+  }
 }

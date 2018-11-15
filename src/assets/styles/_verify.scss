@@ -18,6 +18,11 @@
   }
 }
 .verify {
+  //background-image: url("./assets/img/red.png");
+  //background-repeat: no-repeat;
+  @media (max-width: 960px) {
+   display: none !important;
+  }
   margin-top: 54px !important;
   height: 523px;
   width: 536px;
