@@ -1,12 +1,12 @@
 <template>
   <div class="verify mx-auto fixed-top ">
-    <div class="hash odometer firsthash">
+    <div class="hash font-weight-bold firsthash">
       ...<i class="fas fa-thumbs-up"></i></div>
-    <div class="hash odometer secondhash">
+    <div class="hash font-weight-bold secondhash">
       ...<i class="fas fa-thumbs-up"></i></div>
-    <div class="hash odometer thirdhash">
+    <div class="hash font-weight-bold thirdhash">
       ...<i class="fas fa-thumbs-up"></i></div>
-    <div class="hash odometer fourthash">
+    <div class="hash font-weight-bold fourthash">
       ...<i class="fas fa-thumbs-up"></i></div>
     <div class="line1 mx-auto fixed-top">
       <svg width="500px" height="550px"  viewBox="0 0 500 450" enable-background="new 0 0 340 333" xml:space="preserve">
@@ -26,7 +26,7 @@
       </svg>
     </div>
     <div class="hashbig"><p class="linebottom">HASH</p>
-      <h5 class="coloryellow">0x7ba87aac76d29f20cefa161dabe300039d569b3cb5a1acb768af84c1bd063ff3</h5></div>
+      <h5 class="coloryellow"></h5></div>
   </div>
 
 </template>
