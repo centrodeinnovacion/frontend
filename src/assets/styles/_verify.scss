@@ -18,6 +18,9 @@
   }
 }
 .verify {
+  @media (max-width: 960px) {
+   display: none !important;
+  }
   margin-top: 54px !important;
   height: 523px;
   width: 536px;

@@ -56,7 +56,7 @@
           <component :is="fileFound"></component>
           <component :is="fileNotFound"></component>
 
-          <div v-if="uploadBlockchainComponent || uploadComponent || previewFile" class="scrollbar force-overflow">
+          <div v-if="uploadBlockchainComponent || uploadComponent" class="scrollbar force-overflow">
             <component :is="uploadComponent"></component>
             <component :is="uploadBlockchainComponent"></component>
           </div>
