@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="text-center py-3 footer-copyright" >© 2018.
-                <a href=""> Términos y condiciones de uso.</a>
+                <a href="" target="_blank"> Términos y condiciones de uso.</a>
             </div>
 
         </div>

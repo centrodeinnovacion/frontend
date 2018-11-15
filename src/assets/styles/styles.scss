@@ -119,10 +119,13 @@
 .footer-copyright{
   color: white!important;
   font-size: 12px!important;
-  width: 100% !important;
+  z-index: 1000;
 }
 .falsefooter{
   bottom: 0;
   @media screen and (max-width: 960px) {
+    position: relative!important;
+    bottom: 0!important;
+    margin-bottom: 0!important;
   }
 }

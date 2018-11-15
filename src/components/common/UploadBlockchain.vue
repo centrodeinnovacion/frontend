@@ -11,7 +11,8 @@
       <textarea readonly class="colorgreen" id="etheHash" @click="doCopy">
         {{hash.tx}}
       </textarea>
-      <p class="mb-5">Blockchain devuelve al usuario un hash que indentifica la transacción.</p>
+      <p class="mb-5 pb-5">Blockchain devuelve al usuario un hash que indentifica la transacción.</p>
+      <p></p>
     </div>
   </div>
 </template>

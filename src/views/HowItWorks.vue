@@ -172,6 +172,9 @@
         </div>
       </div>
     </div>
+      <div class="text-center py-3 pt-2 footer-copyright falsefooter" >© 2018.
+          <a href="" target="_blank"> Términos y condiciones de uso.</a>
+      </div>
   </div>
 
 </template>

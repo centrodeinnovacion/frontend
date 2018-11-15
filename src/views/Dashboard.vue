@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 globe">
         <component :is="globeComponent" ref="globe"></component>
         <gif :is="gifComponent"></gif>
         <component :is="verifyComponent"></component>
@@ -70,7 +70,9 @@
         <Tutorial></Tutorial>
       </div>
     </div>
-
+    <div class="text-center py-3 pt-2 footer-copyright falsefooter fixed-bottom" >© 2018.
+      <a href="" target="_blank"> Términos y condiciones de uso.</a>
+    </div>
   </div>
 </template>
 
