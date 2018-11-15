@@ -14,15 +14,18 @@ export default new Router({
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
     },
-      {
-          path: '/howitworks',
-          name: 'howitworks',
-          component: () => import(/* webpackChunkName: "about" */ '@/views/Howitworks.vue')
-      },
+    {
+      path: '/howitworks',
+      name: 'howitworks',
+      component: () => import(/* webpackChunkName: "about" */ '@/views/HowItWorks.vue'),
+      meta: {back: 'home', forward: 'dashboard'}
+    },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import(/*webpackChunkName: "dashboard"*/ '@/views/Dashboard')
+      props: {back: 'howitworks', forward: 'about'},
+      component: () => import(/*webpackChunkName: "dashboard"*/ '@/views/Dashboard'),
+      meta: {back: 'howitworks', forward: 'about'}
     }
   ]
 })

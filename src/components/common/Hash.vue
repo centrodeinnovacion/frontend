@@ -1,10 +1,11 @@
 <template>
-  <div id="hash" @click="doCopy">
-    <div class="hashbig">
-      <p class="linebottom">HASH</p>
-      <textarea readonly class="coloryellow" id="verifiedHash">
+  <div id="hash">
+    <div class="hashbig2 inferior d-flex flex-column align-items-center">
+      <p class="linebottom">HASH DEL DOCUMENTO</p>
+      <div @click="doCopy" data-toggle="tooltip" data-placement="top" title="Clic para copiar hash (Necesario al
+      querer descargar un documento)" class="coloryellow" id="verifiedHash">
         {{ validate.hash }}
-      </textarea>
+      </div>
     </div>
   </div>
 </template>
@@ -24,8 +25,6 @@
         console.log(`I just click to copy ${this.validate.hash}`)
         this.$copyText(this.validate.hash).then( (e) => {
           alert(`Se ha copiado: ${this.validate.hash}`)
-        }, (e)  =>{
-          alert('No se pudo copiar')
         })
       }
     }
