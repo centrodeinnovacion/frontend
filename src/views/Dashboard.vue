@@ -23,8 +23,9 @@
                 </div>
               </div>
 
-              <div class="form-group inputstyle">
-                <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified">
+              <div class="form-group inputstyle" :class="{highlightactive: verifyActive}">
+                <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified"
+                       accept=".jpg,.jpeg,.pdf">
                 <div class="d-flex">
                   <div><p class="buttontittle">Verificar documento</p>
                     <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
@@ -32,7 +33,7 @@
                 </div>
               </div>
 
-              <div class="form-group inputstyle" id="Input-Download">
+              <div class="form-group inputstyle" id="Input-Download" :class="{highlightactive: downloadActive}">
                 <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download"
                         @click="showModal"></button>
                 <div class="d-flex">
@@ -120,7 +121,9 @@
         download: null,
         tutorial: null,
         gifName: null,
-        uploadActive: false
+        uploadActive: false,
+        verifyActive: false,
+        downloadActive: false
       }
     },
     components: {
@@ -176,22 +179,26 @@
         }
         this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
         const file = files[0]
-        console.log(file)
         const fileName = file.name
         this.gifName = fileName.substr(0, 3).toLowerCase()
 
+        this.verifyActive = false
+        this.downloadActive = false
+        this.uploadActive = true
         this.addMarkersToGlobe()
 
         this.uploadFile(file)
       },
       verified(e) {
         this.setToNull()
+        this.uploadActive = false
+        this.verifyActive = true
+        this.downloadActive = false
         const files = e.target.files
         if (!files.length) {
           return
         }
         const file = files[0]
-        console.log(file)
         this.verifiedFile(file)
 
         this.verifyBlockchain()
@@ -200,7 +207,6 @@
         this.setToNull()
         this.globeComponent = 'Global'
         this.ipfsInterval = setInterval(() => {
-          // this.globeComponent.globe.addImage(4.570868, -74.297333, this.$refs.globe.imageIPFS) // Colombia
           this.$refs.globe.globe.addImage(4.570868, -74.297333, this.$refs.globe.imageIPFS) // Colombia
         }, 1000)
 
@@ -223,7 +229,7 @@
             this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //87.106.111.132 s19433107.onlinehome-server.info
           }, 1000)
           this.uploadBlockchainComponent = 'UploadBlockchain'
-        }, 2000) //20000
+        }, 10000)
       },
       setToNull() {
         this.uploadComponent = null
@@ -247,11 +253,13 @@
       },
       showModal() {
         this.setToNull()
+        this.uploadActive = false
+        this.verifyActive = false
+        this.downloadActive = true
         this.globeComponent = 'Global'
         this.previewFile = 'PreviewFile'
       },
       throwWarning() {
-        this.uploadActive = true
         alert('Tenga en cuenta que los archivos aquí subidos quedarán guardados en IPFS y en la cadena de bloques,' +
           ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales')
       }
