@@ -1,5 +1,5 @@
 <template>
-    <div class="home pt-5 d-flex flex-column justify-content-center align-items-center">
+    <div class="home pt-4 d-flex flex-column justify-content-center align-items-center">
         <div class="mt-5 content text-center" data-text="Blockchain"><span class="">
             <span class="linetext">Blockchain</span></span>
         </div>
@@ -9,12 +9,12 @@
                 es decir que la información se maneja de forma descentralizada. Este toolkit le dará herramientas para
                 entender el funcionamiento de Blockchain. Para navegar correctamente por el sitio es necesario hacerlo desde un computador.  </p>
             <router-link class="btn" :to="{name: 'howitworks'}"><span class="buttontext">Empezar</span></router-link>
-            <div class="p-5">
+            <div class="pt-5">
                 <img src="../assets/img/logo_toolkit2.png"/>
             </div>
         </div>
-        <footer>
-            <div class="d-flex align-items-end fixed-bottom">
+        <div class="d-flex flex-column container-fluid falsefooter">
+            <div class="d-flex flex-wrap ">
                 <div class="p-2"><img src="../assets/img/logo_vivelab.png"/>
                 </div>
                 <div class="p-2"><span class="linefooterhome"></span><img src="../assets/img/logo_gobierno.png"/>
@@ -26,10 +26,16 @@
                 <div class="ml-auto p-2"><img src="../assets/img/logo_unpd.png"/><img src="../assets/img/logo_undesa.png"/>
                 </div>
             </div>
-        </footer>
+            <div class="text-center py-3 footer-copyright" >© 2018.
+                <a href=""> Términos y condiciones de uso.</a>
+            </div>
+
+        </div>
     </div>
 
-</template>
+</template>de Blockchain. Para navegar correctamente por el sitio es necesario hacerlo desde un computador.
+
+
 
 <script>
     import Global from '@/components/common/Global'

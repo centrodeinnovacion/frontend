@@ -16,10 +16,10 @@
           </router-link>
         </div>
       </div>
+      <div class="text-center py-3 footer-copyright falsefooter" >© 2018.
+        <a href=""> Términos y condiciones de uso.</a>
+      </div>
     </footer>
-    <div class="text-center py-3" >© 2018.
-      <a href=""> Términos y condiciones de uso.</a>
-    </div>
   </div>
 </template>
 

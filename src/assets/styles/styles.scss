@@ -110,10 +110,6 @@
     width: 100%;
   }
 }
-footer{
-  @media screen and (max-width: 960px) {
-  }
-}
 .modal-header{
   border-bottom: none!important;
 }
@@ -121,7 +117,12 @@ footer{
   color: $white!important;
 }
 .footer-copyright{
-  color: white;
+  color: white!important;
   font-size: 12px!important;
   width: 100% !important;
+}
+.falsefooter{
+  bottom: 0;
+  @media screen and (max-width: 960px) {
+  }
 }
