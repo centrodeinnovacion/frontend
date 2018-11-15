@@ -172,15 +172,25 @@
         </div>
       </div>
     </div>
-      <div class="text-center py-3 pt-2 footer-copyright falsefooter" >© 2018.
-          <a href="" target="_blank"> Términos y condiciones de uso.</a>
+    <div class="text-center py-3 pt-2 footer-copyright falsefooter">© 2018.
+      <a href="" target="_blank"> Términos y condiciones de uso.</a>
+    </div>
+    <div class="row download">
+      <div>
+        <tutorial></tutorial>
       </div>
+    </div>
   </div>
 
 </template>
 
 <script>
+  import Tutorial from '@/components/common/Tutorial'
+
   export default {
-    name: "HowItWorks"
+    name: "HowItWorks",
+    components: {
+      Tutorial
+    }
   }
 </script>

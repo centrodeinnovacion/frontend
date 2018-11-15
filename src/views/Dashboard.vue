@@ -5,16 +5,19 @@
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div>
           <h2>Instrucciones</h2>
-          <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong> o <strong>.jpg</strong>,
+          <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong> o
+            <strong>.jpg</strong>,
             para esto seleccione una de las siguientes acciones: </p>
 
           <form @submit.prevent>
 
             <div class="d-flex align-items-start flex-column justify-content-start">
-              <div class="form-group inputstyle">
-                <input type="file" placeholder="Drag a file to upload" id="Upload" @click="throwWarning" @change="upload" accept=".jpg,.jpeg,.pdf">
+              <div class="form-group inputstyle" :class="{highlightactive: uploadActive}">
+                <input type="file" placeholder="Drag a file to upload" id="Upload" @click="throwWarning"
+                       @change="upload" accept=".jpg,.jpeg,.pdf">
                 <div class="d-flex">
-                  <div><p class="buttontittle">Subir documento</p>
+                  <div>
+                    <p class="buttontittle">Subir documento</p>
                     <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
                   <div class="pt-2 pr-2 ml-auto align-self-start"><i class="iconbutton icon-upload"></i></div>
                 </div>
@@ -30,7 +33,8 @@
               </div>
 
               <div class="form-group inputstyle" id="Input-Download">
-                <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download" @click="showModal"></button>
+                <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download"
+                        @click="showModal"></button>
                 <div class="d-flex">
                   <div><p class="buttontittle">Descargar documento</p></div>
                   <div class="pt-2 pr-2 ml-auto align-self-start"><i class="iconbutton icon-download"></i></div>
@@ -44,7 +48,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 globe">
         <img v-if="globeComponent == null" class="d-flex justify-content-center" src="@/assets/img/red.png" alt="">
         <component :is="globeComponent" ref="globe"></component>
-        <gif :is="gifComponent"></gif>
+        <gif :is="gifComponent" :gifName="gifName"></gif>
         <component :is="verifyComponent"></component>
         <component :is="hashVerified"></component>
         <component :is="notFoundBc"></component>
@@ -71,7 +75,7 @@
         <Tutorial></Tutorial>
       </div>
     </div>
-    <div class="text-center py-3 pt-2 footer-copyright falsefooter fixed-bottom" >© 2018.
+    <div class="text-center py-3 pt-2 footer-copyright falsefooter fixed-bottom">© 2018.
       <a href="" target="_blank"> Términos y condiciones de uso.</a>
     </div>
   </div>
@@ -97,7 +101,7 @@
 
   export default {
     name: 'Dashboard',
-    data(){
+    data() {
       return {
         globeComponent: 'Global',
         uploadComponent: null,
@@ -114,7 +118,9 @@
         fileNotFound: null,
         notFoundBc: null,
         download: null,
-        tutorial:null
+        tutorial: null,
+        gifName: null,
+        uploadActive: false
       }
     },
     components: {
@@ -132,24 +138,24 @@
       Gif,
       Tutorial
     },
-    computed:{
+    computed: {
       ...mapState({
         validate: state => state.Toolkit.validate,
         notValid: state => state.Toolkit.notValid
       })
     },
-    watch:{
-      validate(e){
-        if(e){
+    watch: {
+      validate(e) {
+        if (e) {
           this.setToNull()
           this.verifyComponent = 'Verify'
           this.hashVerified = 'Hash'
-          setTimeout( () => {
+          setTimeout(() => {
             this.fileFound = 'FileFound'
-          },5000)
+          }, 5000)
         }
       },
-      notValid(e){
+      notValid(e) {
         this.setToNull()
         this.notFoundBc = 'NotFoundBc'
         this.fileNotFound = 'FileNotFound'
@@ -163,12 +169,16 @@
       ...mapMutations({
         setProperty: constants.TOOLKIT_SET_PROPERTY
       }),
-      upload(e){
+      upload(e) {
         const files = e.target.files
-        if(!files.length){ return }
+        if (!files.length) {
+          return
+        }
         this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
         const file = files[0]
         console.log(file)
+        const fileName = file.name
+        this.gifName = fileName.substr(0, 3).toLowerCase()
 
         this.addMarkersToGlobe()
 
@@ -177,14 +187,16 @@
       verified(e) {
         this.setToNull()
         const files = e.target.files
-        if(!files.length){ return }
+        if (!files.length) {
+          return
+        }
         const file = files[0]
         console.log(file)
         this.verifiedFile(file)
 
         this.verifyBlockchain()
       },
-      addMarkersToGlobe(){
+      addMarkersToGlobe() {
         this.setToNull()
         this.globeComponent = 'Global'
         this.ipfsInterval = setInterval(() => {
@@ -201,7 +213,7 @@
             this.$refs.globe.globe.addImage(22.25, 114.1667, this.$refs.globe.imageETH) //150.109.46.182
             this.$refs.globe.globe.addImage(37.751, -97.822, this.$refs.globe.imageETH) //34.45.109.226 ec2-34-245-109-226.eu-west-1.compute.amazonaws.com sea!!
             this.$refs.globe.globe.addImage(24.9056, 67.0822, this.$refs.globe.imageETH) //14.192.152.183
-            this.$refs.globe.globe.addImage(53.3331, -6.2489 , this.$refs.globe.imageETH) //54.229.6.221 ec2-54-229-6-221.eu-west-1.compute.amazonaws.com
+            this.$refs.globe.globe.addImage(53.3331, -6.2489, this.$refs.globe.imageETH) //54.229.6.221 ec2-54-229-6-221.eu-west-1.compute.amazonaws.com
             this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //88.198.169.253 static.88-198-169-253.clients.your-server.de
             this.$refs.globe.globe.addImage(48.8582, 2.3387, this.$refs.globe.imageETH) //94.23.49.75 forum.getmasari.org
             this.$refs.globe.globe.addImage(40.8344, -74.1377, this.$refs.globe.imageETH) //159.203.79.51
@@ -229,18 +241,19 @@
         this.notFoundBc = null
         this.globeComponent = null
       },
-      verifyBlockchain(){
+      verifyBlockchain() {
         this.gifComponent = 'Gif'
         this.verifyBlockchainComponent = 'VerifyBlockchain'
       },
-      showModal(){
+      showModal() {
         this.setToNull()
         this.globeComponent = 'Global'
         this.previewFile = 'PreviewFile'
       },
-      throwWarning(){
+      throwWarning() {
+        this.uploadActive = true
         alert('Tenga en cuenta que los archivos aquí subidos quedarán guardados en IPFS y en la cadena de bloques,' +
-            ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales')
+          ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales')
       }
     }
   }
