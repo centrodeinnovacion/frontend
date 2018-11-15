@@ -13,20 +13,20 @@
                 <img src="../assets/img/logo_toolkit2.png"/>
             </div>
         </div>
-        <div class="d-flex flex-column container-fluid falsefooter">
+        <div class="d-flex flex-column container-fluid falsefooter pt-5">
             <div class="d-flex flex-wrap ">
-                <div class="p-2"><img src="../assets/img/logo_vivelab.png"/>
+                <div class="p-2"><a href="http://vivelabbogota.com/" target="_blank"><img src="../assets/img/logo_vivelab.png"/></a>
                 </div>
                 <div class="p-2"><span class="linefooterhome"></span><img src="../assets/img/logo_gobierno.png"/>
                 </div>
                 <div class="p-2"><img src="../assets/img/logo_mintic.png"/>
                 </div>
-                <div class="p-2"><img src="../assets/img/logo_centrodeinnovacion.png"/>
+                <div class="p-2"><a href="http://centrodeinnovacion.gobiernoenlinea.gov.co/es" target="_blank"><img src="../assets/img/logo_centrodeinnovacion.png"/></a>
                 </div>
                 <div class="ml-auto p-2"><img src="../assets/img/logo_unpd.png"/><img src="../assets/img/logo_undesa.png"/>
                 </div>
             </div>
-            <div class="text-center py-3 footer-copyright" >© 2018.
+            <div class="text-center pt-3 pb-0 mb-0 footer-copyright" >© 2018.
                 <a href="" target="_blank"> Términos y condiciones de uso.</a>
             </div>
 

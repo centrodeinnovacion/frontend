@@ -177,7 +177,7 @@
     </div>
     <div class="row download">
       <div>
-        <tutorial></tutorial>
+        <Tutorial></Tutorial>
       </div>
     </div>
   </div>
