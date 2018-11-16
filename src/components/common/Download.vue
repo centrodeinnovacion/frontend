@@ -5,7 +5,7 @@
         <div class="modal-content">
           <div class="modal-body">
             <p class="textcenter">Escriba el HASH del documento que desea descargar</p>
-            <input type="text" class="box-download" placeholder="IPFS hash" v-model="hash">
+            <input type="text" class="box-download" placeholder="Hash de IPFS. Ej: QmWetq33nkz3NLDdnwEBczfNoJTex7rBYAyWR4o26LVRCg" v-model="hash">
             <div class="d-flex justify-content-center pt-5">
               <button type="button" class="btnpink" @click="getFile"> Descargar
                 <i class="iconbutton mt-4 pt-2 pl-3 pr-2 icon-download"></i>

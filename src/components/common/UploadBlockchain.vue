@@ -48,7 +48,7 @@
       doCopy () {
         this.$copyText(this.hash.tx).then( (e) => {
           if(confirm(`Será redirigido a Etherscan para que verifique la transacción ${this.hash.tx} que fue copiada en su portapapeles, desea continuar?`)) {
-            window.open(`https://etherscan.io/tx/${this.hash.tx}`, '_blank');
+            window.open(`https://ropsten.etherscan.io/tx/${this.hash.tx}`, '_blank');
           }
         })
       }
