@@ -12,8 +12,11 @@ const state = {
     hash: null,
     fileName: null
   },
-  notValid: {
-    Error: null
+  error:{
+    code: null,
+    detailed: null,
+    error: null,
+    msg: null
   }
 }
 
@@ -22,10 +25,15 @@ const actions = {
     const formData = new FormData()
     formData.append('file', data)
     Vue.axios.post('/document', formData, {headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
-      .then(response => response.data.result)
+      .then(response => response.data.result )
       .then(hash => {
         commit(constants.TOOLKIT_SET_PROPERTY, {hash})
       })
+      .catch(response => {
+        const error = response.response.data
+        commit(constants.TOOLKIT_SET_PROPERTY, {error})
+      })
+
   },
   [constants.TOOLKIT_VERIFIED_FILE]: ({commit}, data) => {
     const formData = new FormData()
