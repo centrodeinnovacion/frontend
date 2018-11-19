@@ -25,45 +25,50 @@ const actions = {
     const formData = new FormData()
     formData.append('file', data)
     Vue.axios.post('/document', formData, {headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
-      .then(response => response.data.result )
-      .then(hash => {
-        commit(constants.TOOLKIT_SET_PROPERTY, {hash})
-      })
-      .catch(response => {
-        const error = response.response.data
-        commit(constants.TOOLKIT_SET_PROPERTY, {error})
-      })
+        .then(response => response.data.result )
+        .then(hash => {
+          commit(constants.TOOLKIT_SET_PROPERTY, {hash})
+        })
+        .catch(response => {
+          const error = response.response.data
+          commit(constants.TOOLKIT_SET_PROPERTY, {error})
+        })
 
   },
   [constants.TOOLKIT_VERIFIED_FILE]: ({commit}, data) => {
     const formData = new FormData()
     formData.append('file', data)
     Vue.axios.post('/validate', formData, {headers: {'Content-Type': `multipart/form-data; boundary=${formData.boundary}`}})
-      .then(response => response.data.result)
-      .then(validate => {
-        commit(constants.TOOLKIT_SET_PROPERTY, {validate})
-      })
-      .catch(notValid => {
-        commit(constants.TOOLKIT_SET_PROPERTY, {notValid})
-      })
+        .then(response => response.data.result)
+        .then(validate => {
+          commit(constants.TOOLKIT_SET_PROPERTY, {validate})
+        })
+        .catch(response => {
+          const error = response.response.data
+          commit(constants.TOOLKIT_SET_PROPERTY, {error})
+        })
   },
   [constants.TOOLKIT_DOWNLOAD_FILE]: ({commit}, hash) => {
     Vue.axios.get(`/document/${hash}`, {responseType: 'blob'})
-      .then(response => response.data)
-      .then(fileRaw => {
-        const blob = new Blob([fileRaw], {type: fileRaw.type})
-        const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
-        link.href = URL.createObjectURL(blob)
-        fileRaw.type === "application/pdf" ? link.download = `download.pdf` : link.download = `download.jpg`
-        link.click();
-        return blob
-      })
-      .then(file => {
-        commit(constants.TOOLKIT_SET_PROPERTY, {file})
-      })
-      .catch(notValid => {
-        commit(constants.TOOLKIT_SET_PROPERTY, {notValid})
-      })
+        .then(response => response.data)
+        .then(fileRaw => {
+          const blob = new Blob([fileRaw], {type: fileRaw.type})
+          const link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+          link.href = URL.createObjectURL(blob)
+          fileRaw.type === "application/pdf" ? link.download = `download.pdf` : link.download = `download.jpg`
+          link.click();
+          return blob
+        })
+        .then(file => {
+          console.log('this is file')
+          commit(constants.TOOLKIT_SET_PROPERTY, {file})
+        })
+        .catch(response => {
+          console.log('this is error =====')
+          console.log(response.response.data)
+          const error = response.response.data
+          commit(constants.TOOLKIT_SET_PROPERTY, {error})
+        })
   }
 }
 

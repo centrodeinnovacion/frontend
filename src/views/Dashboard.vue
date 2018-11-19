@@ -160,8 +160,9 @@
         }
       },
       error(e){
+        console.log(this.error)
         if(this.error.code === 409){
-          alert('El archivo ya ha sido subido con anterioridad, por lo que no se enviará nuevamente a la cadena de bloques')
+          alert('El archivo ya ha sido subido con anterioridad, por lo que no se enviará nuevamente a la cadena de bloques.')
           this.addIpfsMarkersToGlobe()
           this.addEthMarkersToGlobe()
           this.uploadComponent = 'Upload'
@@ -214,8 +215,8 @@
       verified(e) {
         this.setToNull()
         this.uploadActive = false
-        this.verifyActive = true
         this.downloadActive = false
+        this.verifyActive = true
         const files = e.target.files
         if (!files.length) {
           return
@@ -247,6 +248,9 @@
         }, 500)
       },
       setToNull() {
+        clearTimeout(this.ethereumTimeOut)
+        clearInterval(this.ipfsInterval)
+        clearInterval(this.ethInterval)
         this.uploadComponent = null
         this.uploadBlockchainComponent = null
         this.verifyComponent = null
@@ -254,12 +258,15 @@
         this.hashVerified = null
         this.previewFile = null
         this.gifComponent = null
-        clearTimeout(this.ethereumTimeOut)
-        clearInterval(this.ipfsInterval)
-        clearInterval(this.ethInterval)
+        this.ethereumTimeOut = null
+        this.ipfsInterval = null
+        this.ethInterval = null
         this.fileFound = null
         this.fileNotFound = null
         this.notFoundBc = null
+        this.download = null
+        this.tutorial = null
+        this.gifName = null
         this.globeComponent = null
       },
       verifyBlockchain() {
@@ -275,8 +282,8 @@
         this.previewFile = 'PreviewFile'
       },
       throwWarning() {
-        alert('Tenga en cuenta que los archivos aquí subidos quedarán guardados en IPFS y en la cadena de bloques,' +
-            ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales')
+        alert('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán guardados en IPFS y en la cadena de bloques,' +
+            ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
       }
     }
   }
