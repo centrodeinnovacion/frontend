@@ -1,18 +1,18 @@
 <template>
   <div class="verify mx-auto fixed-top ">
-    <div class="hash firsthash">
+    <div class="hash font-weight-bold firsthash">
       <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
-    <div class="hash secondhash">
+    <div class="hash font-weight-bold secondhash">
       <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
-    <div class="hash thirdhash">
+    <div class="hash font-weight-bold thirdhash">
       <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
-    <div class="hash fourthash">
+    <div class="hash font-weight-bold fourthash">
       <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
