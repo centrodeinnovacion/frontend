@@ -14,7 +14,7 @@
             <div class="d-flex align-items-start flex-column justify-content-start">
               <div class="form-group inputstyle" :class="{highlightactive: uploadActive}">
                 <input type="file" placeholder="Drag a file to upload" id="Upload" @click="throwWarning"
-                       @change="upload" accept=".jpg,.jpeg,.pdf">
+                       @change="upload" accept=".jpeg,.pdf">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Subir documento</p>
@@ -25,7 +25,7 @@
 
               <div class="form-group inputstyle" :class="{highlightactive: verifyActive}">
                 <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified"
-                       accept=".jpg,.jpeg,.pdf">
+                       accept=".jpeg,.pdf">
                 <div class="d-flex">
                   <div><p class="buttontittle">Verificar documento</p>
                     <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
@@ -75,9 +75,6 @@
         <download></download>
         <Tutorial></Tutorial>
       </div>
-    </div>
-    <div class="text-center py-3 pt-2 footer-copyright falsefooter fixed-bottom">© 2018.
-      <a href="" target="_blank"> Términos y condiciones de uso.</a>
     </div>
   </div>
 </template>
