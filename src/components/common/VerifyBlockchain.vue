@@ -11,7 +11,3 @@
         name: "VerifyBlockchain"
     }
 </script>
-
-<style scoped>
-
-</style>
