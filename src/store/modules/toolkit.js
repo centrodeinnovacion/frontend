@@ -58,7 +58,6 @@ const actions = {
           return blob
         })
         .then(file => {
-          console.log('this is file')
           commit(constants.TOOLKIT_SET_PROPERTY, {file})
         })
         .catch(response => {

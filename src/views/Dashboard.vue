@@ -160,7 +160,6 @@
         }
       },
       error(e){
-        console.log(this.error)
         if(this.error.code === 409){
           alert('El archivo ya ha sido subido con anterioridad, por lo que no se enviará nuevamente a la cadena de bloques.')
           this.addIpfsMarkersToGlobe()
@@ -168,7 +167,6 @@
           this.uploadComponent = 'Upload'
         }
         if (this.error.code === 404) {
-          console.log(this.error.detailed)
           this.setToNull()
           this.notFoundBc = 'NotFoundBc'
           this.fileNotFound = 'FileNotFound'
@@ -222,9 +220,10 @@
           return
         }
         const file = files[0]
+        this.gifComponent = 'Gif'
         this.verifiedFile(file)
 
-        this.verifyBlockchain()
+        this.verifyBlockchainComponent = 'VerifyBlockchain'
       },
       addIpfsMarkersToGlobe() {
         this.ipfsInterval = setInterval(() => {
@@ -268,10 +267,6 @@
         this.tutorial = null
         this.gifName = null
         this.globeComponent = null
-      },
-      verifyBlockchain() {
-        this.gifComponent = 'Gif'
-        this.verifyBlockchainComponent = 'VerifyBlockchain'
       },
       showModal() {
         this.setToNull()
