@@ -15,8 +15,6 @@ const state = {
   error:{
     code: null,
     detailed: null,
-    error: null,
-    msg: null
   }
 }
 
@@ -30,7 +28,7 @@ const actions = {
           commit(constants.TOOLKIT_SET_PROPERTY, {hash})
         })
         .catch(response => {
-          const error = response.response.data
+          const error = {code: response.response.data.code, detailed: response.response.data.detailed}
           commit(constants.TOOLKIT_SET_PROPERTY, {error})
         })
 
@@ -44,7 +42,7 @@ const actions = {
           commit(constants.TOOLKIT_SET_PROPERTY, {validate})
         })
         .catch(response => {
-          const error = response.response.data
+          const error = {code: response.response.data.code, detailed: response.response.data.detailed}
           commit(constants.TOOLKIT_SET_PROPERTY, {error})
         })
   },
@@ -64,9 +62,7 @@ const actions = {
           commit(constants.TOOLKIT_SET_PROPERTY, {file})
         })
         .catch(response => {
-          console.log('this is error =====')
-          console.log(response.response.data)
-          const error = response.response.data
+          const error = { code: response.response.status, detailed: response.response.statusText}
           commit(constants.TOOLKIT_SET_PROPERTY, {error})
         })
   }
