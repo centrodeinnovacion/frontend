@@ -9,7 +9,7 @@
         un <a href="https://es.wikipedia.org/wiki/Protocolo_de_internet" target="_blank">protocolo</a> (http es también un protocolo), que utiliza múltiples nodos para almacenar la información de forma descentralizada.</p>
       <h4 class="coloryellow">Hash:</h4>
       <textarea data-toggle="tooltip" data-placement="top" title="Clic para copiar hash (Necesario al querer descargar un documento)" readonly class="coloryellow" id="ipfsHash" @click="doCopy">
-        {{hash.hash}}
+        {{ error.code === 409 ? error.detailed.split(' ').pop() : hash.hash }}
       </textarea>
       <p>Al cargar el archivo, <a href="https://ipfs.io/" target="_blank">IPFS</a> devuelve al usuario el resumen
         matemático del documento o un “Hash”. El hash
@@ -26,7 +26,8 @@
     name: 'Dashboard',
     computed: {
       ...mapState({
-        hash: state => state.Toolkit.hash
+        hash: state => state.Toolkit.hash,
+        error: state => state.Toolkit.error
       })
     },
     methods: {
@@ -42,11 +43,17 @@
         })
       },
       doCopy () {
-        this.$copyText(this.hash.hash).then( (e) => {
-          alert(`Se ha copiado: ${this.hash.hash}`)
-        })
+        if (this.error.code === 409) {
+          this.$copyText(this.error.detailed.split(' ').pop()).then((e) => {
+            alert(`Se ha copiado: ${this.error.detailed.split(' ').pop()}`)
+          })
+        } else {
+          this.$copyText(this.hash.hash).then((e) => {
+            alert(`Se ha copiado: ${this.hash.hash}`)
+          })
+        }
       }
     },
-      
+
   }
 </script>

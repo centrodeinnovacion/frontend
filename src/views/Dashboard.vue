@@ -144,7 +144,8 @@
     computed: {
       ...mapState({
         validate: state => state.Toolkit.validate,
-        notValid: state => state.Toolkit.notValid
+        error: state => state.Toolkit.error,
+        hash: state => state.Toolkit.hash
       })
     },
     watch: {
@@ -158,10 +159,26 @@
           }, 5000)
         }
       },
-      notValid(e) {
-        this.setToNull()
-        this.notFoundBc = 'NotFoundBc'
-        this.fileNotFound = 'FileNotFound'
+      error(e){
+        if(this.error.code === 409){
+          alert('El archivo ya ha sido subido con anterioridad, por lo que no se enviará nuevamente a la cadena de bloques.')
+          this.addIpfsMarkersToGlobe()
+          this.addEthMarkersToGlobe()
+          this.uploadComponent = 'Upload'
+        }
+        if (this.error.code === 404) {
+          this.setToNull()
+          this.notFoundBc = 'NotFoundBc'
+          this.fileNotFound = 'FileNotFound'
+        }
+      },
+      hash(e){
+        this.addIpfsMarkersToGlobe()
+        this.uploadComponent = 'Upload'
+        this.ethereumTimeOut = setTimeout(() => {
+          this.addEthMarkersToGlobe()
+          this.uploadBlockchainComponent = 'UploadBlockchain'
+        }, 2000)
       }
     },
     methods: {
@@ -177,7 +194,6 @@
         if (!files.length) {
           return
         }
-        this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
         const file = files[0]
         const fileName = file.name
         this.gifName = fileName.substr(0, 3).toLowerCase()
@@ -185,53 +201,55 @@
         this.verifyActive = false
         this.downloadActive = false
         this.uploadActive = true
-        this.addMarkersToGlobe()
+        this.setToNull()
+        this.globeComponent = 'Global'
+        this.gifComponent = 'Gif'
+        if(this.error.code === 409){
+
+        }
 
         this.uploadFile(file)
       },
       verified(e) {
         this.setToNull()
         this.uploadActive = false
-        this.verifyActive = true
         this.downloadActive = false
+        this.verifyActive = true
         const files = e.target.files
         if (!files.length) {
           return
         }
         const file = files[0]
+        this.gifComponent = 'Gif'
         this.verifiedFile(file)
 
-        this.verifyBlockchain()
+        this.verifyBlockchainComponent = 'VerifyBlockchain'
       },
-      addMarkersToGlobe() {
-        this.setToNull()
-        this.globeComponent = 'Global'
+      addIpfsMarkersToGlobe() {
         this.ipfsInterval = setInterval(() => {
           this.$refs.globe.globe.addImage(4.570868, -74.297333, this.$refs.globe.imageIPFS) // Colombia
-        }, 1000)
-
-        this.gifComponent = 'Gif'
-        this.uploadComponent = 'Upload'
-
-        this.ethereumTimeOut = setTimeout(() => {
-          this.ethInterval = setInterval(() => {
-            this.$refs.globe.globe.addImage(35.685, 139.7514, this.$refs.globe.imageETH) //52.193.60.84 ec2-52-193-60-84.ap-northeast-1.compute.amazonaws.com
-            this.$refs.globe.globe.addImage(22.25, 114.1667, this.$refs.globe.imageETH) //150.109.46.182
-            this.$refs.globe.globe.addImage(37.751, -97.822, this.$refs.globe.imageETH) //34.45.109.226 ec2-34-245-109-226.eu-west-1.compute.amazonaws.com sea!!
-            this.$refs.globe.globe.addImage(24.9056, 67.0822, this.$refs.globe.imageETH) //14.192.152.183
-            this.$refs.globe.globe.addImage(53.3331, -6.2489, this.$refs.globe.imageETH) //54.229.6.221 ec2-54-229-6-221.eu-west-1.compute.amazonaws.com
-            this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //88.198.169.253 static.88-198-169-253.clients.your-server.de
-            this.$refs.globe.globe.addImage(48.8582, 2.3387, this.$refs.globe.imageETH) //94.23.49.75 forum.getmasari.org
-            this.$refs.globe.globe.addImage(40.8344, -74.1377, this.$refs.globe.imageETH) //159.203.79.51
-            this.$refs.globe.globe.addImage(34.7725, 113.7266, this.$refs.globe.imageETH) //120.78.194.152
-            this.$refs.globe.globe.addImage(35.69, 139.69, this.$refs.globe.imageETH) //163.143.196.35.bc.googleusercontent.com
-            this.$refs.globe.globe.addImage(38.6582, -77.2497, this.$refs.globe.imageETH) //35.196.143.163
-            this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //87.106.111.132 s19433107.onlinehome-server.info
-          }, 1000)
-          this.uploadBlockchainComponent = 'UploadBlockchain'
-        }, 10000)
+        }, 500)
+      },
+      addEthMarkersToGlobe() {
+        this.ethInterval = setInterval(() => {
+          this.$refs.globe.globe.addImage(35.685, 139.7514, this.$refs.globe.imageETH) //52.193.60.84 ec2-52-193-60-84.ap-northeast-1.compute.amazonaws.com
+          this.$refs.globe.globe.addImage(22.25, 114.1667, this.$refs.globe.imageETH) //150.109.46.182
+          this.$refs.globe.globe.addImage(37.751, -97.822, this.$refs.globe.imageETH) //34.45.109.226 ec2-34-245-109-226.eu-west-1.compute.amazonaws.com sea!!
+          this.$refs.globe.globe.addImage(24.9056, 67.0822, this.$refs.globe.imageETH) //14.192.152.183
+          this.$refs.globe.globe.addImage(53.3331, -6.2489, this.$refs.globe.imageETH) //54.229.6.221 ec2-54-229-6-221.eu-west-1.compute.amazonaws.com
+          this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //88.198.169.253 static.88-198-169-253.clients.your-server.de
+          this.$refs.globe.globe.addImage(48.8582, 2.3387, this.$refs.globe.imageETH) //94.23.49.75 forum.getmasari.org
+          this.$refs.globe.globe.addImage(40.8344, -74.1377, this.$refs.globe.imageETH) //159.203.79.51
+          this.$refs.globe.globe.addImage(34.7725, 113.7266, this.$refs.globe.imageETH) //120.78.194.152
+          this.$refs.globe.globe.addImage(35.69, 139.69, this.$refs.globe.imageETH) //163.143.196.35.bc.googleusercontent.com
+          this.$refs.globe.globe.addImage(38.6582, -77.2497, this.$refs.globe.imageETH) //35.196.143.163
+          this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //87.106.111.132 s19433107.onlinehome-server.info
+        }, 500)
       },
       setToNull() {
+        clearTimeout(this.ethereumTimeOut)
+        clearInterval(this.ipfsInterval)
+        clearInterval(this.ethInterval)
         this.uploadComponent = null
         this.uploadBlockchainComponent = null
         this.verifyComponent = null
@@ -239,17 +257,16 @@
         this.hashVerified = null
         this.previewFile = null
         this.gifComponent = null
-        clearTimeout(this.ethereumTimeOut)
-        clearInterval(this.ipfsInterval)
-        clearInterval(this.ethInterval)
+        this.ethereumTimeOut = null
+        this.ipfsInterval = null
+        this.ethInterval = null
         this.fileFound = null
         this.fileNotFound = null
         this.notFoundBc = null
+        this.download = null
+        this.tutorial = null
+        this.gifName = null
         this.globeComponent = null
-      },
-      verifyBlockchain() {
-        this.gifComponent = 'Gif'
-        this.verifyBlockchainComponent = 'VerifyBlockchain'
       },
       showModal() {
         this.setToNull()
@@ -260,8 +277,8 @@
         this.previewFile = 'PreviewFile'
       },
       throwWarning() {
-        alert('Tenga en cuenta que los archivos aquí subidos quedarán guardados en IPFS y en la cadena de bloques,' +
-          ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales')
+        alert('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán guardados en IPFS y en la cadena de bloques,' +
+            ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
       }
     }
   }
