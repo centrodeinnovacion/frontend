@@ -9,21 +9,19 @@
       es decir que la información se maneja de forma descentralizada. Este toolkit le dará herramientas para
       entender el funcionamiento de Blockchain. Para navegar correctamente por el sitio es necesario hacerlo desde un computador.  </p>
       <router-link class="btn" :to="{name: 'howitworks'}"><span class="buttontext">Empezar</span></router-link>
-      <div class="pt-5">
+      <div class="pt-5 mt-2">
         <img src="../assets/img/logo_toolkit2.png"/>
       </div>
     </div>
-    <div class="d-flex flex-column container-fluid falsefooter pt-5">
-      <div class="d-flex flex-wrap ">
-        <div class="p-2"><a href="http://vivelabbogota.com/" target="_blank"><img src="../assets/img/logo_vivelab.png"/></a>
+    <div class="d-flex flex-column container-fluid fixed-bottom2">
+      <div class="d-flex flex-wrap">
+        <div class="p-2"><img src="../assets/img/logo_unpd.png"/><img src="../assets/img/logo_undesa.png"/>
         </div>
-        <div class="p-2"><span class="linefooterhome"></span><img src="../assets/img/logo_gobierno.png"/>
+        <div class="ml-auto  p-2"><img src="../assets/img/logo_mintic.png"/>
         </div>
-        <div class="p-2"><img src="../assets/img/logo_mintic.png"/>
+        <div class="p-2"><img src="../assets/img/logo_centrodeinnovacion.png"/><span class="linefooterhome"></span>
         </div>
-        <div class="p-2"><a href="http://centrodeinnovacion.gobiernoenlinea.gov.co/es" target="_blank"><img src="../assets/img/logo_centrodeinnovacion.png"/></a>
-        </div>
-        <div class="ml-auto p-2"><img src="../assets/img/logo_unpd.png"/><img src="../assets/img/logo_undesa.png"/>
+        <div class="p-2"><a href="http://vivelabbogota.com/" ><img src="../assets/img/logo_vivelab.png"/></a>
         </div>
       </div>
     </div>
