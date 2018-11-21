@@ -21,7 +21,7 @@
         </div>
         <div class="p-2"><img src="../assets/img/logo_centrodeinnovacion.png"/><span class="linefooterhome"></span>
         </div>
-        <div class="p-2"><a href="http://vivelabbogota.com/" ><img src="../assets/img/logo_vivelab.png"/></a>
+        <div class="p-2"><a href="http://vivelabbogota.com/" target="_blank" ><img src="../assets/img/logo_vivelab.png"/></a>
         </div>
       </div>
     </div>
