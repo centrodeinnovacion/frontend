@@ -1,9 +1,9 @@
 <template>
   <div id="hash">
     <div class="hashbig2 d-flex flex-column align-items-center">
-      <p class="linebottom font-weight-bold">HASH DEL DOCUMENTO</p>
+      <p class="font-weight-bold">HASH DEL DOCUMENTO<span class="d-flex justify-content-center linebottom pt-3"></span></p>
       <div @click="doCopy" data-toggle="tooltip" data-placement="top" title="Clic para copiar hash (Necesario al
-      querer descargar un documento)" class="coloryellow" id="verifiedHash">
+      querer descargar un documento)" class="coloryellow pt-2" id="verifiedHash">
         {{ validate.hash }}
       </div>
     </div>
