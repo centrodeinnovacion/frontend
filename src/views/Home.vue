@@ -17,9 +17,9 @@
       <div class="d-flex flex-wrap">
         <div class="p-2"><img src="../assets/img/logo_unpd.png"/><img src="../assets/img/logo_undesa.png"/>
         </div>
-        <div class="ml-auto  p-2"><img src="../assets/img/logo_mintic.png"/>
+        <div class="p-2"><img src="../assets/img/logo_mintic.png"/>
         </div>
-        <div class="p-2"><img src="../assets/img/logo_centrodeinnovacion.png"/><span class="linefooterhome"></span>
+        <div class="ml-auto p-2"><img src="../assets/img/logo_centrodeinnovacion.png"/><span class="linefooterhome"></span>
         </div>
         <div class="p-2"><a href="http://vivelabbogota.com/" target="_blank" ><img src="../assets/img/logo_vivelab.png"/></a>
         </div>
