@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container-fluid">
     <router-view/>
-      <div class="text-center py-3 pt-2 footer-copyright falsefooter">© 2018.
+      <div class="text-center py-3 footer-copyright falsefooter">© 2018.
         <a href="/docs/terms.pdf" target="_blank"> Términos y condiciones de uso.</a>
       </div>
       <footer class="" v-if="route !== 'home' && route !== 'about'">

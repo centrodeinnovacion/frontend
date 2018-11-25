@@ -1,5 +1,5 @@
 <template>
-  <div class="verify mx-auto fixed-top ">
+  <div class="verify mx-auto my-auto position-fixed d-flex justify-content-center align-self-center mx-auto my-auto">
     <div class="hash font-weight-bold firsthash">
       <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
@@ -16,7 +16,7 @@
       <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
-    <div class="line1 mx-auto fixed-top">
+    <div class="line1 mx-auto">
       <svg width="500px" height="550px"  viewBox="0 0 500 450" enable-background="new 0 0 340 333" xml:space="preserve">
 
         <path class="st0 path" d="M184.5,461.2c0,0,282-147,234.6-293.6"/>
