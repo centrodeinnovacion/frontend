@@ -1,5 +1,5 @@
 <template>
-    <div class="verify mx-auto fixed-top ">
+    <div class="verify mx-auto my-auto position-fixed d-flex justify-content-center align-self-center">
         <div class="nofilefound-1 ad-4">No se encontró el <br>archivo en el nodo</div>
         <div class="hash ad-4 nofilefound-2">No se encontró el <br>archivo en el nodo</div>
         <div class="hash ad-4 nofilefound-3">No se encontró el <br>archivo en el nodo</div>
