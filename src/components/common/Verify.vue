@@ -1,5 +1,5 @@
 <template>
-  <div class="verify mx-auto my-auto position-fixed d-flex justify-content-center align-self-center mx-auto my-auto">
+  <div class="verify mx-auto my-auto position-fixed d-flex justify-content-center align-self-center ">
     <div class="hash font-weight-bold firsthash">
       <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
