@@ -42,9 +42,11 @@ For your convenience, there is a prepared image at [ViveLab Bogota's Docker Hub 
 
 It's worthy to mention that on production you should use a `.env` file fully dedicated to that environment as shown on the [API Project's Production Method](https://github.com/centrodeinnovacion/api#production-method). You also need to provide valid SSL certificates for the API and Frontend projects to properly work. It is not recommended to use self signed certificates.
 
+Finally, this project runs an Nginx docker image as base of the custom configuration. Thus you must provide a suitable `production.conf` Nginx configuration file to be used instead of the `default.conf` file. This file must ensure to have the upstream, the path to the SSL certificates and also a redirection from http to https (i.e. redirecting all requests done through port 80 to port 443).
+
 ## API Consumption
 
-This project uses [axios](https://github.com/axios/axios#axios) to fire requests up against the API. As you can see at the [`main.js`](./src/main.js)
+This project uses [axios](https://github.com/axios/axios#axios) to fire requests up against the API. As you can see at the [`main.js`](./src/main.js),
 
 ```javascript
 try {
@@ -56,4 +58,36 @@ try {
 Vue.axios.defaults.baseURL = remote ? '/api/' : 'http://localhost:10010'
 ```
 
-The endpoint is chosen depending on how the project was started. For instance, running using the [NPM Method](#npm-method) will choose the `http://localhost:10010` endpoint, whereas running using the [Docker Method](#docker-method) will use the `/api/` endpoint. This endpoint is an alias for the Nginx Upstream shown in the `default.conf` file.
+the endpoint is chosen depending on how the project was started. For instance, running using the [NPM Method](#npm-method) will choose the `http://localhost:10010` endpoint, whereas running using the [Docker Method](#docker-method) will use the `/api/` endpoint. This endpoint is an alias for the Nginx Upstream shown in the [`default.conf`](./default.conf) file.
+
+```nginx
+upstream backend_server {
+  server api-toolkit:10443;
+}
+
+server {
+  listen  80;
+  server_name localhost;
+  return 301 https://$host$request_uri;
+}
+
+server {
+  ...
+
+  ssl_certificate /etc/ssl/nginx.crt;
+  ssl_certificate_key /etc/ssl/nginx.key;
+
+  ...
+
+  location /api/ {
+    proxy_pass https://backend_server/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+
+  location / {
+    ...
+  }
+}
+```
