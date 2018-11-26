@@ -125,3 +125,9 @@ For instance, the upload file method, only will append the final part of the end
 
   }
 ```
+
+In order to know more about how this store pattern works, refer to the [Vuex](https://vuex.vuejs.org/) documentation.
+
+## Disclaimer
+
+We are responsible for neither the use you give to this toolkit nor the deployment on production environments nor the SSL certificates nor the Production Nginx Configuration File.. The software is delivered as it is and you are compelled to use it as shown here.
