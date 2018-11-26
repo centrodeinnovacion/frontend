@@ -6,30 +6,36 @@
         <div>
           <h2>Instrucciones</h2>
           <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong> o
-            <strong>.jpg</strong>,
-            para esto seleccione una de las siguientes acciones: </p>
+            <strong>.jpg</strong>, para esto seleccione una de las siguientes acciones: </p>
 
           <form @submit.prevent>
 
             <div class="d-flex align-items-start flex-column justify-content-start">
               <div class="form-group inputstyle" :class="{highlightactive: uploadActive}">
-                <input type="file" placeholder="Drag a file to upload" id="Upload" @click="throwWarning"
+                <input type="file" placeholder="Drag a file to upload" id="Upload" @click="uploadWarning"
                        @change="upload" accept=".jpeg,.pdf">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Subir documento</p>
-                    <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
-                  <div class="pt-2 pr-2 ml-auto align-self-start"><i class="iconbutton icon-upload"></i></div>
+                    <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p>
+                  </div>
+                  <div class="pt-2 pr-2 ml-auto align-self-start">
+                    <i class="iconbutton icon-upload"></i>
+                  </div>
                 </div>
               </div>
 
               <div class="form-group inputstyle" :class="{highlightactive: verifyActive}">
                 <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified"
-                       accept=".jpeg,.pdf">
+                       @click="verifyWarning" accept=".jpeg,.pdf">
                 <div class="d-flex">
-                  <div><p class="buttontittle">Verificar documento</p>
-                    <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p></div>
-                  <div class="pt-2 pr-2 ml-auto align-self-start"><i class="iconbutton icon-verify"></i></div>
+                  <div>
+                    <p class="buttontittle">Verificar documento</p>
+                    <p class="text-input">Arrastre el documento aquí o haga clic para buscarlo</p>
+                  </div>
+                  <div class="pt-2 pr-2 ml-auto align-self-start">
+                    <i class="iconbutton icon-verify"></i>
+                  </div>
                 </div>
               </div>
 
@@ -46,8 +52,10 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 globe d-flex justify-content-center align-self-center my-auto mx-auto flex-column">
-        <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png" alt="">
+      <div
+          class="col-lg-6 col-md-6 col-sm-6 col-xs-12 globe d-flex justify-content-center align-self-center my-auto mx-auto flex-column">
+        <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png"
+             alt="">
         <component :is="globeComponent" ref="globe"></component>
         <gif :is="gifComponent" :gifName="gifName"></gif>
         <component :is="verifyComponent"></component>
@@ -156,8 +164,8 @@
           }, 5000)
         }
       },
-      error(e){
-        if(this.error.code === 409){
+      error(e) {
+        if (this.error.code === 409) {
           alert('El archivo ya ha sido subido con anterioridad, por lo que no se enviará nuevamente a la cadena de bloques.')
           this.addIpfsMarkersToGlobe()
           this.addEthMarkersToGlobe()
@@ -169,7 +177,7 @@
           this.fileNotFound = 'FileNotFound'
         }
       },
-      hash(e){
+      hash(e) {
         this.addIpfsMarkersToGlobe()
         this.uploadComponent = 'Upload'
         this.ethereumTimeOut = setTimeout(() => {
@@ -195,23 +203,11 @@
         const fileName = file.name
         this.gifName = fileName.substr(0, 3).toLowerCase()
 
-        this.verifyActive = false
-        this.downloadActive = false
-        this.uploadActive = true
-        this.setToNull()
         this.globeComponent = 'Global'
         this.gifComponent = 'Gif'
-        if(this.error.code === 409){
-
-        }
-
         this.uploadFile(file)
       },
       verified(e) {
-        this.setToNull()
-        this.uploadActive = false
-        this.downloadActive = false
-        this.verifyActive = true
         const files = e.target.files
         if (!files.length) {
           return
@@ -273,9 +269,19 @@
         this.globeComponent = 'Global'
         this.previewFile = 'PreviewFile'
       },
-      throwWarning() {
+      uploadWarning() {
         alert('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán guardados en IPFS y en la cadena de bloques,' +
-            ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
+          ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
+        this.verifyActive = false
+        this.downloadActive = false
+        this.uploadActive = true
+        this.setToNull()
+      },
+      verifyWarning() {
+        this.setToNull()
+        this.uploadActive = false
+        this.downloadActive = false
+        this.verifyActive = true
       }
     }
   }
