@@ -14,8 +14,16 @@ Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 
-Vue.axios.defaults.baseURL = 'http://localhost:10010'
-//Vue.axios.defaults.baseURL = '/api/'
+let remote
+
+try {
+  remote = $VUE_REMOTE
+} catch(e) {
+  remote = false
+}
+
+Vue.axios.defaults.baseURL = remote ? '/api/' : 'http://localhost:10010'
+
 sync(store,router)
 
 new Vue({
