@@ -10,7 +10,7 @@
         </div>
         <div class="modal-body">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            <iframe class="embed-responsive-item" src="https://ipfs.io/ipfs/QmbAWVBEPSirXRXCJ5xV9vNJZokgW21Wqta22XWGV15wdp"
                     allowfullscreen></iframe>
           </div>
         </div>

@@ -52,10 +52,8 @@
         </div>
       </div>
 
-      <div
-          class="col-lg-6 col-md-6 col-sm-6 col-xs-12 globe d-flex justify-content-center align-self-center my-auto mx-auto flex-column">
-        <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png"
-             alt="">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 globe d-flex justify-content-center align-self-center my-auto mx-auto flex-column">
+        <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png" alt="">
         <component :is="globeComponent" ref="globe"></component>
         <gif :is="gifComponent" :gifName="gifName"></gif>
         <component :is="verifyComponent"></component>
@@ -81,7 +79,7 @@
     <div class="row download">
       <div>
         <download></download>
-        <Tutorial></Tutorial>
+        <tutorial></tutorial>
       </div>
     </div>
   </div>
@@ -93,7 +91,7 @@
 
   import Global from '@/components/common/Global'
   import Upload from '@/components/common/Upload'
-  import Download from '@/components/common/Download'
+  import Download from '@/components/dashboard/Download'
   import UploadBlockchain from '@/components/common/UploadBlockchain'
   import Tutorial from '@/components/common/Tutorial'
   import Verify from '@/components/common/Verify'
