@@ -179,6 +179,7 @@
         setProperty: constants.TOOLKIT_SET_PROPERTY
       }),
       upload(e) {
+        this.setToNull()
         const files = e.target.files
         if (!files.length) {
           return
@@ -262,15 +263,15 @@
         this.previewFile = 'PreviewFile'
       },
       uploadWarning() {
+        this.setToNull()
+        this.globeComponent = 'Global'
         alert('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán guardados en IPFS y en la cadena de bloques,' +
           ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
         this.verifyActive = false
         this.downloadActive = false
         this.uploadActive = true
-        this.setToNull()
       },
       verifyWarning() {
-        this.setToNull()
         this.uploadActive = false
         this.downloadActive = false
         this.verifyActive = true
