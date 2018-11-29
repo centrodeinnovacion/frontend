@@ -20,7 +20,6 @@
 
 <script>
   import {mapState} from 'vuex'
-  import Chaffle from 'chaffle'
 
   export default {
     name: 'Dashboard',
@@ -31,17 +30,6 @@
       })
     },
     methods: {
-      chaffleIt() {
-        const elements = document.querySelectorAll('[data-chaffle]')
-        Array.prototype.forEach.call(elements, el => {
-          const chaffle = new Chaffle(el, {
-            lang: 'en',
-            speed: 5,
-            delay: 10
-          })
-          chaffle.init()
-        })
-      },
       doCopy () {
         if (this.error.code === 409) {
           this.$copyText(this.error.detailed.split(' ').pop()).then((e) => {

@@ -18,36 +18,20 @@
 </template>
 
 <script>
-import Chaffle from 'chaffle'
-import {mapState} from 'vuex'
+  import {mapState} from 'vuex'
 
-export default {
-  name: "UploadBlockchain",
-  mounted() {
-    setTimeout(() => {
-      this.chaffleIt()
-    }, 3000)
-  },
-  computed: {
-    ...mapState({
-      hash: state => state.Toolkit.hash
-    })
-  },
-  methods: {
-    chaffleIt() {
-      const elements = document.querySelectorAll('[data-chaffle]')
-      Array.prototype.forEach.call(elements, el => {
-        const chaffle = new Chaffle(el, {
-          lang: 'en',
-          speed: 20,
-          delay: 100
-        })
-        chaffle.init()
+  export default {
+    name: "UploadBlockchain",
+    computed: {
+      ...mapState({
+        hash: state => state.Toolkit.hash
       })
     },
-    doCopy () {
-      window.open(`https://ropsten.etherscan.io/tx/${this.hash.tx}`, '_blank');
+    methods: {
+      doCopy () {
+        if(this.hash.tx.split(' ')[0] !== 'No')
+          window.open(`https://ropsten.etherscan.io/tx/${this.hash.tx}`, '_blank');
+      }
     }
   }
-}
 </script>

@@ -163,25 +163,11 @@
         }
       },
       error(e) {
-        if (this.error.code === 409) {
-          alert('El archivo ya ha sido subido con anterioridad, por lo que no se enviará nuevamente a la cadena de bloques.')
-          this.addIpfsMarkersToGlobe()
-          this.addEthMarkersToGlobe()
-          this.uploadComponent = 'Upload'
-        }
         if (this.error.code === 404) {
           this.setToNull()
           this.notFoundBc = 'NotFoundBc'
           this.fileNotFound = 'FileNotFound'
         }
-      },
-      hash(e) {
-        this.addIpfsMarkersToGlobe()
-        this.uploadComponent = 'Upload'
-        this.ethereumTimeOut = setTimeout(() => {
-          this.addEthMarkersToGlobe()
-          this.uploadBlockchainComponent = 'UploadBlockchain'
-        }, 2000)
       }
     },
     methods: {
@@ -203,7 +189,15 @@
 
         this.globeComponent = 'Global'
         this.gifComponent = 'Gif'
+        this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
+
         this.uploadFile(file)
+        this.addIpfsMarkersToGlobe()
+        this.uploadComponent = 'Upload'
+        this.ethereumTimeOut = setTimeout(() => {
+          this.addEthMarkersToGlobe()
+          this.uploadBlockchainComponent = 'UploadBlockchain'
+        }, 2000)
       },
       verified(e) {
         const files = e.target.files

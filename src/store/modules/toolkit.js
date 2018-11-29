@@ -27,10 +27,10 @@ const actions = {
         .then(hash => {
           commit(constants.TOOLKIT_SET_PROPERTY, {hash})
         })
-        .catch(response => {
+        /*.catch(response => {
           const error = {code: response.response.data.code, detailed: response.response.data.detailed}
           commit(constants.TOOLKIT_SET_PROPERTY, {error})
-        })
+        })*/
 
   },
   [constants.TOOLKIT_VERIFIED_FILE]: ({commit}, data) => {
