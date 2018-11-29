@@ -8,9 +8,7 @@
       <p> El hash del documento es transferido de <a href="https://ipfs.io/" target="_blank">IPFS</a> a nodos de la red de
       Blockchain en este caso <a href="https://www.ethereum.org/" target="_blank">Ethereum</a> a través del <a href="https://hipertextual.com/archivo/2014/05/que-es-api/" target="_blank">API</a>.</p>
       <h4 class="colorgreen">Hash:</h4>
-      <textarea readonly class="colorgreen" id="etheHash" @click="doCopy">
-        {{hash.tx}}
-      </textarea>
+      <textarea readonly class="colorgreen" id="etheHash" @click="doCopy">{{hash.tx}}</textarea>
       <p class="mb-5 pb-5">Blockchain devuelve al usuario un hash que indentifica la transacción.</p>
       <p></p>
     </div>
