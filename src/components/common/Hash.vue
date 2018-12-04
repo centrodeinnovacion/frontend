@@ -22,7 +22,6 @@
     },
     methods:{
       doCopy () {
-        console.log(`I just click to copy ${this.validate.hash}`)
         this.$copyText(this.validate.hash).then( (e) => {
           alert(`Se ha copiado: ${this.validate.hash}`)
         })

@@ -201,15 +201,17 @@
         }, 2000)
       },
       verified(e) {
+        this.setToNull()
         const files = e.target.files
         if (!files.length) {
           return
         }
         const file = files[0]
-        this.gifComponent = 'Gif'
-        this.verifiedFile(file)
-
+        this.globeComponent = 'Global'
         this.verifyBlockchainComponent = 'VerifyBlockchain'
+        this.gifComponent = 'Gif'
+
+        this.verifiedFile(file)
       },
       addIpfsMarkersToGlobe() {
         this.ipfsInterval = setInterval(() => {
