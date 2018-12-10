@@ -21,14 +21,14 @@
     <div class="d-flex flex-column container-fluid fixed-bottom2">
       <div class="d-flex flex-wrap">
         <div class="p-2">
-          <img src="../assets/img/logo_unpd.png"/>
-          <img src="../assets/img/logo_undesa.png"/>
+          <a href="http://www.co.undp.org/" target="_blank"> <img src="../assets/img/logo_unpd.png"/></a>
+          <a href="https://www.un.org/development/desa/en/" target="_blank"><img src="../assets/img/logo_undesa.png"/></a>
         </div>
         <div class="p-2">
-          <img src="../assets/img/logo_mintic.png"/>
+          <a href="https://www.mintic.gov.co/portal/604/w3-channel.html" target="_blank"><img src="../assets/img/logo_mintic.png"/></a>
         </div>
         <div class="ml-auto p-2">
-          <img src="../assets/img/logo_centrodeinnovacion.png"/>
+          <a href="http://centrodeinnovacion.gobiernoenlinea.gov.co/es" target="_blank"><img src="../assets/img/logo_centrodeinnovacion.png"/></a>
           <span class="linefooterhome"></span>
         </div>
         <div class="p-2">
