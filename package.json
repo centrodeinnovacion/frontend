@@ -9,7 +9,6 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
-    "chaffle": "^2.0.0",
     "form-data": "^2.3.3",
     "vue": "^2.5.17",
     "vue-axios": "^2.1.4",

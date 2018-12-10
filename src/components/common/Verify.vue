@@ -1,19 +1,19 @@
 <template>
   <div class="verify mx-auto my-auto position-fixed d-flex justify-content-center align-self-center ">
     <div class="hash font-weight-bold firsthash">
-      <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
+      <p>{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash font-weight-bold secondhash">
-      <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
+      <p>{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash font-weight-bold thirdhash">
-      <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
+      <p>{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="hash font-weight-bold fourthash">
-      <p data-chaffle="en">{{ `${validate.hash.substr(0,11)}...` }}</p>
+      <p>{{ `${validate.hash.substr(0,11)}...` }}</p>
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="line1 mx-auto">
@@ -64,7 +64,6 @@
 
 
 <script>
-  import Chaffle from 'chaffle'
   import {mapState} from 'vuex'
 
   export default {
@@ -73,19 +72,6 @@
       ...mapState({
         validate: state => state.Toolkit.validate
       })
-    },
-    methods: {
-      chaffleIt() {
-        const elements = document.querySelectorAll('[data-chaffle]')
-        Array.prototype.forEach.call(elements, el => {
-          const chaffle = new Chaffle(el, {
-            lang: 'en',
-            speed: 40,
-            delay: 80
-          })
-          chaffle.init()
-        })
-      }
     }
   }
 </script>

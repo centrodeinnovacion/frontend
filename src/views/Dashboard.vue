@@ -163,25 +163,11 @@
         }
       },
       error(e) {
-        if (this.error.code === 409) {
-          alert('El archivo ya ha sido subido con anterioridad, por lo que no se enviará nuevamente a la cadena de bloques.')
-          this.addIpfsMarkersToGlobe()
-          this.addEthMarkersToGlobe()
-          this.uploadComponent = 'Upload'
-        }
         if (this.error.code === 404) {
           this.setToNull()
           this.notFoundBc = 'NotFoundBc'
           this.fileNotFound = 'FileNotFound'
         }
-      },
-      hash(e) {
-        this.addIpfsMarkersToGlobe()
-        this.uploadComponent = 'Upload'
-        this.ethereumTimeOut = setTimeout(() => {
-          this.addEthMarkersToGlobe()
-          this.uploadBlockchainComponent = 'UploadBlockchain'
-        }, 2000)
       }
     },
     methods: {
@@ -193,6 +179,7 @@
         setProperty: constants.TOOLKIT_SET_PROPERTY
       }),
       upload(e) {
+        this.setToNull()
         const files = e.target.files
         if (!files.length) {
           return
@@ -203,18 +190,28 @@
 
         this.globeComponent = 'Global'
         this.gifComponent = 'Gif'
+        this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
+
         this.uploadFile(file)
+        this.addIpfsMarkersToGlobe()
+        this.uploadComponent = 'Upload'
+        this.ethereumTimeOut = setTimeout(() => {
+          this.addEthMarkersToGlobe()
+          this.uploadBlockchainComponent = 'UploadBlockchain'
+        }, 2000)
       },
       verified(e) {
+        this.setToNull()
         const files = e.target.files
         if (!files.length) {
           return
         }
         const file = files[0]
-        this.gifComponent = 'Gif'
-        this.verifiedFile(file)
-
+        this.globeComponent = 'Global'
         this.verifyBlockchainComponent = 'VerifyBlockchain'
+        this.gifComponent = 'Gif'
+
+        this.verifiedFile(file)
       },
       addIpfsMarkersToGlobe() {
         this.ipfsInterval = setInterval(() => {
@@ -268,15 +265,15 @@
         this.previewFile = 'PreviewFile'
       },
       uploadWarning() {
+        this.setToNull()
+        this.globeComponent = 'Global'
         alert('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán guardados en IPFS y en la cadena de bloques,' +
           ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
         this.verifyActive = false
         this.downloadActive = false
         this.uploadActive = true
-        this.setToNull()
       },
       verifyWarning() {
-        this.setToNull()
         this.uploadActive = false
         this.downloadActive = false
         this.verifyActive = true
