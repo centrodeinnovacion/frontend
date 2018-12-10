@@ -27,11 +27,10 @@ const actions = {
         .then(hash => {
           commit(constants.TOOLKIT_SET_PROPERTY, {hash})
         })
-        .catch(response => {
-          const error = {code: response.response.data.code, detailed: response.response.data.detailed}
-          commit(constants.TOOLKIT_SET_PROPERTY, {error})
+        .catch(res => {
+          const hash = {hash: res.response.data.detailed.hash, tx: res.response.data.detailed.fileName}
+          commit(constants.TOOLKIT_SET_PROPERTY, {hash})
         })
-
   },
   [constants.TOOLKIT_VERIFIED_FILE]: ({commit}, data) => {
     const formData = new FormData()
@@ -41,8 +40,8 @@ const actions = {
         .then(validate => {
           commit(constants.TOOLKIT_SET_PROPERTY, {validate})
         })
-        .catch(response => {
-          const error = {code: response.response.data.code, detailed: response.response.data.detailed}
+        .catch(res => {
+          const error = {code: res.response.data.code, detailed: res.response.data.detailed }
           commit(constants.TOOLKIT_SET_PROPERTY, {error})
         })
   },
@@ -60,9 +59,9 @@ const actions = {
         .then(file => {
           commit(constants.TOOLKIT_SET_PROPERTY, {file})
         })
-        .catch(response => {
-          const error = { code: response.response.status, detailed: response.response.statusText}
-          commit(constants.TOOLKIT_SET_PROPERTY, {error})
+        .catch(res => {
+            const error = { code: res.response.status, detailed: res.response.statusText}
+            commit(constants.TOOLKIT_SET_PROPERTY, {error})
         })
   }
 }
