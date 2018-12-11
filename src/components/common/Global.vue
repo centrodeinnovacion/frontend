@@ -21,7 +21,7 @@
           rotationIdleSpeedFactor: 20.0,
           rotationSpeedFactor: 1.5,
           wave: false,
-          width: 650
+          width: 590
         },
         globe: null,
         imageIPFS: null,

@@ -29,8 +29,8 @@
 }
 a {
   color: $lightgreen;
-  font-style: reular;
   font-weight: 500;
+  text-transform: uppercase;
   &:hover{
     color: $lightgreen;
   }
