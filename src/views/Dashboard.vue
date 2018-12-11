@@ -5,7 +5,7 @@
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div>
           <h2>Instrucciones</h2>
-          <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong> o
+          <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong>, <strong>.jpeg</strong> o
             <strong>.jpg</strong>, para esto seleccione una de las siguientes acciones: </p>
 
           <form @submit.prevent>
@@ -56,6 +56,7 @@
         <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png" alt="">
         <component :is="globeComponent" ref="globe"></component>
         <gif :is="gifComponent" :gifName="gifName"></gif>
+        <hash></hash>
         <component :is="verifyComponent"></component>
         <component :is="hashVerified"></component>
         <component :is="notFoundBc"></component>

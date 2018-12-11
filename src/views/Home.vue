@@ -9,8 +9,9 @@
       <p class="textcenter text-center pr-5 pl-5 mr-5 ml-5">Esta tecnología puede considerarse como una base de
         datos compartida y validada por consenso, entre varios nodos o computadores conectados a una misma red,
         es decir que la información se maneja de forma descentralizada. Este toolkit le dará herramientas para
-        entender el funcionamiento de Blockchain. Para navegar correctamente por el sitio es necesario hacerlo desde un
-        computador. </p>
+        entender el funcionamiento de Blockchain.<br>
+      <span class="coloryellow"><i class="fas fa-exclamation-triangle"></i> Para navegar correctamente por este sitio es necesario hacerlo desde un
+        computador. </span></p>
       <router-link class="btn" :to="{name: 'howitworks'}">
         <span class="buttontext">Empezar</span>
       </router-link>
