@@ -56,7 +56,6 @@
         <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png" alt="">
         <component :is="globeComponent" ref="globe"></component>
         <gif :is="gifComponent" :gifName="gifName"></gif>
-        <hash></hash>
         <component :is="verifyComponent"></component>
         <component :is="hashVerified"></component>
         <component :is="notFoundBc"></component>
