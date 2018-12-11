@@ -7,8 +7,8 @@
       <footer class="" v-if="route !== 'home' && route !== 'about'">
         <div class="d-flex fixed-bottom mb-2">
           <div class="p-2 ml-5 mr-auto mb-0 pb-0" data-toggle="tooltip" data-placement="top" title="¿Cómo usar este kit?">
-            <button type="button"  class="btnDiamond" data-toggle="modal" data-target="#tutorialModal" id="Tutorial">
-              <i class="fas fa-question"></i>
+            <button type="button"  class="btnStyle p-3" data-toggle="modal" data-target="#tutorialModal" id="Tutorial">
+              Video explicativo
             </button>
           </div>
           <div class="p-2 mr-3 mb-3">
@@ -17,7 +17,7 @@
             </router-link>
           </div>
           <div class="p-2 mr-3 mb-0">
-            <router-link class="btnDiamond" :to="{name: forward}">
+            <router-link class="btnDiamond2" :to="{name: forward}">
               <i class="fas fa-arrow-right"></i>
             </router-link>
           </div>

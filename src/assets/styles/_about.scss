@@ -180,3 +180,55 @@ a {
     margin-right: auto!important;
   }
 }
+
+.btnStyle {
+  margin-top: 50px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color:$lightgreen;
+  background-color: transparent;
+  border-radius: 0 !important;
+  &:hover {
+    background-color: none;
+    color: $lightgreentransparent !important;
+  }
+}
+.btnDiamond2 {
+  margin-top: 50px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $lightgreen;
+  background-color: $lightgreen;
+  width: 50px;
+  height: 50px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-radius: 0 !important;
+  .fas {
+    color: $darkblue !important;
+    -webkit-transform: rotate(-45deg) !important;
+    -moz-transform: rotate(-45deg) !important;
+    -ms-transform: rotate(-45deg) !important;
+    -o-transform: rotate(-45deg) !important;
+    transform: rotate(-45deg) !important;
+  }
+}
+
+.btnDiamond2:hover {
+  background-color: $darkblue;
+  text-decoration-color: $darkblue !important;
+  .fas {
+    color: $lightgreen !important;
+  }
+}
+

@@ -9,39 +9,79 @@
       <div class="d-flex align-items-lg-start align-items-md-start flex-column pr-lg-3">
         <div class="step mt-3 pl-5 pt-2 mb-lg-5 mb-md-5 mb-sm-0 pb-lg-5 pb-md-5 pb-sm-0 fadeInLeft ad-1">
           <p><span class="purple number text-right">1.</span><br>
-            Un usuario realiza una operación, bien sea cargar o enviar cualquier tipo de información. A esta
-            operación se le denomina transacción. El usuario recibe un reporte certificando la operación, en
-            Blockchain a este reporte se le denomina "hash".</p>
+            Un usuario realiza una operación utilizando Blockchain, para este caso cargar o descentralizar un documento.
+            A esta operación se le denomina transacción.
+            Cada documento tiene una representación alfanumérica única de acuerdo a su contenido. A esto se le
+            denomina “hash”.</p>
         </div>
         <div class="step mtsm2 o mt-5 pt-5 pl-5 fadeInLeft pb-5 ad-1 mb-5">
           <p><span class="green number text-right">3.</span><br>
-            Al completar la capacidad de almacenaje (generalmente en minutos), el bloque se cierra con el registro de
-            las transacciones realizadas y se crea uno nuevo. Al cerrarse se genera otro hash, que contiene el reporte
-            del contenido del bloque junto a una referencia al bloque anterior.</p>
+            La cadena de bloques o Blockchain se compone de nodos, que son computadores ubicados en
+            diferentes lugares del planeta, conectados a través de un protocolo que garantiza tener una copia de los
+            datos en cada nodo, lo que permite la descentralización de la información.
+          </p>
         </div>
         <div class="step mtsm4 mt-5 pt-5 pl-5 fadeInLeft ad-1 pb-5 mb-5">
           <p><span class="orangelight number text-right">5.</span><br>
-            Las cadenas de bloques se encuentran almacenadas dentro de la red de Blockchain, la cual se compone de
-            nodos, estos son puntos de almacenamiento que se encuentran ubicados en diferentes lugares del planeta, lo
-            que permite la descentralización la información. Cada nodo de la red tiene una copia de la cadena de
-            bloques.</p>
+            En la cadena de bloques es muy difícil eliminar o modificar información, pues para hacerlo la información se
+            debe cambiar en el 51% de los nodos al mismo tiempo. Sin embargo en las redes públicas de Blockchain más
+            conocidas la gran cantidad de nodos que la componen aseguran que lo que se registre en Blockchain no podrá
+            ser eliminado.
+          </p>
         </div>
         <div class="step mtsm  mt pt-5 pl-5 fadeInLeft ad-1">
           <p><span class="colorgreen number text-right">7.</span><br>
-            En la cadena de bloques es imposible destruir o modificar información, pues para hacerlo la información se
-            debe modificar en el 51% de los nodos. Sin embargo en redes públicas de blockchain como Etherium la gran
-            cantidad de nodos que la componen hacen imposible lo anterior. Por esta razón Blockchain es considerado en
-            extremo seguro.</p>
+            En este kit el usuario subirá un documento que se registrará en IPFS el cual arrojará un hash único del
+            documento. Este kit tomará ese hash y lo guardará en
+            Blockchain y generará otro hash que identificará la transacción realizada por el kit. Tanto el documento como la
+            transacción son descentralizados lo que asegura su autenticidad.
+          </p>
         </div>
       </div>
 
       <div class="drawhowitworks d-flex align-items-start pt-5 mt-3">
         <svg class="draw align-self-center"x="0px" y="0" width="300px" height="1500px" viewBox="0 520 250 200" xml:space="preserve">
-          <g><path class="st8" d="M118.1,69.3V56.6H99.5c-1.2,0-2.2,1-2.2,2.2v43.3c0,1.2,1,2.2,2.2,2.2h31.4c1.2,0,2.2-1,2.2-2.2V71.5h-12.7 C119.1,71.5,118.1,70.5,118.1,69.3z M133.1,68v0.6h-11.9V56.6h0.6c0.6,0,1.2,0.2,1.6,0.7l9.1,9.1C132.8,66.8,133.1,67.4,133.1,68z"/><ellipse transform="matrix(1.314359e-02 -0.9999 0.9999 1.314359e-02 -5.3856 19.5856)" class="st8" cx="7.2" cy="12.5" rx="5" ry="5"/>
-          <ellipse transform="matrix(1.314359e-02 -0.9999 0.9999 1.314359e-02 71.217 154.2018)" class="st8" cx="113.7" cy="41" rx="5" ry="5"/>
-          <polyline class="st8" points="12.2,13 114.2,13 114.2,36 	"/>
-          <rect x="114.2" y="81.1" class="st8" width="1" height="9.9"/>
-          <polygon class="st8" points="118.8,84.4 118.1,85.1 114.7,81.5 111.4,85.1 110.6,84.4 114.7,80 				"/>
+          <g>
+            <g>
+	<ellipse class="st8" cx="7.2" cy="12.6" rx="5" ry="5"/>
+	<ellipse class="st8" cx="113.7" cy="41.1" rx="5" ry="5"/>
+	<polyline class="st8" points="12.2,13 114.2,13 114.2,36 	"/>
+</g>
+<g>
+	<path class="st8" d="M81.2,58.9V46.2H62.6c-1.2,0-2.2,1-2.2,2.2v43.3c0,1.2,1,2.2,2.2,2.2H94c1.2,0,2.2-1,2.2-2.2V61.1H83.5
+		C82.2,61.1,81.2,60.1,81.2,58.9z M96.2,57.6v0.6H84.3v-12h0.6c0.6,0,1.2,0.2,1.6,0.7l9.1,9.1C95.9,56.4,96.2,57,96.2,57.6z"/>
+	<g>
+		<g>
+			<g>
+				<rect x="77.3" y="70.7" class="st8" width="1" height="9.9"/>
+			</g>
+			<g>
+				<g>
+					<polygon class="st8" points="81.9,74 81.2,74.7 77.8,71.1 74.5,74.7 73.7,74 77.8,69.6 					"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<path class="st8" d="M137.6,75.6h-1v-5.9h-7v5.9h-1V63.3h1v5.5h7v-5.5h1V75.6z"/>
+	<path class="st8" d="M147.5,72.2H142l-1.3,3.4h-1.1l4.6-12.3h1l4.6,12.3h-1.1L147.5,72.2z M142.3,71.3h4.9l-2.5-6.7L142.3,71.3z"/>
+	<path class="st8" d="M158.6,72.6c0-0.7-0.2-1.2-0.7-1.6c-0.5-0.4-1.4-0.8-2.6-1.1c-1.3-0.4-2.2-0.7-2.8-1.2
+		c-0.8-0.6-1.2-1.4-1.2-2.3c0-0.9,0.4-1.7,1.2-2.3c0.8-0.6,1.8-0.9,3-0.9c0.8,0,1.5,0.2,2.2,0.5c0.6,0.3,1.1,0.8,1.5,1.3
+		c0.4,0.6,0.5,1.2,0.5,1.9h-1c0-0.8-0.3-1.5-0.9-2s-1.3-0.8-2.3-0.8c-0.9,0-1.7,0.2-2.2,0.6c-0.6,0.4-0.8,1-0.8,1.6
+		c0,0.6,0.2,1.1,0.8,1.5c0.5,0.4,1.3,0.7,2.4,1s1.9,0.6,2.5,0.9c0.6,0.3,1,0.7,1.3,1.2c0.3,0.4,0.4,1,0.4,1.6c0,1-0.4,1.7-1.2,2.3
+		c-0.8,0.6-1.8,0.9-3.1,0.9c-0.9,0-1.7-0.2-2.4-0.5c-0.7-0.3-1.3-0.7-1.6-1.3s-0.6-1.2-0.6-1.9h1c0,0.9,0.3,1.5,1,2
+		c0.6,0.5,1.5,0.8,2.6,0.8c1,0,1.7-0.2,2.3-0.6C158.4,73.8,158.6,73.3,158.6,72.6z"/>
+	<path class="st8" d="M171,75.6h-1v-5.9h-7v5.9h-1V63.3h1v5.5h7v-5.5h1V75.6z"/>
+</g>
+<g>
+	<g>
+		<rect x="108.8" y="66.9" class="st8" width="9.9" height="1"/>
+	</g>
+	<g>
+		<rect x="108.8" y="72.1" class="st8" width="9.9" height="1"/>
+	</g>
+</g>
           </g>
           <g><ellipse transform="matrix(1.314360e-02 -0.9999 0.9999 1.314360e-02 69.8069 368.7729)" class="st9" cx="221.7" cy="149" rx="5" ry="5"/>
           <ellipse transform="matrix(1.314360e-02 -0.9999 0.9999 1.314360e-02 -7.295 234.6494)" class="st9" cx="115.2" cy="121" rx="5" ry="5"/>
@@ -57,82 +97,95 @@
           <g><ellipse transform="matrix(0.9999 -1.314362e-02 1.314362e-02 0.9999 -3.9953 0.1213)" class="st11" cx="7.2" cy="304" rx="5" ry="5"/>
           <ellipse transform="matrix(0.9999 -1.314362e-02 1.314362e-02 0.9999 -3.6115 1.5186)" class="st11" cx="113.7" cy="275.5" rx="5" ry="5"/>
           <polyline class="st11" points="12.2,303.5 114.2,303.5 114.2,280.5 	"/>
-          <polygon class="st11" points="161.7,368 179.7,374 161.7,380 143.7,374 "/>
-          <polygon class="st12" points="161.7,400 161.7,380 179.7,374 180.1,394 	"/>
-          <polygon class="st12" points="161.7,400 161.7,380 143.7,374 143.4,394 	"/>
-          <polygon class="st12" points="113.7,368 131.7,374 113.7,380 95.7,374 "/>
-          <polygon class="st12" points="113.7,400 113.7,380 131.7,374 132.1,394 	"/>
-          <polygon class="st12" points="113.7,400 113.7,380 95.7,374 95.4,394 	"/>
+            <g>
+	<ellipse class="st12" cx="7.2" cy="323.6" rx="5" ry="5"/>
+	<ellipse class="st12" cx="113.7" cy="352.1" rx="5" ry="5"/>
+	<polyline class="st12" points="12.2,324 114.2,324 114.2,347 	"/>
+</g>
+<g>
+	<ellipse class="st12" cx="7.2" cy="304" rx="5" ry="5"/>
+	<ellipse class="st12" cx="113.7" cy="275.5" rx="5" ry="5"/>
+	<polyline class="st12" points="12.2,303.5 114.2,303.5 114.2,280.5 	"/>
+</g>
+<path class="st12" d="M97.8,364.7H83.3c-0.8,0-1.5,0.7-1.5,1.7v11.1c0,0.9,0.7,1.7,1.5,1.7h5.8l-0.5,1.7h-2.2
+	c-0.4,0-0.7,0.4-0.7,0.8s0.3,0.8,0.7,0.8h8.3c0.4,0,0.7-0.4,0.7-0.8s-0.3-0.8-0.7-0.8h-2.2l-0.5-1.7h5.8c0.8,0,1.5-0.7,1.5-1.7
+	v-11.1C99.3,365.5,98.6,364.7,97.8,364.7z M97.3,376.9H83.7v-10h13.6V376.9z"/>
+<path class="st12" d="M147.5,364.7H133c-0.8,0-1.5,0.7-1.5,1.7v11.1c0,0.9,0.7,1.7,1.5,1.7h5.8l-0.5,1.7h-2.2
+	c-0.4,0-0.7,0.4-0.7,0.8s0.3,0.8,0.7,0.8h8.3c0.4,0,0.7-0.4,0.7-0.8s-0.3-0.8-0.7-0.8h-2.2l-0.5-1.7h5.8c0.8,0,1.5-0.7,1.5-1.7
+	v-11.1C149,365.5,148.3,364.7,147.5,364.7z M147,376.9h-13.6v-10H147V376.9z"/>
+<path class="st12" d="M147.5,410.2H133c-0.8,0-1.5,0.7-1.5,1.7v11.1c0,0.9,0.7,1.7,1.5,1.7h5.8l-0.5,1.7h-2.2
+	c-0.4,0-0.7,0.4-0.7,0.8c0,0.5,0.3,0.8,0.7,0.8h8.3c0.4,0,0.7-0.4,0.7-0.8c0-0.5-0.3-0.8-0.7-0.8h-2.2l-0.5-1.7h5.8
+	c0.8,0,1.5-0.7,1.5-1.7v-11.1C149,410.9,148.3,410.2,147.5,410.2z M147,422.4h-13.6v-10H147V422.4z"/>
+<path class="st12" d="M92.8,410.2H78.2c-0.8,0-1.5,0.7-1.5,1.7v11.1c0,0.9,0.7,1.7,1.5,1.7H84l-0.5,1.7h-2.2c-0.4,0-0.7,0.4-0.7,0.8
+	c0,0.5,0.3,0.8,0.7,0.8h8.3c0.4,0,0.7-0.4,0.7-0.8c0-0.5-0.3-0.8-0.7-0.8h-2.2l-0.5-1.7h5.8c0.8,0,1.5-0.7,1.5-1.7v-11.1
+	C94.2,410.9,93.6,410.2,92.8,410.2z M92.3,422.4H78.7v-10h13.6V422.4z"/>
+<path class="st12" d="M120.1,390.8h-14.6c-0.8,0-1.5,0.7-1.5,1.7v11.1c0,0.9,0.7,1.7,1.5,1.7h5.8l-0.5,1.7h-2.2
+	c-0.4,0-0.7,0.4-0.7,0.8s0.3,0.8,0.7,0.8h8.3c0.4,0,0.7-0.4,0.7-0.8s-0.3-0.8-0.7-0.8h-2.2l-0.5-1.7h5.8c0.8,0,1.5-0.7,1.5-1.7
+	v-11.1C121.5,391.5,120.9,390.8,120.1,390.8z M119.6,403H106v-10h13.6V403z"/>
+<line class="st12" x1="104.1" y1="371.9" x2="126.9" y2="371.9"/>
+<line class="st12" x1="131.5" y1="384.7" x2="124.1" y2="389.7"/>
+<line class="st12" x1="140.2" y1="387.2" x2="140.2" y2="404.7"/>
+<line class="st12" x1="101.7" y1="382.5" x2="106.9" y2="387.7"/>
+<line class="st12" x1="124.4" y1="405.1" x2="129.5" y2="410.3"/>
+<line class="st12" x1="103.5" y1="421" x2="125.4" y2="421"/>
+<line class="st12" x1="94.2" y1="408.5" x2="98.7" y2="404.1"/>
+<line class="st12" x1="86.7" y1="389.7" x2="86.7" y2="404.7"/>
           <ellipse transform="matrix(1.314362e-02 -0.9999 0.9999 1.314362e-02 -316.3588 326.4979)" class="st11" cx="7.2" cy="323.5" rx="5" ry="5"/>
           <ellipse transform="matrix(1.314362e-02 -0.9999 0.9999 1.314362e-02 -239.7561 461.1141)" class="st11" cx="113.7" cy="352" rx="5" ry="5"/>
           <polyline class="st11" points="12.2,324 114.2,324 114.2,347 	"/></g>
-          <g><ellipse transform="matrix(1.314360e-02 -0.9999 0.9999 1.314360e-02 -227.1675 661.8693)" class="st0" cx="221.7" cy="446" rx="5" ry="5"/>
-          <ellipse transform="matrix(1.314360e-02 -0.9999 0.9999 1.314360e-02 -304.2693 527.7457)" class="st0" cx="115.2" cy="418" rx="5" ry="5"/>
-          <polyline class="st0" points="216.7,446 114.7,446 114.7,423 	"/>
-          <ellipse transform="matrix(1.314360e-02 -0.9999 0.9999 1.314360e-02 -378.2629 600.7731)" class="st0" cx="115.2" cy="492" rx="5" ry="5"/>
-          <ellipse transform="matrix(1.314359e-02 -0.9999 0.9999 1.314359e-02 -247.1665 681.6057)" class="st0" cx="221.7" cy="466" rx="5" ry="5"/>
-          <polyline class="st0" points="216.7,466 114.7,466 114.7,487 	"/>
-          <polygon class="st0" points="114.7,563 132.7,569 114.7,575 96.7,569 	"/>
-          <polygon class="st0" points="114.7,595 114.7,575 132.7,569 133.1,589 		"/>
-          <polygon class="st0" points="114.7,595 114.7,575 96.7,569 96.4,589 		"/>
-          <polygon class="st0" points="114.7,543 132.7,549 114.7,555 96.7,549 	"/>
-          <polygon class="st0" points="114.7,575 114.7,555 132.7,549 133.1,569 		"/>
-          <polygon class="st0" points="114.7,575 114.7,555 96.7,549 96.4,569 		"/>
-          <polygon class="st0" points="114.7,509 132.7,515 114.7,521 96.7,515 	"/>
-          <polygon class="st0" points="114.7,541 114.7,521 132.7,515 133.1,535 		"/>
-          <polygon class="st0" points="114.7,541 114.7,521 96.7,515 96.4,535 		"/>
-          </g>
-          <g><ellipse transform="matrix(0.9999 -1.314362e-02 1.314362e-02 0.9999 -8.4116 0.1503)" class="st13" cx="7.2" cy="640" rx="5" ry="5"/>
-          <ellipse transform="matrix(0.9999 -1.314362e-02 1.314362e-02 0.9999 -8.0278 1.5476)" class="st13" cx="113.7" cy="611.5" rx="5" ry="5"/>
-          <polyline class="st13" points="12.2,639.5 114.2,639.5 114.2,616.5 	"/>
-          <ellipse transform="matrix(1.314362e-02 -0.9999 0.9999 1.314362e-02 -652.3297 658.0817)" class="st13" cx="7.2" cy="659.5" rx="5" ry="5"/>
-          <ellipse transform="matrix(1.314362e-02 -0.9999 0.9999 1.314362e-02 -575.7271 792.6979)" class="st13" cx="113.7" cy="688" rx="5" ry="5"/>
-          <polyline class="st13" points="12.2,660 114.2,660 114.2,683 	"/>
-          </g>
-          <g><polygon class="st14" points="80.2,728.3 89.7,731.5 80.2,734.7 70.6,731.5 	"/>
-          <polygon class="st14" points="80.2,745.3 80.2,734.7 89.7,731.5 89.9,742.2 		"/>
-          <polygon class="st14" points="80.2,745.3 80.2,734.7 70.6,731.5 70.4,742.2 		"/>
-          <polygon class="st14" points="80.2,717.7 89.7,720.9 80.2,724.1 70.6,720.9 	"/>
-          <polygon class="st14" points="80.2,734.7 80.2,724.1 89.7,720.9 89.9,731.5 		"/>
-          <polygon class="st14" points="80.2,734.7 80.2,724.1 70.6,720.9 70.4,731.5 		"/>
-          <polygon class="st14" points="80.2,707 89.7,710.2 80.2,713.4 70.6,710.2 	"/>
-          <polygon class="st14" points="80.2,724.1 80.2,713.4 89.7,710.2 89.9,720.9 		"/>
-          <polygon class="st14" points="80.2,724.1 80.2,713.4 70.6,710.2 70.4,720.9 		"/>
-          <polygon class="st14" points="187.2,772.3 196.7,775.5 187.2,778.7 177.6,775.5 	"/>
-          <polygon class="st14" points="187.2,789.3 187.2,778.7 196.7,775.5 196.9,786.2 		"/>
-          <polygon class="st14" points="187.2,789.3 187.2,778.7 177.6,775.5 177.4,786.2 		"/>
-          <polygon class="st14" points="187.2,761.7 196.7,764.9 187.2,768.1 177.6,764.9 	"/>
-          <polygon class="st14" points="187.2,778.7 187.2,768.1 196.7,764.9 196.9,775.5 		"/>
-          <polygon class="st14" points="187.2,778.7 187.2,768.1 177.6,764.9 177.4,775.5 		"/>
-          <polygon class="st14" points="187.2,751 196.7,754.2 187.2,757.4 177.6,754.2 	"/>
-          <polygon class="st14" points="187.2,768.1 187.2,757.4 196.7,754.2 196.9,764.9 		"/>
-          <polygon class="st14" points="187.2,768.1 187.2,757.4 177.6,754.2 177.4,764.9 		"/>
-          <polygon class="st14" points="112.2,780.3 121.7,783.5 112.2,786.7 102.6,783.5 	"/>
-          <polygon class="st14" points="112.2,797.3 112.2,786.7 121.7,783.5 121.9,794.2 		"/>
-          <polygon class="st14" points="112.2,797.3 112.2,786.7 102.6,783.5 102.4,794.2 		"/>
-          <polygon class="st14" points="112.2,769.7 121.7,772.9 112.2,776.1 102.6,772.9 	"/>
-          <polygon class="st14" points="112.2,786.7 112.2,776.1 121.7,772.9 121.9,783.5 		"/>
-          <polygon class="st14" points="112.2,786.7 112.2,776.1 102.6,772.9 102.4,783.5 		"/>
-          <polygon class="st14" points="112.2,759 121.7,762.2 112.2,765.4 102.6,762.2 	"/>
-          <polygon class="st14" points="112.2,776.1 112.2,765.4 121.7,762.2 121.9,772.9 		"/>
-          <polygon class="st14" points="112.2,776.1 112.2,765.4 102.6,762.2 102.4,772.9 		"/>
-          <polygon class="st14" points="144.2,715.3 153.7,718.5 144.2,721.7 134.6,718.5 	"/>
-          <polygon class="st14" points="144.2,732.3 144.2,721.7 153.7,718.5 153.9,729.2 		"/>
-          <polygon class="st14" points="144.2,732.3 144.2,721.7 134.6,718.5 134.4,729.2 		"/>
-          <polygon class="st14" points="144.2,704.7 153.7,707.9 144.2,711.1 134.6,707.9 	"/>
-          <polygon class="st14" points="144.2,721.7 144.2,711.1 153.7,707.9 153.9,718.5 		"/>
-          <polygon class="st14" points="144.2,721.7 144.2,711.1 134.6,707.9 134.4,718.5 		"/>
-          <polygon class="st14" points="144.2,694 153.7,697.2 144.2,700.4 134.6,697.2 	"/>
-          <polygon class="st14" points="144.2,711.1 144.2,700.4 153.7,697.2 153.9,707.9 		"/>
-          <polygon class="st14" points="144.2,711.1 144.2,700.4 134.6,697.2 134.4,707.9 		"/>
-          <line class="st14" x1="96.7" y1="725" x2="127.7" y2="725"/>
-          <line class="st14" x1="155.7" y1="735" x2="172.2" y2="751.5"/>
-          <line class="st14" x1="170.7" y1="764" x2="129.7" y2="764"/>
-          <line class="st14" x1="100.7" y1="759" x2="88.2" y2="746.5"/>
-          </g>
-          <g><ellipse transform="matrix(1.314360e-02 -0.9999 0.9999 1.314360e-02 -633.1324 1062.533)" class="st15" cx="221.7" cy="852" rx="5" ry="5"/>
-          <ellipse transform="matrix(1.314360e-02 -0.9999 0.9999 1.314360e-02 -710.2343 928.4094)" class="st15" cx="115.2" cy="824" rx="5" ry="5"/>
-          <polyline class="st15" points="216.7,852 114.7,852 114.7,829 	"/>
+<g>
+	<ellipse class="st0" cx="221.7" cy="481" rx="5" ry="5"/>
+	<ellipse class="st0" cx="115.2" cy="453" rx="5" ry="5"/>
+	<polyline class="st0" points="216.7,480.9 114.7,480.9 114.7,457.9 	"/>
+</g>
+<g>
+	<ellipse class="st0" cx="115.2" cy="527" rx="5" ry="5"/>
+	<ellipse class="st0" cx="221.7" cy="501" rx="5" ry="5"/>
+	<polyline class="st0" points="216.7,500.9 114.7,500.9 114.7,521.9 	"/>
+</g>
+<g>
+	<polygon class="st0" points="114.7,597.9 132.7,603.9 114.7,609.9 96.7,603.9 	"/>
+	<g>
+		<polygon class="st0" points="114.7,629.9 114.7,609.9 132.7,603.9 133.1,623.9 		"/>
+		<polygon class="st0" points="114.7,629.9 114.7,609.9 96.7,603.9 96.4,623.9 		"/>
+	</g>
+	<polygon class="st0" points="114.7,577.9 132.7,583.9 114.7,589.9 96.7,583.9 	"/>
+	<g>
+		<polygon class="st0" points="114.7,609.9 114.7,589.9 132.7,583.9 133.1,603.9 		"/>
+		<polygon class="st0" points="114.7,609.9 114.7,589.9 96.7,583.9 96.4,603.9 		"/>
+	</g>
+	<polygon class="st0" points="114.7,543.9 132.7,549.9 114.7,555.9 96.7,549.9 	"/>
+	<g>
+		<polygon class="st0" points="114.7,575.9 114.7,555.9 132.7,549.9 133.1,569.9 		"/>
+		<polygon class="st0" points="114.7,575.9 114.7,555.9 96.7,549.9 96.4,569.9 		"/>
+	</g>
+</g>
+
+
+          <g>
+	<ellipse class="st13" cx="6.1" cy="692.7" rx="5" ry="5"/>
+	<ellipse class="st13" cx="112.6" cy="721.2" rx="5" ry="5"/>
+	<polyline class="st13" points="11.1,693.1 113.1,693.1 113.1,716.1 	"/>
+</g>
+<g>
+	<ellipse class="st13" cx="6.1" cy="673.1" rx="5" ry="5"/>
+	<ellipse class="st13" cx="112.6" cy="644.6" rx="5" ry="5"/>
+	<polyline class="st13" points="11.1,672.6 113.1,672.6 113.1,649.6 	"/>
+</g>
+
+<g>
+	<path class="st13" d="M113.7,735.7c-4.5,0-8.2,3.7-8.2,8.2v4.8h-1.1c-1.5,0-2.8,1.2-2.8,2.8v13.3c0,1.5,1.2,2.8,2.8,2.8h18.7
+		c1.5,0,2.8-1.2,2.8-2.8v-13.3c0-1.5-1.2-2.8-2.8-2.8H122v-4.8C121.9,739.4,118.3,735.7,113.7,735.7z M106.6,743.9
+		c0-3.9,3.2-7.1,7.1-7.1s7.1,3.2,7.1,7.1v4.8h-14.2V743.9z M123.1,749.8c0.9,0,1.7,0.7,1.7,1.7v13.3c0,0.9-0.7,1.7-1.7,1.7h-18.7
+		c-0.9,0-1.7-0.7-1.7-1.7v-13.3c0-0.9,0.7-1.7,1.7-1.7h1.7h15.3H123.1z"/>
+	<path class="st13" d="M113.7,752.6c-1.9,0-3.4,1.5-3.4,3.4c0,1.2,0.6,2.3,1.6,2.9v2.8c0,1,0.8,1.8,1.8,1.8s1.8-0.8,1.8-1.8v-2.8
+		c1-0.6,1.6-1.7,1.6-2.9C117.2,754.1,115.6,752.6,113.7,752.6z M114.7,758.1c-0.2,0.1-0.3,0.3-0.3,0.5v3.1c0,0.4-0.3,0.7-0.7,0.7
+		c-0.4,0-0.7-0.3-0.7-0.7v-3.1c0-0.2-0.1-0.4-0.3-0.5c-0.8-0.4-1.3-1.2-1.3-2.1c0-1.3,1-2.3,2.3-2.3s2.3,1,2.3,2.3
+		C116,756.9,115.5,757.7,114.7,758.1z"/>
+</g>
+
+          <g>
+
           <polyline class="st15" points="216.7,872 114.7,872 114.7,893 	"/>
           <polygon class="st15" points="114.7,954 132.7,960 114.7,966 96.7,960 	"/>
           <polygon class="st15" points="114.7,986 114.7,966 132.7,960 133.1,980 		"/>
@@ -160,17 +213,22 @@
       <div class="d-flex align-items-start flex-column pl-5">
         <div class="stepright mtsm6 mt-2 pt-3 pr-5 fadeInRight ad-1">
           <p class="text-left"><span class="color_lightgreen number text-left">2.</span><br>
-            La transacción es almacenada con otras transacciones, en una caja de seguridad representada en
-            Blockchain como un bloque.</p>
+            Blockchain traduce cadena de bloques y un bloque es un conjunto de transacciones que son confirmadas cada
+            cierto tiempo. Cada bloque se encuentra relacionado con el anterior y con el posterior a través de hashes.
+          </p>
         </div>
         <div class="stepright mtsm3 mt-2 pr-5 pt-3 pb-5 fadeInRight ad-1 mb-5">
           <p class="text-left"><span class="coloryellow number text-left">4.</span><br>
-            El bloque se enlaza con los bloques anteriores a través del hash o la referencia del bloque anterior.</p>
+            No es posible que un usuario modifique información almacenada en la cadena de bloques, sin embargo puede
+            registrar un cambio de la misma, generando una trazabilidad de los cambios realizados.
+          </p>
         </div>
-        <div class="stepright mtsm5  mt-5 pr-5 pt-5 fadeInRight ad-1">
-          <p class="text-left"><span class="orange number text-left">6.</span><br>
-            Si un usuario quiere modificar alguna información almacenada en la cadena de bloques, deberá crear una nueva
-            transacción y aun así la versión anterior de la información seguirá existiendo en la cadena.</p>
+        <div class="stepright mtsm5  mt-4 pr-5  fadeInRight ad-1">
+          <p class="text-left"><span class="orange number text-left">¿Cómo funciona este kit?</span><br>
+            Este Kit utiliza IPFS que es un sistema para descentralizar archivos. Similar a un Dropbox descentralizado. El proceso de
+            registro de documentos en IPFS es similar al realizado en Blockchain explicado anteriormente, que asegura
+            que los documentos no sean modificados.
+          </p>
         </div>
       </div>
     </div>
