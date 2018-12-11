@@ -7,9 +7,9 @@
       <h3 class="colorgreen">Transacción de IPFS a Blockchain</h3>
       <p> El hash del documento es transferido de <a href="https://ipfs.io/" target="_blank">IPFS</a> a nodos de la red de
       Blockchain en este caso <a href="https://www.ethereum.org/" target="_blank">Ethereum</a> a través del <a href="https://hipertextual.com/archivo/2014/05/que-es-api/" target="_blank">API</a>.</p>
-      <h4 class="colorgreen">Hash:</h4>
+      <h4 class="colorgreen">Hash de la transacción:</h4>
       <textarea readonly class="colorgreen" id="etheHash" @click="doCopy">{{this.hash.tx.substring(0,2) === '0x' || hash.tx === 'procesando...' || hash.tx === null ? hash.tx : `El archivo "${hash.tx}" ya fue subido previamente`}}</textarea>
-      <p class="mb-5 pb-5">Blockchain devuelve al usuario un hash que indentifica la transacción.</p>
+      <p class="mb-5 pb-5">Blockchain devuelve al usuario un hash que indentifica la transacción. Haga clic en el hash para ir a Ropsten y verificar que la transacción s eha realizado.</p>
       <p></p>
     </div>
   </div>

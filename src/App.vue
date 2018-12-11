@@ -6,7 +6,7 @@
       </div>
       <footer class="" v-if="route !== 'home' && route !== 'about'">
         <div class="d-flex fixed-bottom mb-2">
-          <div class="p-2 ml-5 mr-auto mb-0 pb-0" data-toggle="tooltip" data-placement="top" title="¿Cómo usar este tooltip?">
+          <div class="p-2 ml-5 mr-auto mb-0 pb-0" data-toggle="tooltip" data-placement="top" title="¿Cómo usar este kit?">
             <button type="button"  class="btnDiamond" data-toggle="modal" data-target="#tutorialModal" id="Tutorial">
               <i class="fas fa-question"></i>
             </button>

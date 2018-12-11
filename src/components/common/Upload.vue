@@ -7,7 +7,8 @@
       <h3 class="coloryellow"> Documento subido en nodos de IPFS </h3>
       <p>El documento es almacenado y distribuido a través de <a href="https://ipfs.io/" target="_blank">IPFS</a>,
         un <a href="https://es.wikipedia.org/wiki/Protocolo_de_internet" target="_blank">protocolo</a> (http es también un protocolo), que utiliza múltiples nodos para almacenar la información de forma descentralizada.</p>
-      <h4 class="coloryellow">Hash:</h4>
+      <h4 class="coloryellow">Hash del documento:</h4>
+      <p class="coloryellow pb-4 font-weight-bold"><i class="fas fa-exclamation-triangle"></i> Haga clic en el Hash para copiarlo y guárdelo. Necesitará este hash más adelante para verificar y descargar.</p>
       <textarea data-toggle="tooltip" data-placement="top" title="Clic para copiar hash (Necesario al querer descargar un documento)" readonly class="coloryellow" id="ipfsHash" @click="doCopy">{{ hash.hash }}</textarea>
       <p>Al cargar el archivo, <a href="https://ipfs.io/" target="_blank">IPFS</a> devuelve al usuario el resumen
         matemático del documento o un “Hash”. El hash
