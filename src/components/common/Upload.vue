@@ -35,9 +35,11 @@
             alert(`Se ha copiado: ${this.error.detailed.split(' ').pop()}`)
           })
         } else {
-          this.$copyText(this.hash.hash).then((e) => {
-            alert(`Se ha copiado: ${this.hash.hash}`)
-          })
+          if(this.hash.hash != 'procesando...') {
+            this.$copyText(this.hash.hash).then((e) => {
+              alert(`Se ha copiado: ${this.hash.hash}`)
+            })
+          }
         }
       }
     },

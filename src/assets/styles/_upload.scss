@@ -48,7 +48,8 @@ textarea {
   border-style: hidden;
   resize: none;
   height: 100px;
-  overflow: hidden;
+  width: 100%;
+  outline: none;
 }
 .coloryellow {
   color: $yellow !important;
