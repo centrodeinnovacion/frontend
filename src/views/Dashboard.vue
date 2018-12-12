@@ -148,8 +148,7 @@
     computed: {
       ...mapState({
         validate: state => state.Toolkit.validate,
-        error: state => state.Toolkit.error,
-        hash: state => state.Toolkit.hash
+        error: state => state.Toolkit.error
       })
     },
     watch: {
@@ -191,17 +190,24 @@
             }
             const file = files[0]
             const fileName = file.name
-            this.gifName = fileName.substr(0, 3).toLowerCase()
-            this.gifComponent = 'Gif'
-            this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
+            const fileExtension = fileName.split('.').pop()
+            console.log(fileExtension)
+            if(fileExtension !== 'pdf' && fileExtension !== 'jpeg' && fileExtension !== 'jpg'){
+              alert(`La extensión ".${fileExtension}" del archivo no está soportada por este Kit, inténtelo de nuevo con un archivo que tenga alguna de las siguientes extensiones: ".pdf", ".jpeg" o ".jpg".`)
+              this.setToNull()
+            }else {
+              this.gifName = fileName.substr(0, 3).toLowerCase()
+              this.gifComponent = 'Gif'
+              this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
 
-            this.uploadFile(file)
-            this.addIpfsMarkersToGlobe()
-            this.uploadComponent = 'Upload'
-            this.ethereumTimeOut = setTimeout(() => {
+              this.uploadFile(file)
+              this.addIpfsMarkersToGlobe()
+              this.uploadComponent = 'Upload'
+              this.ethereumTimeOut = setTimeout(() => {
                 this.addEthMarkersToGlobe()
                 this.uploadBlockchainComponent = 'UploadBlockchain'
-            }, 2000)
+              }, 2000)
+            }
         }else{
             this.setToNull()
         }
