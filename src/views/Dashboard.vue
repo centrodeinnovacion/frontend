@@ -11,7 +11,7 @@
           <form @submit.prevent>
 
             <div class="d-flex align-items-start flex-column justify-content-start">
-              <div class="form-group inputstyle" :class="{highlightactive: uploadActive}">
+              <div class="form-group inputstyle" :class="{highlightactive: uploadActive}" :disabled="uploadDisabled">
                 <input type="file" placeholder="Drag a file to upload" id="Upload"
                        @change="upload" accept=".jpeg,.pdf">
                 <div class="d-flex">
@@ -25,9 +25,9 @@
                 </div>
               </div>
 
-              <div class="form-group inputstyle" :class="{highlightactive: verifyActive}">
+              <div class="form-group inputstyle" :class="{highlightactive: verifyActive}" :disabled="verifyDisabled">
                 <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified"
-                       @click="verifyWarning" accept=".jpeg,.pdf">
+                       accept=".jpeg,.pdf">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Verificar documento</p>
@@ -39,7 +39,7 @@
                 </div>
               </div>
 
-              <div class="form-group inputstyle" id="Input-Download" :class="{highlightactive: downloadActive}">
+              <div class="form-group inputstyle" id="Input-Download" :class="{highlightactive: downloadActive}" :disabled="downloadDisabled">
                 <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download"
                         @click="showModal"></button>
                 <div class="d-flex">
@@ -127,7 +127,10 @@
         uploadActive: false,
         verifyActive: false,
         downloadActive: false,
-        confirmUpload: false
+        confirmUpload: false,
+        uploadDisabled: false,
+        verifyDisabled: false,
+        downloadDisabled: false
       }
     },
     components: {
@@ -161,7 +164,7 @@
           this.hashVerified = 'Hash'
           setTimeout(() => {
             this.fileFound = 'FileFound'
-          }, 5000)
+          }, 700)
         }
       },
       error(e) {
@@ -173,8 +176,11 @@
         }
       },
       hash(e){
-          if(this.hash.hash !== 'procesando...')
+          if(this.hash.hash !== 'procesando...') {
               this.gifComponent = null
+              this.verifyDisabled = false
+              this.downloadDisabled = false
+          }
       }
     },
     methods: {
@@ -200,6 +206,8 @@
               alert(`La extensión ".${fileExtension}" del archivo no está soportada por este Kit, inténtelo de nuevo con un archivo que tenga alguna de las siguientes extensiones: ".pdf", ".jpeg" o ".jpg".`)
               this.setToNull()
             }else {
+              this.verifyDisabled = true
+              this.downloadDisabled = true
               this.gifName = fileName.substr(0, 3).toLowerCase()
               this.gifComponent = 'Gif'
               this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
@@ -210,14 +218,17 @@
               this.ethereumTimeOut = setTimeout(() => {
                 this.addEthMarkersToGlobe()
                 this.uploadBlockchainComponent = 'UploadBlockchain'
-              }, 2000)
+              }, 1500)
             }
         }else{
             this.setToNull()
         }
       },
       verified(e) {
+        this.verifyHighlighting()
         this.setToNull()
+        this.uploadDisabled = true
+        this.downloadDisabled =  true
         const files = e.target.files
         if (!files.length) {
           return
@@ -270,6 +281,9 @@
         this.tutorial = null
         this.gifName = null
         this.globeComponent = 'Global'
+        this.verifyDisabled = false
+        this.downloadDisabled = false
+        this.uploadDisabled = false
       },
       showModal() {
         this.setToNull()
@@ -287,7 +301,7 @@
         this.downloadActive = false
         this.uploadActive = true
       },
-      verifyWarning() {
+      verifyHighlighting() {
         this.uploadActive = false
         this.downloadActive = false
         this.verifyActive = true

@@ -69,6 +69,10 @@
     &:hover {
       @include buttonhighlight();
     }
+    &:disabled {
+      color: red !important;
+      background-color: lightcoral !important;
+    }
 
   }
   .highlightactive {
