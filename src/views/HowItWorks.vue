@@ -31,7 +31,7 @@
         </div>
         <div class="step mt-5 pt-5 pl-5 fadeInLeft ad-1">
           <p><span class="orange number text-right">1.</span><br>
-            En este kit el usuario subirá un documento que se registrará en IPFS el cual arrojará un hash único del
+            En este kit el usuario subirá un documento que se registrará en <a class="d-inline-block" tabindex="0" data-toggle="tooltip" title="InterPlanetary File System">IPFS</a> el cual arrojará un hash único del
             documento.
           </p>
         </div>
@@ -377,7 +377,7 @@
         </div>
         <div class="stepright  mt-0 pr-5 pb-0 fadeInRight ad-1">
           <p class="text-left"><span class="orange number text-left">¿Cómo funciona este kit?</span><br>
-            Este Kit utiliza IPFS que es un sistema para descentralizar archivos. Similar a un Dropbox descentralizado.
+						Este Kit utiliza <a class="d-inline-block" tabindex="0" data-toggle="tooltip" title="InterPlanetary File System">IPFS</a> que es un sistema para descentralizar archivos. Similar a un Dropbox descentralizado.
             El proceso de
             registro de documentos en IPFS es similar al realizado en Blockchain explicado anteriormente, que asegura
             que los documentos no sean modificados.
