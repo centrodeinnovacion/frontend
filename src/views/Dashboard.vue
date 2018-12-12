@@ -148,7 +148,8 @@
     computed: {
       ...mapState({
         validate: state => state.Toolkit.validate,
-        error: state => state.Toolkit.error
+        error: state => state.Toolkit.error,
+        hash: state => state.Toolkit.hash
       })
     },
     watch: {
@@ -170,6 +171,10 @@
           this.notFoundBc = 'NotFoundBc'
           this.fileNotFound = 'FileNotFound'
         }
+      },
+      hash(e){
+          if(this.hash.hash !== 'procesando...')
+              this.gifComponent = null
       }
     },
     methods: {
@@ -191,7 +196,6 @@
             const file = files[0]
             const fileName = file.name
             const fileExtension = fileName.split('.').pop()
-            console.log(fileExtension)
             if(fileExtension !== 'pdf' && fileExtension !== 'jpeg' && fileExtension !== 'jpg'){
               alert(`La extensión ".${fileExtension}" del archivo no está soportada por este Kit, inténtelo de nuevo con un archivo que tenga alguna de las siguientes extensiones: ".pdf", ".jpeg" o ".jpg".`)
               this.setToNull()
