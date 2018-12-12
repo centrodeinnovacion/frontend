@@ -21,7 +21,7 @@
       })
     },
     methods:{
-      doCopy () {
+      doCopy() {
         this.$copyText(this.validate.hash).then( (e) => {
           alert(`Se ha copiado: ${this.validate.hash}`)
         })

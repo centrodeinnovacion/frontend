@@ -29,7 +29,7 @@
       })
     },
     methods: {
-      doCopy () {
+      doCopy() {
         if (this.error.code === 409) {
           this.$copyText(this.error.detailed.split(' ').pop()).then((e) => {
             alert(`Se ha copiado: ${this.error.detailed.split(' ').pop()}`)

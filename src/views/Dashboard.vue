@@ -12,7 +12,7 @@
 
             <div class="d-flex align-items-start flex-column justify-content-start">
               <div class="form-group inputstyle" :class="{highlightactive: uploadActive}">
-                <input type="file" placeholder="Drag a file to upload" id="Upload" @click="uploadWarning"
+                <input type="file" placeholder="Drag a file to upload" id="Upload"
                        @change="upload" accept=".jpeg,.pdf">
                 <div class="d-flex">
                   <div>
@@ -126,7 +126,8 @@
         gifName: null,
         uploadActive: false,
         verifyActive: false,
-        downloadActive: false
+        downloadActive: false,
+        confirmUpload: false
       }
     },
     components: {
@@ -155,6 +156,7 @@
       validate(e) {
         if (e) {
           this.setToNull()
+          this.globeComponent = null
           this.verifyComponent = 'Verify'
           this.hashVerified = 'Hash'
           setTimeout(() => {
@@ -165,6 +167,7 @@
       error(e) {
         if (this.error.code === 404) {
           this.setToNull()
+            this.globeComponent = null
           this.notFoundBc = 'NotFoundBc'
           this.fileNotFound = 'FileNotFound'
         }
@@ -179,26 +182,29 @@
         setProperty: constants.TOOLKIT_SET_PROPERTY
       }),
       upload(e) {
-        this.setToNull()
-        const files = e.target.files
-        if (!files.length) {
-          return
+        this.uploadWarning()
+        if(this.confirmUpload) {
+            this.setToNull()
+            const files = e.target.files
+            if (!files.length) {
+                return
+            }
+            const file = files[0]
+            const fileName = file.name
+            this.gifName = fileName.substr(0, 3).toLowerCase()
+            this.gifComponent = 'Gif'
+            this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
+
+            this.uploadFile(file)
+            this.addIpfsMarkersToGlobe()
+            this.uploadComponent = 'Upload'
+            this.ethereumTimeOut = setTimeout(() => {
+                this.addEthMarkersToGlobe()
+                this.uploadBlockchainComponent = 'UploadBlockchain'
+            }, 2000)
+        }else{
+            this.setToNull()
         }
-        const file = files[0]
-        const fileName = file.name
-        this.gifName = fileName.substr(0, 3).toLowerCase()
-
-        this.globeComponent = 'Global'
-        this.gifComponent = 'Gif'
-        this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
-
-        this.uploadFile(file)
-        this.addIpfsMarkersToGlobe()
-        this.uploadComponent = 'Upload'
-        this.ethereumTimeOut = setTimeout(() => {
-          this.addEthMarkersToGlobe()
-          this.uploadBlockchainComponent = 'UploadBlockchain'
-        }, 2000)
       },
       verified(e) {
         this.setToNull()
@@ -207,7 +213,6 @@
           return
         }
         const file = files[0]
-        this.globeComponent = 'Global'
         this.verifyBlockchainComponent = 'VerifyBlockchain'
         this.gifComponent = 'Gif'
 
@@ -254,21 +259,20 @@
         this.download = null
         this.tutorial = null
         this.gifName = null
-        this.globeComponent = null
+        this.globeComponent = 'Global'
       },
       showModal() {
         this.setToNull()
         this.uploadActive = false
         this.verifyActive = false
         this.downloadActive = true
-        this.globeComponent = 'Global'
         this.previewFile = 'PreviewFile'
       },
       uploadWarning() {
         this.setToNull()
-        this.globeComponent = 'Global'
-        alert('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán guardados en IPFS y en la cadena de bloques,' +
-          ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
+        this.confirmUpload = confirm('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán' +
+            'guardados en IPFS y en la cadena de bloques, por lo que se recomienda NO subir archivos con contenido' +
+            ' sensible o datos personales.')
         this.verifyActive = false
         this.downloadActive = false
         this.uploadActive = true
