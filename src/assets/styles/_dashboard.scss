@@ -8,6 +8,18 @@
   }
 }
 
+@mixin disabled(){
+  border: 1px solid rgba(156, 237, 223, 0.5);
+  background-color: transparent;
+  color: rgba(156, 237, 223, 0.5) !important;
+  &:hover {
+    background-color: rgba(156, 237, 223, 0.3) !important;
+  }
+  p {
+    color: rgba(156, 237, 223, 0.5) !important;
+  }
+}
+
 .dashboard {
   margin-left: 2.5%;
   height: 96vh;
@@ -70,13 +82,14 @@
       @include buttonhighlight();
     }
     &:disabled {
-      color: red !important;
-      background-color: lightcoral !important;
+     @include disabled();
     }
-
   }
   .highlightactive {
     @include buttonhighlight();
+  }
+  .blockbutton {
+    @include disabled();
   }
 
   #Upload, #Verify, #Download {
