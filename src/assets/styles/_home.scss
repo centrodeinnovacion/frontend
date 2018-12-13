@@ -118,8 +118,9 @@
     align-items: center;
     border: 1px solid $lightgreen;
     background-color: transparent;
-    width: 12vh;
-    height: 12vh;
+    width: 100px!important;
+    height: 100px!important;
+    padding: 50px!important;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
