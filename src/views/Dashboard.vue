@@ -13,7 +13,7 @@
             <div class="d-flex align-items-start flex-column justify-content-start">
               <div class="form-group inputstyle" :class="{highlightactive: uploadActive, blockbutton: uploadDisabled}">
                 <input type="file" placeholder="Drag a file to upload" id="Upload"
-                       @change="upload" accept=".jpeg,.pdf" :disabled="uploadDisabled">
+                       @change="upload" accept=".jpeg,.pdf,.jpg" :disabled="uploadDisabled">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Subir documento</p>
@@ -27,7 +27,7 @@
 
               <div class="form-group inputstyle" :class="{highlightactive: verifyActive, blockbutton: verifyDisabled}">
                 <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified"
-                       accept=".jpeg,.pdf" :disabled="verifyDisabled">
+                       accept=".jpeg,.pdf,.jpg" :disabled="verifyDisabled">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Verificar documento</p>
@@ -130,7 +130,8 @@
         confirmUpload: false,
         uploadDisabled: false,
         verifyDisabled: false,
-        downloadDisabled: false
+        downloadDisabled: false,
+        maxFileSize: 10485760
       }
     },
     components: {
@@ -210,22 +211,29 @@
             return
           }
           const file = files[0]
-          const fileName = file.name
-          const fileExtension = fileName.split('.').pop()
-          if(fileExtension !== 'pdf' && fileExtension !== 'jpeg' && fileExtension !== 'jpg'){
-            alert(`La extensión ".${fileExtension}" del archivo no está soportada por este Kit, inténtelo de nuevo con un archivo que tenga alguna de las siguientes extensiones: ".pdf", ".jpeg" o ".jpg".`)
+          if(file.size > this.maxFileSize) {
+            alert(`El máximo tamaño permitido para los archivos es de 10 MB, intentelo de nuevo con un archivo más pequeño.`)
             this.setToNull()
+            this.enableButtons()
           }else {
-            this.gifName = fileName.substr(0, 3).toLowerCase()
-            this.gifComponent = 'Gif'
-            this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
-            this.uploadFile(file)
-            this.addIpfsMarkersToGlobe()
-            this.uploadComponent = 'Upload'
-            this.ethereumTimeOut = setTimeout(() => {
-              this.addEthMarkersToGlobe()
-              this.uploadBlockchainComponent = 'UploadBlockchain'
-            }, 1500)
+            const fileName = file.name
+            const fileExtension = fileName.split('.').pop()
+            if (fileExtension !== 'pdf' && fileExtension !== 'jpeg' && fileExtension !== 'jpg') {
+              alert(`La extensión ".${fileExtension}" del archivo no está soportada por este Kit, inténtelo de nuevo con un archivo que tenga alguna de las siguientes extensiones: ".pdf", ".jpeg" o ".jpg".`)
+              this.setToNull()
+              this.enableButtons()
+            } else {
+              this.gifName = fileName.substr(0, 3).toLowerCase()
+              this.gifComponent = 'Gif'
+              this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
+              this.uploadFile(file)
+              this.addIpfsMarkersToGlobe()
+              this.uploadComponent = 'Upload'
+              this.ethereumTimeOut = setTimeout(() => {
+                this.addEthMarkersToGlobe()
+                this.uploadBlockchainComponent = 'UploadBlockchain'
+              }, 1500)
+            }
           }
         }else{
           this.setToNull()
