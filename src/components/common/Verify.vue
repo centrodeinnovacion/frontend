@@ -55,13 +55,10 @@
         <path class="st0 path" d="M184.2,461c0,0-220.4-174.3-98.1-267.3"/>
         <path class="st0 path" d="M184.6,461.4c0,0-82.7-446,114.2-413.7"/>
         <path class="st0 path" d="M184.5,461.2c0,0,127.2,34,179-1.2"/>
-</svg>
-
+      </svg>
     </div>
   </div>
-
 </template>
-
 
 <script>
   import {mapState} from 'vuex'
