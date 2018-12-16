@@ -5,11 +5,9 @@
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div>
           <h2>Instrucciones</h2>
-          <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong>, <strong>.jpeg</strong> o
-            <strong>.jpg</strong>, para esto seleccione una de las siguientes acciones: </p>
-
+          <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong> o
+            <strong>.jpeg</strong>, para esto seleccione una de las siguientes acciones: </p>
           <form @submit.prevent>
-
             <div class="d-flex align-items-start flex-column justify-content-start">
               <div class="form-group inputstyle" :class="{highlightactive: uploadActive, blockbutton: uploadDisabled}">
                 <input type="file" placeholder="Drag a file to upload" id="Upload"
@@ -53,7 +51,8 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 globe d-flex justify-content-center align-self-center my-auto mx-auto flex-column">
-        <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png" alt="">
+        <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png"
+             alt="">
         <component :is="globeComponent" ref="globe"></component>
         <gif :is="gifComponent" :gifName="gifName"></gif>
         <component :is="verifyComponent"></component>
@@ -67,7 +66,6 @@
           <component :is="previewFile"></component>
           <component :is="fileFound"></component>
           <component :is="fileNotFound"></component>
-
           <div v-if="uploadBlockchainComponent || uploadComponent" class="scrollbar force-overflow">
             <component :is="uploadComponent"></component>
             <component :is="uploadBlockchainComponent"></component>
