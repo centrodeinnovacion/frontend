@@ -11,9 +11,9 @@
           <form @submit.prevent>
 
             <div class="d-flex align-items-start flex-column justify-content-start">
-              <div class="form-group inputstyle" :class="{highlightactive: uploadActive}">
-                <input type="file" placeholder="Drag a file to upload" id="Upload" @click="uploadWarning"
-                       @change="upload" accept=".jpeg,.pdf">
+              <div class="form-group inputstyle" :class="{highlightactive: uploadActive, blockbutton: uploadDisabled}">
+                <input type="file" placeholder="Drag a file to upload" id="Upload"
+                       @change="upload" accept=".jpeg,.pdf,.jpg" :disabled="uploadDisabled">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Subir documento</p>
@@ -25,9 +25,9 @@
                 </div>
               </div>
 
-              <div class="form-group inputstyle" :class="{highlightactive: verifyActive}">
+              <div class="form-group inputstyle" :class="{highlightactive: verifyActive, blockbutton: verifyDisabled}">
                 <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified"
-                       @click="verifyWarning" accept=".jpeg,.pdf">
+                       accept=".jpeg,.pdf,.jpg" :disabled="verifyDisabled">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Verificar documento</p>
@@ -39,9 +39,9 @@
                 </div>
               </div>
 
-              <div class="form-group inputstyle" id="Input-Download" :class="{highlightactive: downloadActive}">
+              <div class="form-group inputstyle" id="Input-Download" :class="{highlightactive: downloadActive, blockbutton: downloadDisabled}">
                 <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download"
-                        @click="showModal"></button>
+                        :disabled="downloadDisabled"></button>
                 <div class="d-flex">
                   <div><p class="buttontittle">Descargar documento</p></div>
                   <div class="pt-2 pr-2 ml-auto align-self-start"><i class="iconbutton icon-download"></i></div>
@@ -78,7 +78,7 @@
     </div>
     <div class="row download">
       <div>
-        <download></download>
+        <download @to-download="showModal"></download>
         <tutorial></tutorial>
       </div>
     </div>
@@ -126,7 +126,12 @@
         gifName: null,
         uploadActive: false,
         verifyActive: false,
-        downloadActive: false
+        downloadActive: false,
+        confirmUpload: false,
+        uploadDisabled: false,
+        verifyDisabled: false,
+        downloadDisabled: false,
+        maxFileSize: 10485760
       }
     },
     components: {
@@ -148,26 +153,43 @@
       ...mapState({
         validate: state => state.Toolkit.validate,
         error: state => state.Toolkit.error,
-        hash: state => state.Toolkit.hash
+        hash: state => state.Toolkit.hash,
+        file: state => state.Toolkit.file
       })
     },
     watch: {
       validate(e) {
         if (e) {
           this.setToNull()
+          this.enableButtons()
+          this.globeComponent = null
           this.verifyComponent = 'Verify'
           this.hashVerified = 'Hash'
           setTimeout(() => {
             this.fileFound = 'FileFound'
-          }, 5000)
+          }, 700)
         }
       },
       error(e) {
         if (this.error.code === 404) {
           this.setToNull()
+          this.enableButtons()
+          this.globeComponent = null
           this.notFoundBc = 'NotFoundBc'
           this.fileNotFound = 'FileNotFound'
         }
+      },
+      hash(e){
+        if(this.hash.hash !== 'procesando...') {
+          this.gifComponent = null
+          setTimeout(() => {
+            this.verifyDisabled = false
+            this.downloadDisabled = false
+          }, 1000)
+        }
+      },
+      file(e){
+        this.enableButtons()
       }
     },
     methods: {
@@ -179,35 +201,54 @@
         setProperty: constants.TOOLKIT_SET_PROPERTY
       }),
       upload(e) {
-        this.setToNull()
-        const files = e.target.files
-        if (!files.length) {
-          return
+        this.uploadWarning()
+        if(this.confirmUpload) {
+          this.setToNull()
+          this.verifyDisabled = true
+          this.downloadDisabled = true
+          const files = e.target.files
+          if (!files.length) {
+            return
+          }
+          const file = files[0]
+          if(file.size > this.maxFileSize) {
+            alert(`El máximo tamaño permitido para los archivos es de 10 MB, intentelo de nuevo con un archivo más pequeño.`)
+            this.setToNull()
+            this.enableButtons()
+          }else {
+            const fileName = file.name
+            const fileExtension = fileName.split('.').pop()
+            if (fileExtension !== 'pdf' && fileExtension !== 'jpeg' && fileExtension !== 'jpg') {
+              alert(`La extensión ".${fileExtension}" del archivo no está soportada por este Kit, inténtelo de nuevo con un archivo que tenga alguna de las siguientes extensiones: ".pdf", ".jpeg" o ".jpg".`)
+              this.setToNull()
+              this.enableButtons()
+            } else {
+              this.gifName = fileName.substr(0, 3).toLowerCase()
+              this.gifComponent = 'Gif'
+              this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
+              this.uploadFile(file)
+              this.addIpfsMarkersToGlobe()
+              this.uploadComponent = 'Upload'
+              this.ethereumTimeOut = setTimeout(() => {
+                this.addEthMarkersToGlobe()
+                this.uploadBlockchainComponent = 'UploadBlockchain'
+              }, 1500)
+            }
+          }
+        }else{
+          this.setToNull()
         }
-        const file = files[0]
-        const fileName = file.name
-        this.gifName = fileName.substr(0, 3).toLowerCase()
-
-        this.globeComponent = 'Global'
-        this.gifComponent = 'Gif'
-        this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
-
-        this.uploadFile(file)
-        this.addIpfsMarkersToGlobe()
-        this.uploadComponent = 'Upload'
-        this.ethereumTimeOut = setTimeout(() => {
-          this.addEthMarkersToGlobe()
-          this.uploadBlockchainComponent = 'UploadBlockchain'
-        }, 2000)
       },
       verified(e) {
+        this.verifyHighlighting()
         this.setToNull()
+        this.uploadDisabled = true
+        this.downloadDisabled =  true
         const files = e.target.files
         if (!files.length) {
           return
         }
         const file = files[0]
-        this.globeComponent = 'Global'
         this.verifyBlockchainComponent = 'VerifyBlockchain'
         this.gifComponent = 'Gif'
 
@@ -254,29 +295,37 @@
         this.download = null
         this.tutorial = null
         this.gifName = null
-        this.globeComponent = null
+        this.globeComponent = 'Global'
       },
       showModal() {
         this.setToNull()
+        this.uploadDisabled = true
+        this.verifyDisabled = true
         this.uploadActive = false
         this.verifyActive = false
         this.downloadActive = true
-        this.globeComponent = 'Global'
         this.previewFile = 'PreviewFile'
       },
       uploadWarning() {
         this.setToNull()
-        this.globeComponent = 'Global'
-        alert('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán guardados en IPFS y en la cadena de bloques,' +
-          ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
+        this.confirmUpload = confirm('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán' +
+          'guardados en IPFS y en la cadena de bloques, por lo que se recomienda NO subir archivos con contenido' +
+          ' sensible o datos personales.')
         this.verifyActive = false
         this.downloadActive = false
         this.uploadActive = true
       },
-      verifyWarning() {
+      verifyHighlighting() {
         this.uploadActive = false
         this.downloadActive = false
         this.verifyActive = true
+      },
+      enableButtons() {
+        setTimeout(() => {
+          this.uploadDisabled = false
+          this.verifyDisabled = false
+          this.downloadDisabled = false
+        }, 1000)
       }
     }
   }
