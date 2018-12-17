@@ -255,7 +255,16 @@
       addIpfsMarkersToGlobe() {
         this.ipfsInterval = setInterval(() => {
           this.$refs.globe.globe.addImage(4.570868, -74.297333, this.$refs.globe.imageIPFS) // Colombia
-        }, 500)
+          this.$refs.globe.globe.addImage(-30.559482, 22.937506, this.$refs.globe.disabledIPFS)//South Africa
+          this.$refs.globe.globe.addImage(31.791702, -7.09262, this.$refs.globe.disabledIPFS)//Morocco
+          this.$refs.globe.globe.addImage(35.907757, 127.766922, this.$refs.globe.disabledIPFS)//South Korea
+          this.$refs.globe.globe.addImage(56.130366, -106.346771, this.$refs.globe.disabledIPFS)//Canada
+          this.$refs.globe.globe.addImage(40.463667, -3.74922, this.$refs.globe.disabledIPFS)//Spain
+          this.$refs.globe.globe.addImage(41.87194, 12.56738, this.$refs.globe.disabledIPFS)//Italy
+          this.$refs.globe.globe.addImage(-16.290154, -63.588653, this.$refs.globe.disabledIPFS)//Bolivia
+          this.$refs.globe.globe.addImage(55.378051, -3.435973, this.$refs.globe.disabledIPFS)//United Kingdom
+          this.$refs.globe.globe.addImage(23.424076, 53.847818, this.$refs.globe.disabledIPFS)//United Arab Emirates
+        }, 800)
       },
       addEthMarkersToGlobe() {
         this.ethInterval = setInterval(() => {
@@ -271,7 +280,7 @@
           this.$refs.globe.globe.addImage(35.69, 139.69, this.$refs.globe.imageETH) //163.143.196.35.bc.googleusercontent.com
           this.$refs.globe.globe.addImage(38.6582, -77.2497, this.$refs.globe.imageETH) //35.196.143.163
           this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //87.106.111.132 s19433107.onlinehome-server.info
-        }, 500)
+        }, 800)
       },
       setToNull() {
         clearTimeout(this.ethereumTimeOut)
