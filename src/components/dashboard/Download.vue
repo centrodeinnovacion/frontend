@@ -34,6 +34,7 @@
         document: constants.TOOLKIT_DOWNLOAD_FILE
       }),
       getFile(e){
+        this.$emit('to-download', e)
         this.document(this.hash)
       }
     }

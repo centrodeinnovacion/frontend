@@ -7,8 +7,8 @@
 </template>
 
 <script>
-  import IPFSmarker from './img/file-alt-solid.svg'
-  import ETHmarker from './img/layer-group-solid.svg'
+  import IPFSmarker from './img/file-alt-solid.png'
+  import ETHmarker from './img/layer-group-solid.png'
 
   export default {
     name: 'global',

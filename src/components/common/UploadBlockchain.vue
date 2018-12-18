@@ -16,20 +16,20 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex'
+import {mapState} from 'vuex'
 
-  export default {
-    name: "UploadBlockchain",
-    computed: {
-      ...mapState({
-        hash: state => state.Toolkit.hash
-      })
-    },
-    methods: {
-      doCopy () {
-        if(this.hash.tx.substring(0,2) === '0x')
-          window.open(`https://ropsten.etherscan.io/tx/${this.hash.tx}`, '_blank');
-      }
+export default {
+  name: "UploadBlockchain",
+  computed: {
+    ...mapState({
+      hash: state => state.Toolkit.hash
+    })
+  },
+  methods: {
+    redirect() {
+      if(this.hash.tx.substring(0,2) === '0x')
+        window.open(`https://ropsten.etherscan.io/tx/${this.hash.tx}`, '_blank');
     }
   }
+}
 </script>

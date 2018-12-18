@@ -8,6 +8,18 @@
   }
 }
 
+@mixin disabled(){
+  border: 1px solid rgba(156, 237, 223, 0.5);
+  background-color: transparent;
+  color: rgba(156, 237, 223, 0.5) !important;
+  &:hover {
+    background-color: rgba(156, 237, 223, 0.3) !important;
+  }
+  p {
+    color: rgba(156, 237, 223, 0.5) !important;
+  }
+}
+
 .dashboard {
   height: 96vh;
   .btn-dashboard {
@@ -67,10 +79,15 @@
     &:hover {
       @include buttonhighlight();
     }
-
+    &:disabled {
+     @include disabled();
+    }
   }
   .highlightactive {
     @include buttonhighlight();
+  }
+  .blockbutton {
+    @include disabled();
   }
 
   #Upload, #Verify, #Download {
