@@ -35,7 +35,7 @@
             alert(`Se ha copiado: ${this.error.detailed.split(' ').pop()}`)
           })
         } else {
-          if(this.hash.hash != 'procesando...') {
+          if(this.hash.hash !== 'procesando...') {
             this.$copyText(this.hash.hash).then((e) => {
               alert(`Se ha copiado: ${this.hash.hash}`)
             })
