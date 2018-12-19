@@ -8,6 +8,8 @@
 @import "verify";
 @import "about";
 @import "animations";
+@import "hash";
+
 @font-face {
   font-family: 'Toolkit-Icon';
   src: url('assets/fonts/Toolkit-Icon.eot?os9i8d');
@@ -22,15 +24,13 @@
 #app {
   background-color: $darkblue !important;
   height: 100%;
-  width: 100%;
+  width:auto;
   background-image: url("./assets/frame.png");
   background-repeat: repeat;
 
   .scrollbar{
     overflow-y: scroll;
     height: 80vh;
-    float: left;
-
   }
   .scrollbar::-webkit-scrollbar-track
   {

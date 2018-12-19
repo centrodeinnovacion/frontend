@@ -5,15 +5,13 @@
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <div>
           <h2>Instrucciones</h2>
-          <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong>, <strong>.jpeg</strong> o
-            <strong>.jpg</strong>, para esto seleccione una de las siguientes acciones: </p>
-
+          <p>Suponga que usted quiere cargar, verificar y descargar un archivo <strong>.pdf</strong> o
+            <strong>.jpeg</strong>, para esto seleccione una de las siguientes acciones: </p>
           <form @submit.prevent>
-
             <div class="d-flex align-items-start flex-column justify-content-start">
-              <div class="form-group inputstyle" :class="{highlightactive: uploadActive}">
-                <input type="file" placeholder="Drag a file to upload" id="Upload" @click="uploadWarning"
-                       @change="upload" accept=".jpeg,.pdf">
+              <div class="form-group inputstyle" :class="{highlightactive: uploadActive, blockbutton: uploadDisabled}">
+                <input type="file" placeholder="Drag a file to upload" id="Upload"
+                       @change="upload" accept=".jpeg,.pdf,.jpg" :disabled="uploadDisabled">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Subir documento</p>
@@ -25,9 +23,9 @@
                 </div>
               </div>
 
-              <div class="form-group inputstyle" :class="{highlightactive: verifyActive}">
+              <div class="form-group inputstyle" :class="{highlightactive: verifyActive, blockbutton: verifyDisabled}">
                 <input type="file" placeholder="Drag a file to upload" id="Verify" @change="verified"
-                       @click="verifyWarning" accept=".jpeg,.pdf">
+                       accept=".jpeg,.pdf,.jpg" :disabled="verifyDisabled">
                 <div class="d-flex">
                   <div>
                     <p class="buttontittle">Verificar documento</p>
@@ -39,9 +37,9 @@
                 </div>
               </div>
 
-              <div class="form-group inputstyle" id="Input-Download" :class="{highlightactive: downloadActive}">
+              <div class="form-group inputstyle" id="Input-Download" :class="{highlightactive: downloadActive, blockbutton: downloadDisabled}">
                 <button type="button" data-toggle="modal" data-target="#downloadModal" id="Download"
-                        @click="showModal"></button>
+                        :disabled="downloadDisabled"></button>
                 <div class="d-flex">
                   <div><p class="buttontittle">Descargar documento</p></div>
                   <div class="pt-2 pr-2 ml-auto align-self-start"><i class="iconbutton icon-download"></i></div>
@@ -52,8 +50,9 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 globe d-flex justify-content-center align-self-center my-auto mx-auto flex-column">
-        <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png" alt="">
+      <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12 globe d-flex justify-content-center align-self-center my-auto mx-auto flex-column">
+        <img v-if="globeComponent == null" class="d-flex justify-content-center mx-auto" src="@/assets/img/red.png"
+             alt="">
         <component :is="globeComponent" ref="globe"></component>
         <gif :is="gifComponent" :gifName="gifName"></gif>
         <component :is="verifyComponent"></component>
@@ -67,7 +66,6 @@
           <component :is="previewFile"></component>
           <component :is="fileFound"></component>
           <component :is="fileNotFound"></component>
-
           <div v-if="uploadBlockchainComponent || uploadComponent" class="scrollbar force-overflow">
             <component :is="uploadComponent"></component>
             <component :is="uploadBlockchainComponent"></component>
@@ -78,7 +76,7 @@
     </div>
     <div class="row download">
       <div>
-        <download></download>
+        <download @to-download="showModal"></download>
         <tutorial></tutorial>
       </div>
     </div>
@@ -126,7 +124,12 @@
         gifName: null,
         uploadActive: false,
         verifyActive: false,
-        downloadActive: false
+        downloadActive: false,
+        confirmUpload: false,
+        uploadDisabled: false,
+        verifyDisabled: false,
+        downloadDisabled: false,
+        maxFileSize: 10485760
       }
     },
     components: {
@@ -148,26 +151,43 @@
       ...mapState({
         validate: state => state.Toolkit.validate,
         error: state => state.Toolkit.error,
-        hash: state => state.Toolkit.hash
+        hash: state => state.Toolkit.hash,
+        file: state => state.Toolkit.file
       })
     },
     watch: {
       validate(e) {
         if (e) {
           this.setToNull()
+          this.enableButtons()
+          this.globeComponent = null
           this.verifyComponent = 'Verify'
           this.hashVerified = 'Hash'
           setTimeout(() => {
             this.fileFound = 'FileFound'
-          }, 5000)
+          }, 700)
         }
       },
       error(e) {
         if (this.error.code === 404) {
           this.setToNull()
+          this.enableButtons()
+          this.globeComponent = null
           this.notFoundBc = 'NotFoundBc'
           this.fileNotFound = 'FileNotFound'
         }
+      },
+      hash(e){
+        if(this.hash.hash !== 'procesando...') {
+          this.gifComponent = null
+          setTimeout(() => {
+            this.verifyDisabled = false
+            this.downloadDisabled = false
+          }, 1000)
+        }
+      },
+      file(e){
+        this.enableButtons()
       }
     },
     methods: {
@@ -179,35 +199,54 @@
         setProperty: constants.TOOLKIT_SET_PROPERTY
       }),
       upload(e) {
-        this.setToNull()
-        const files = e.target.files
-        if (!files.length) {
-          return
+        this.uploadWarning()
+        if(this.confirmUpload) {
+          this.setToNull()
+          this.verifyDisabled = true
+          this.downloadDisabled = true
+          const files = e.target.files
+          if (!files.length) {
+            return
+          }
+          const file = files[0]
+          if(file.size > this.maxFileSize) {
+            alert(`El máximo tamaño permitido para los archivos es de 10 MB, intentelo de nuevo con un archivo más pequeño.`)
+            this.setToNull()
+            this.enableButtons()
+          }else {
+            const fileName = file.name
+            const fileExtension = fileName.split('.').pop()
+            if (fileExtension !== 'pdf' && fileExtension !== 'jpeg' && fileExtension !== 'jpg') {
+              alert(`La extensión ".${fileExtension}" del archivo no está soportada por este Kit, inténtelo de nuevo con un archivo que tenga alguna de las siguientes extensiones: ".pdf", ".jpeg" o ".jpg".`)
+              this.setToNull()
+              this.enableButtons()
+            } else {
+              this.gifName = fileName.substr(0, 3).toLowerCase()
+              this.gifComponent = 'Gif'
+              this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
+              this.uploadFile(file)
+              this.addIpfsMarkersToGlobe()
+              this.uploadComponent = 'Upload'
+              this.ethereumTimeOut = setTimeout(() => {
+                this.addEthMarkersToGlobe()
+                this.uploadBlockchainComponent = 'UploadBlockchain'
+              }, 1500)
+            }
+          }
+        }else{
+          this.setToNull()
         }
-        const file = files[0]
-        const fileName = file.name
-        this.gifName = fileName.substr(0, 3).toLowerCase()
-
-        this.globeComponent = 'Global'
-        this.gifComponent = 'Gif'
-        this.setProperty({hash: {hash: 'procesando...', tx: 'procesando...'}})
-
-        this.uploadFile(file)
-        this.addIpfsMarkersToGlobe()
-        this.uploadComponent = 'Upload'
-        this.ethereumTimeOut = setTimeout(() => {
-          this.addEthMarkersToGlobe()
-          this.uploadBlockchainComponent = 'UploadBlockchain'
-        }, 2000)
       },
       verified(e) {
+        this.verifyHighlighting()
         this.setToNull()
+        this.uploadDisabled = true
+        this.downloadDisabled =  true
         const files = e.target.files
         if (!files.length) {
           return
         }
         const file = files[0]
-        this.globeComponent = 'Global'
         this.verifyBlockchainComponent = 'VerifyBlockchain'
         this.gifComponent = 'Gif'
 
@@ -216,7 +255,16 @@
       addIpfsMarkersToGlobe() {
         this.ipfsInterval = setInterval(() => {
           this.$refs.globe.globe.addImage(4.570868, -74.297333, this.$refs.globe.imageIPFS) // Colombia
-        }, 500)
+          this.$refs.globe.globe.addImage(-30.559482, 22.937506, this.$refs.globe.disabledIPFS)//South Africa
+          this.$refs.globe.globe.addImage(31.791702, -7.09262, this.$refs.globe.disabledIPFS)//Morocco
+          this.$refs.globe.globe.addImage(35.907757, 127.766922, this.$refs.globe.disabledIPFS)//South Korea
+          this.$refs.globe.globe.addImage(56.130366, -106.346771, this.$refs.globe.disabledIPFS)//Canada
+          this.$refs.globe.globe.addImage(40.463667, -3.74922, this.$refs.globe.disabledIPFS)//Spain
+          this.$refs.globe.globe.addImage(41.87194, 12.56738, this.$refs.globe.disabledIPFS)//Italy
+          this.$refs.globe.globe.addImage(-16.290154, -63.588653, this.$refs.globe.disabledIPFS)//Bolivia
+          this.$refs.globe.globe.addImage(55.378051, -3.435973, this.$refs.globe.disabledIPFS)//United Kingdom
+          this.$refs.globe.globe.addImage(23.424076, 53.847818, this.$refs.globe.disabledIPFS)//United Arab Emirates
+        }, 800)
       },
       addEthMarkersToGlobe() {
         this.ethInterval = setInterval(() => {
@@ -232,7 +280,7 @@
           this.$refs.globe.globe.addImage(35.69, 139.69, this.$refs.globe.imageETH) //163.143.196.35.bc.googleusercontent.com
           this.$refs.globe.globe.addImage(38.6582, -77.2497, this.$refs.globe.imageETH) //35.196.143.163
           this.$refs.globe.globe.addImage(51.2993, 9.491, this.$refs.globe.imageETH) //87.106.111.132 s19433107.onlinehome-server.info
-        }, 500)
+        }, 800)
       },
       setToNull() {
         clearTimeout(this.ethereumTimeOut)
@@ -254,29 +302,37 @@
         this.download = null
         this.tutorial = null
         this.gifName = null
-        this.globeComponent = null
+        this.globeComponent = 'Global'
       },
       showModal() {
         this.setToNull()
+        this.uploadDisabled = true
+        this.verifyDisabled = true
         this.uploadActive = false
         this.verifyActive = false
         this.downloadActive = true
-        this.globeComponent = 'Global'
         this.previewFile = 'PreviewFile'
       },
       uploadWarning() {
         this.setToNull()
-        this.globeComponent = 'Global'
-        alert('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán guardados en IPFS y en la cadena de bloques,' +
-          ' por lo que se recomienda NO subir archivos con contenido sensible o datos personales.')
+        this.confirmUpload = confirm('Tenga en cuenta que los archivos subidos por medio de este Toolkit, quedarán' +
+          'guardados en IPFS y en la cadena de bloques, por lo que se recomienda NO subir archivos con contenido' +
+          ' sensible o datos personales.')
         this.verifyActive = false
         this.downloadActive = false
         this.uploadActive = true
       },
-      verifyWarning() {
+      verifyHighlighting() {
         this.uploadActive = false
         this.downloadActive = false
         this.verifyActive = true
+      },
+      enableButtons() {
+        setTimeout(() => {
+          this.uploadDisabled = false
+          this.verifyDisabled = false
+          this.downloadDisabled = false
+        }, 1000)
       }
     }
   }
