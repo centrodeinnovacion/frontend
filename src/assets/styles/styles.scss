@@ -24,15 +24,13 @@
 #app {
   background-color: $darkblue !important;
   height: 100%;
-  width: 100%;
+  width:auto;
   background-image: url("./assets/frame.png");
   background-repeat: repeat;
 
   .scrollbar{
     overflow-y: scroll;
     height: 80vh;
-    float: left;
-
   }
   .scrollbar::-webkit-scrollbar-track
   {
