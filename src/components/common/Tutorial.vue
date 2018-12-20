@@ -10,7 +10,9 @@
         </div>
         <div class="modal-body">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://ipfs.io/ipfs/QmbAWVBEPSirXRXCJ5xV9vNJZokgW21Wqta22XWGV15wdp"
+            <iframe class="embed-responsive-item" width="560" height="315"
+                    src="https://www.youtube.com/embed/LbR7Qcom17A" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
           </div>
         </div>
