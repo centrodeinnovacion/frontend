@@ -17,7 +17,7 @@
       <i class="fas fa-thumbs-up"></i>
     </div>
     <div class="line1 mx-auto">
-      <svg width="500px" height="550px"  viewBox="0 0 500 450" enable-background="new 0 0 340 333" xml:space="preserve">
+      <svg width="500px" height="550px"  viewBox="0 0 540 630" enable-background="new 0 0 340 333" xml:space="preserve">
 
         <path class="st0 path" d="M184.5,461.2c0,0,282-147,234.6-293.6"/>
         <ellipse transform="matrix(9.188243e-03 -1 1 9.188243e-03 247.5492 585.8514)" class="st1 hash" cx="419.4" cy="168" rx="3.7" ry="3.7"/>
